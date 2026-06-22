@@ -1,0 +1,9 @@
+{
+  "name": "pi-generic-site-discovery",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Project-local Pi extension for bounded generic website discovery with Playwright.",
+  "dependencies": {
+    "playwright": "^1.53.1"
+  }
+}
