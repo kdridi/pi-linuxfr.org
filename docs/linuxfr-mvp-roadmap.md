@@ -298,6 +298,14 @@ limit?: number
 - Results include enough context to decide whether more collection is needed.
 - Output is bounded and concise.
 
+### Later query improvements
+
+These are intentionally deferred until the basic three-tool MVP works end to end:
+
+- add optional snippets even when a query matches metadata only;
+- add simple relevance ordering, for example metadata matches before raw-text matches;
+- improve Atom and HTML text cleanup beyond the current lightweight snippet normalization.
+
 ## Phase 7: `linuxfr_update_wiki` MVP
 
 ### Goal
