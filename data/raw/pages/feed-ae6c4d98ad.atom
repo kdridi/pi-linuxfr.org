@@ -1,0 +1,1479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom" xmlns:wfw="http://wellformedweb.org/CommentAPI/">
+  <id>tag:linuxfr.org,2005:/news</id>
+  <link rel="alternate" type="text/html" href="https://linuxfr.org/news"/>
+  <link rel="self" type="application/atom+xml" href="https://linuxfr.org/news.atom"/>
+  <title>LinuxFr.org : les dépêches</title>
+  <updated>2026-06-22T14:20:28+02:00</updated>
+  <icon>/favicon.png</icon>
+  <entry>
+    <id>tag:linuxfr.org,2005:News/43094</id>
+    <published>2026-06-22T14:20:28+02:00</published>
+    <updated>2026-06-22T14:20:28+02:00</updated>
+    <link rel="alternate" type="text/html" href="https://linuxfr.org/news/revue-de-presse-de-l-april-pour-la-semaine-25-de-l-annee-2026"/>
+    <title>Revue de presse de l’April pour la semaine 25 de l’année 2026</title>
+    <rights>Licence CC By‑SA http://creativecommons.org/licenses/by-sa/4.0/deed.fr</rights>
+    <content type="html">&lt;div&gt;&lt;p&gt;Cette revue de presse sur Internet fait partie du travail de veille mené par l’April dans le cadre de son action de défense et de promotion du logiciel libre. Les positions exposées dans les articles sont celles de leurs auteurs et ne rejoignent pas forcément celles de l’April.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.zdnet.fr/blogs/l-esprit-libre/la-commission-europeenne-a-recule-sur-le-logiciel-libre-critiquent-les-libristes-497372.htm"&gt;[ZDNET] La Commission européenne a reculé sur le logiciel libre, critiquent les libristes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://next.ink/243025/mastodon-se-lance-dans-les-newsletters"&gt;[Next] Mastodon se lance dans les newsletters&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.sudouest.fr/gironde/saint-loubes/saint-loubes-les-logiciels-libres-s-invitent-a-la-mediatheque-29482568.php"&gt;[Sud Ouest] Saint-Loubès: les logiciels libres s'invitent à la médiathèque&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.zdnet.fr/actualites/larrivee-deuro-office-1-0-seme-la-zizanie-dans-le-monde-de-lopen-source-la-compatibilite-nest-pas-synonyme-de-souverainete-497012.htm"&gt;[ZDNET] L'arrivée d'Euro-Office 1.0 sème la zizanie dans le monde de l'open source: «La compatibilité n'est pas synonyme de souveraineté»&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.silicon.fr/open-source-1375/lopen-source-nest-plus-gratuit-par-defaut-il-devient-un-choix-strategique-et-responsable-227702"&gt;[Silicon.fr] L'open source n'est plus 'gratuit par défaut'&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.cio-online.com/actualites/lire-open-source-la-cnaf-s-engage-dans-le-projet-catala-de-l-inria-17081.html"&gt;[cio-online.com] Open Source: la Cnaf s'engage dans le projet Catala de l'Inria&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://basta.media/Un-fournisseur-d-acces-a-internet-citoyen-veut-reprendre-SFR-a-la-place-Bouygues-Free-Orange"&gt;[Basta!] «Se soucier des usagers»: un fournisseur d'accès à Internet citoyen veut reprendre SFR à la place de Bouygues, Free et Orange&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.lesnumeriques.com/telephone-portable/je-me-suis-passe-de-google-pendant-un-mois-grace-a-e-os-et-au-fairphone-6-la-vie-privee-a-portee-de-clics-a257252.html"&gt;[Les Numeriques] Je me suis passé de Google pendant un mois grâce à /e/OS et au Fairphone 6: la vie privée à portée de clics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.cio-online.com/actualites/lire-walter-arnaud-devient-dinum-l-etat-accelere-dans-la-creation-de-l-ariane-17086.html"&gt;[cio-online.com] Walter Arnaud devient Dinum ; l'Etat accélère dans la création de l'Ariane&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;ul&gt;&lt;li&gt;lien nᵒ 1 : &lt;a title="https://www.april.org" hreflang="fr" href="https://linuxfr.org/redirect/117762"&gt;April&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 2 : &lt;a title="https://www.april.org/revue-de-presse" hreflang="fr" href="https://linuxfr.org/redirect/117763"&gt;Revue de presse de l&amp;#39;April&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 3 : &lt;a title="https://linuxfr.org/news/revue-de-presse-de-l-april-pour-la-semaine-24-de-l-annee-2026" hreflang="fr" href="https://linuxfr.org/redirect/117764"&gt;Revue de presse de la semaine précédente&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 4 : &lt;a title="https://filsdu.net" hreflang="fr" href="https://linuxfr.org/redirect/117765"&gt;🕸 Fils du Net&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;h2 id="toc-zdnet-la-commission-européenne-a-reculé-sur-le-logiciel-libre-critiquent-les-libristes"&gt;&lt;a href="https://www.zdnet.fr/blogs/l-esprit-libre/la-commission-europeenne-a-recule-sur-le-logiciel-libre-critiquent-les-libristes-497372.htm"&gt;[ZDNET] La Commission européenne a reculé sur le logiciel libre, critiquent les libristes&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;✍ Thierry Noisette, le dimanche 21 juin 2026.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Bien qu’il marque des progrès, le projet de règlement européen publié par la Commission de Bruxelles a reculé, en particulier sur le principe du ’libre par défaut’, dénoncent le CNLL et l’April. La bataille va s’engager dans le ’trilogue’ avec le Parlement européen et le Conseil.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Et aussi: &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.lesnumeriques.com/societe-numerique/souverainete-numerique-l-europe-renonce-a-imposer-le-logiciel-libre-et-choisit-l-encouragement-n257733.html"&gt;[Les Numeriques] Souveraineté numérique: l'Europe renonce à imposer le logiciel libre et choisit… “l'encouragement”&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="toc-next-mastodon-se-lance-dans-les-newsletters"&gt;&lt;a href="https://next.ink/243025/mastodon-se-lance-dans-les-newsletters"&gt;[Next] Mastodon se lance dans les newsletters&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;✍ Mathilde Saliou, le jeudi 18 juin 2026.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Outre des collections, la version 4.6 de Mastodon propose des newsletters, une fonctionnalité qui permettra aux internautes de suivre les travaux des…&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="toc-sud-ouest-saint-loubès-les-logiciels-libres-sinvitent-à-la-médiathèque"&gt;&lt;a href="https://www.sudouest.fr/gironde/saint-loubes/saint-loubes-les-logiciels-libres-s-invitent-a-la-mediatheque-29482568.php"&gt;[Sud Ouest] Saint-Loubès: les logiciels libres s'invitent à la médiathèque&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;✍ Jean-Pierre Nowak, le jeudi 18 juin 2026.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Des bénévoles de l’Association bordelaise des utilisateurs de logiciels libres et de Libre Tic ont animé un atelier pour présenter les avantages de l’informatique ouverte aux usagers de Saint-Loubès&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="toc-zdnet-larrivée-deuro-office-10-sème-la-zizanie-dans-le-monde-de-lopen-source-la-compatibilité-nest-pas-synonyme-de-souveraineté"&gt;&lt;a href="https://www.zdnet.fr/actualites/larrivee-deuro-office-1-0-seme-la-zizanie-dans-le-monde-de-lopen-source-la-compatibilite-nest-pas-synonyme-de-souverainete-497012.htm"&gt;[ZDNET] L'arrivée d'Euro-Office 1.0 sème la zizanie dans le monde de l'open source: «La compatibilité n'est pas synonyme de souveraineté»&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;✍ Steven Vaughan-Nichols, le mardi 16 juin 2026.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;La nouvelle alternative open source basée sur le cloud à Microsoft 365 et Google Workspace est désormais disponible. Les partisans de LibreOffice critiquent vivement sa dépendance vis-à-vis des formats de documents Microsoft.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="toc-siliconfr-lopen-source-nest-plus-gratuit-par-défaut"&gt;&lt;a href="https://www.silicon.fr/open-source-1375/lopen-source-nest-plus-gratuit-par-defaut-il-devient-un-choix-strategique-et-responsable-227702"&gt;[Silicon.fr] L'open source n'est plus 'gratuit par défaut'&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;✍ Philippe Leroy, le mardi 16 juin 2026.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Utiliser un modèle open source implique désormais de comprendre son entraînement, de documenter précisément son usage, de garantir sa conformité avec les exigences réglementaires selon la classification du système.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Et aussi: &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.lemondeinformatique.fr/actualites/lireamp-la-souverainete-numerique-est-une-posture-pas-un-produit-100348.html"&gt;[Le Monde Informatique] La souveraineté numérique est une posture, pas un produit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.journaldunet.com/solutions/dsi/1551609-open-source-ou-logiciel-proprietaire-un-debat-qui-detourne-les-entreprises-des-vrais-enjeux"&gt;[Journal du Net] Open source ou logiciel propriétaire: un débat qui détourne les entreprises des vrais enjeux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="toc-cio-onlinecom-open-source-la-cnaf-sengage-dans-le-projet-catala-de-linria"&gt;&lt;a href="https://www.cio-online.com/actualites/lire-open-source-la-cnaf-s-engage-dans-le-projet-catala-de-l-inria-17081.html"&gt;[cio-online.com] Open Source: la Cnaf s'engage dans le projet Catala de l'Inria&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;✍ Emmanuelle Delsol, le lundi 15 juin 2026.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;L’administration va contribuer au projet Open Source pour améliorer son moteur de règles et traduire le droit en code pour le calcul des prestations.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="toc-basta-se-soucier-des-usagers-un-fournisseur-daccès-à-internet-citoyen-veut-reprendre-sfr-à-la-place-de-bouygues-free-et-orange"&gt;&lt;a href="https://basta.media/Un-fournisseur-d-acces-a-internet-citoyen-veut-reprendre-SFR-a-la-place-Bouygues-Free-Orange"&gt;[Basta!] «Se soucier des usagers»: un fournisseur d'accès à Internet citoyen veut reprendre SFR à la place de Bouygues, Free et Orange&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;✍ Rachel Knaebel, le vendredi 12 juin 2026.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Bouygues, Free et Orange ont annoncé un accord pour reprendre, et démanteler, l’entreprise SFR. Il y avait pourtant une offre alternative, à 1 euro, venue d’un fournisseur d’accès à Internet associatif, comme il en existe des dizaines en France.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="toc-les-numeriques-je-me-suis-passé-de-google-pendant-un-mois-grâce-à-eos-et-au-fairphone-6-la-vie-privée-à-portée-de-clics"&gt;&lt;a href="https://www.lesnumeriques.com/telephone-portable/je-me-suis-passe-de-google-pendant-un-mois-grace-a-e-os-et-au-fairphone-6-la-vie-privee-a-portee-de-clics-a257252.html"&gt;[Les Numeriques] Je me suis passé de Google pendant un mois grâce à /e/OS et au Fairphone 6: la vie privée à portée de clics&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;✍ Corentin Bechade, le vendredi 12 juin 2026.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Il n’y a pas qu’iOS et Android dans la vie. Si Google et Apple ont largement vampirisé le marché mobile, il existe une alternative européenne plus respectueuse de vos données personnelles et de votre vie privée: /e/OS. Après un mois d’utilisation, voici mon avis sur cet OS entièrement émancipé des géants du web.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="toc-cio-onlinecom-walter-arnaud-devient-dinum-letat-accélère-dans-la-création-de-lariane"&gt;&lt;a href="https://www.cio-online.com/actualites/lire-walter-arnaud-devient-dinum-l-etat-accelere-dans-la-creation-de-l-ariane-17086.html"&gt;[cio-online.com] Walter Arnaud devient Dinum ; l'Etat accélère dans la création de l'Ariane&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;✍ Reynald Fléchaux, le vendredi 12 juin 2026.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Les deux chargés de mission, censés repenser les rôles de la Dinum et de la DITP, en prennent la tête, suite au conseil des ministres du 10 juin. Le signe de la volonté du gouvernement d’accélérer dans la reprise en main de la stratégie numérique de l’Etat.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;&lt;div&gt;&lt;a href="https://linuxfr.org/news/revue-de-presse-de-l-april-pour-la-semaine-25-de-l-annee-2026.epub"&gt;Télécharger ce contenu au format EPUB&lt;/a&gt;&lt;/div&gt;    &lt;p&gt;
+      &lt;strong&gt;Commentaires :&lt;/strong&gt;
+      &lt;a href="https://linuxfr.org/nodes/144386/comments.atom"&gt;voir le flux Atom&lt;/a&gt;
+      &lt;a href="https://linuxfr.org/news/revue-de-presse-de-l-april-pour-la-semaine-25-de-l-annee-2026#comments"&gt;ouvrir dans le navigateur&lt;/a&gt;
+    &lt;/p&gt;
+</content>
+    <author>
+      <name>echarp</name>
+    </author>
+    <category term="Internet"/>
+    <category term="revue_de_presse"/>
+    <category term="dinum"/>
+    <category term="fairphone"/>
+    <category term="eos"/>
+    <category term="libreoffice"/>
+    <category term="mastodon"/>
+    <category term="commission_européenne"/>
+    <wfw:commentRss>https://linuxfr.org/nodes/144386/comments.atom</wfw:commentRss>
+  </entry>
+  <entry>
+    <id>tag:linuxfr.org,2005:News/43091</id>
+    <published>2026-06-22T10:50:34+02:00</published>
+    <updated>2026-06-22T10:50:34+02:00</updated>
+    <link rel="alternate" type="text/html" href="https://linuxfr.org/news/de-la-fermeture-des-comptes-inactifs-depuis-3-ans"/>
+    <title>De la fermeture des comptes inactifs depuis 3 ans</title>
+    <rights>Licence CC By‑SA http://creativecommons.org/licenses/by-sa/4.0/deed.fr</rights>
+    <content type="html">&lt;div&gt;&lt;p&gt;En &lt;a href="//linuxfr.org/news/regles-de-perennite-des-comptes-linuxfr-org-et-donnees-a-caractere-personnel"&gt;février 2023&lt;/a&gt;, nous avions décrit « &lt;em&gt;les données à caractère personnel traitées, qu’elles soient ou non associées à un compte, le cycle de vie de ses données et le changement de politique concernant ce cycle de vie.&lt;/em&gt; » La règle a été mise en place au 28 juin 2023 (la date de dernière activité du compte ayant été mise en place au 31 mai 2023) : &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;les comptes inactifs pendant trois ans sont fermés et les données conservées inutiles au service supprimées ;&lt;/li&gt;
+&lt;li&gt;les comptes fermés depuis plus d’un an voient les données associées inutiles au service supprimées (cf dépêche d'&lt;a href="//linuxfr.org/news/regles-de-perennite-des-comptes-linuxfr-org-donnees-a-caractere-personnel-et-effet-un-an"&gt;évaluation 1 an après en 2024&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Depuis trois ans, les comptes fermés (par la personne détenant le compte ou par l’équipe de modération sur les spams par exemple) voient donc leurs données minimisées. La nouveauté cette année était la fermeture des comptes inactifs depuis trois ans.&lt;/p&gt;
+&lt;/div&gt;&lt;ul&gt;&lt;/ul&gt;&lt;div&gt;&lt;h3 id="toc-quelques-chiffres-pour-donner-une-idée-de-lévolution-des-comptes"&gt;Quelques chiffres pour donner une idée de l’évolution des comptes&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;un an, c’est 961 comptes ouverts (et 286 fermés depuis), entre le 01 octobre 2024 et le 30 septembre 2025 (basées sur
+les rétrospectives des quinzaines)&lt;/li&gt;
+&lt;li&gt;un an, c’est aussi 1607 tentatives de création de comptes, sur la même période (basé sur les identifiants en base de données), dont beaucoup ne sont visiblement jamais confirmés et donc jamais réellement ouverts (spam, erreur d’adresse, erreur sur le pseudo voulu, etc.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="toc-application-de-la-règle-des-3-ans-dinactivité"&gt;Application de la règle des 3 ans d’inactivité&lt;/h3&gt;
+
+&lt;p&gt;Regardons les &lt;a href="https://web.archive.org/web/20260411231745/https://linuxfr.org/statistiques/users"&gt;statistiques conservées par archive.org du 11 avril dernier&lt;/a&gt;, soit avant l’échéance des trois ans d’inactivité du 31 mai dernier :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;53599 utilisatrices et utilisateurs ayant ou ayant eu des comptes (et encore présents en base de données)&lt;/li&gt;
+&lt;li&gt;33150 comptes&lt;/li&gt;
+&lt;li&gt;1384 comptes fermés&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Et comparons avec les &lt;a href="//linuxfr.org/statistiques/users"&gt;statistiques&lt;/a&gt; au moment de l’écriture de la dépêche, en base de données on trouve :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;38847 utilisatrices et utilisateurs ayant ou ayant eu des comptes (et encore présents en base de données)&lt;/li&gt;
+&lt;li&gt;18397 comptes&lt;/li&gt;
+&lt;li&gt;12380 comptes fermés&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Il y a donc eu purge de plus de 14500 comptes et fermeture de plus de 10000 comptes au 31 mai 2026.&lt;/p&gt;
+
+&lt;p&gt;Pourquoi certains comptes sont purgés ? Car ils n’avaient aucun contenu public ou commentaire public ou contribution à des contenus publics. Il peut s’agir de personnes n’ayant jamais rien eu à dire sur le site, de spammeurs n’ayant jamais réussi à publier quoi que soit, etc. La volumétrie est aussi due au stock puisque le traitement s’est appliqué à tous les comptes concernés depuis 1999 (année du plus vieux compte en base de données).&lt;/p&gt;
+
+&lt;p&gt;Pourquoi certains comptes sont fermés ? Parce qu’ils restent associés un ou plusieurs contenus ou commentaires ou contributions publics. Les cas peuvent être multiples : la personne est décédée, la personne est passée à autre chose, la personne avait juste besoin de poser une question à un moment et n’est donc pas restée, la personne est depuis 3 ans en prison ou en orbite ou dans un sous-marin ou tout autre endroit hors-ligne, etc.&lt;/p&gt;
+&lt;h3 id="toc-conséquences-techniques"&gt;Conséquences techniques ?&lt;/h3&gt;
+
+&lt;p&gt;Va-t-on réutiliser les identifiants libérés dans la base de données de comptes ? Il n’y a pas vraiment d’intérêt à le faire.&lt;/p&gt;
+
+&lt;p&gt;A-t-on gagné sur le volume des sauvegardes ? La table des versions de dépêches pèse ~9 GiB pour ~430000 tuples, celle des commentaires ~3 GiB pour 2M de commentaires. La table des comptes n’est que la 11&lt;sup&gt;e&lt;/sup&gt; plus volumineuse en base, avec 18 MiB. Donc non on ne gagne rien de significatif. Probablement moins que si on supprimait dès maintenant les encore présents en base 700 contenus non publics et 21900 commentaires non publics.&lt;/p&gt;
+
+&lt;p&gt;Est-ce que tout le site va aller plus vite ? Non, ça ne va pas être perceptible sur les requêtes SQL.&lt;/p&gt;
+
+&lt;p&gt;Quel serait le cas le plus favorable en termes de réduction des données ? L’anonymisation du compte et de tout ce qui est associé : cela supprime un compte bien sûr, mais ça permettait en théorie de fusionner des éditions de dépêches par exemple : si Anonyme, seul compte contributeur, a 82 éditions d’une même dépêche, alors des années après, on peut sans doute se contenter de ne garder que la première et la dernière édition par exemple (pour préserver dates et attribution). Et même si Anonyme a seulement les éditions 53 à 57 d’une dépêche, on pourrait faire de même sur cette partie contiguë.&lt;/p&gt;
+&lt;h3 id="toc-aide-sur-le-sujet"&gt;Aide sur le sujet&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="//linuxfr.org//aide#aide-dcp"&gt;Quelles sont les données à caractère personnel (DCP) traitées par le site ?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="//linuxfr.org//aide#aide-donneesautres"&gt;Quelles sont les données sans caractère personnel relatives au compte traitées par le site ?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="//linuxfr.org//aide#aide-donneesinutiles"&gt;Quelles sont les données inutiles au service qui sont supprimées des comptes fermés ?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;P.S. : cette dépêche sera ma &lt;a href="//linuxfr.org/statistiques/top"&gt;500&lt;sup&gt;e&lt;/sup&gt; dépêche publiée&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;a href="https://linuxfr.org/news/de-la-fermeture-des-comptes-inactifs-depuis-3-ans.epub"&gt;Télécharger ce contenu au format EPUB&lt;/a&gt;&lt;/div&gt;    &lt;p&gt;
+      &lt;strong&gt;Commentaires :&lt;/strong&gt;
+      &lt;a href="https://linuxfr.org/nodes/144360/comments.atom"&gt;voir le flux Atom&lt;/a&gt;
+      &lt;a href="https://linuxfr.org/news/de-la-fermeture-des-comptes-inactifs-depuis-3-ans#comments"&gt;ouvrir dans le navigateur&lt;/a&gt;
+    &lt;/p&gt;
+</content>
+    <author>
+      <name>Benoît Sibaud</name>
+    </author>
+    <author>
+      <name>vpo</name>
+    </author>
+    <author>
+      <name>Ysabeau  🧶</name>
+    </author>
+    <category term="LinuxFr.org"/>
+    <category term="linuxfr"/>
+    <category term="statistiques"/>
+    <wfw:commentRss>https://linuxfr.org/nodes/144360/comments.atom</wfw:commentRss>
+  </entry>
+  <entry>
+    <id>tag:linuxfr.org,2005:News/43089</id>
+    <published>2026-06-22T07:31:46+02:00</published>
+    <updated>2026-06-22T07:31:46+02:00</updated>
+    <link rel="alternate" type="text/html" href="https://linuxfr.org/news/open-source-experience-prolonge-son-appel-a-conferences-jusqu-au-24-juin"/>
+    <title>Open Source Experience  prolonge son appel à conférences jusqu’au 24 juin</title>
+    <rights>Licence CC By‑SA http://creativecommons.org/licenses/by-sa/4.0/deed.fr</rights>
+    <content type="html">&lt;div&gt;&lt;p&gt;Initialement terminé le 14 juin dernier, l’appel à conférences du salon Open Source Experience (aka OSXP pour les intimes) est prolongé : les propositions peuvent être soumises jusqu’au &lt;strong&gt;24 juin 2026 à 23 h 59&lt;/strong&gt;. Quelques jours de plus pour finir le teaser d’un retour d’expérience, affûter un sujet technique ou sortir votre idée de conférence qui traîne dans votre pile &lt;code&gt;À traiter&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Et au passage le village des associations revient en force !&lt;/p&gt;
+
+&lt;p&gt;Plus de détails dans la suite de la dépêche.&lt;/p&gt;
+&lt;/div&gt;&lt;ul&gt;&lt;li&gt;lien nᵒ 1 : &lt;a title="https://pretalx.com/open-source-experience-2026/cfp" hreflang="fr" href="https://linuxfr.org/redirect/117750"&gt;Appel à conférences Open Source Experience&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 2 : &lt;a title="https://www.opensource-experience.com/" hreflang="fr" href="https://linuxfr.org/redirect/117751"&gt;Site web d&amp;#39;Open Source Experience&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 3 : &lt;a title="https://pretalx.com/p/about/" hreflang="en" href="https://linuxfr.org/redirect/117752"&gt;Pretalx, logiciel libre de gestion de CFP et de programmes d’événements&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;h3 id="toc-prolongation-de-lappel-à-conférence"&gt;Prolongation de l'appel à conférence&lt;/h3&gt;
+
+&lt;p&gt;Suite aux demandes de plusieurs acteurs de l’écosystème que nous ne nommerons pas, car ils ont procrastinés, les organisateurs d’OSXP repoussent la date limite de soumission. L’appel vise des conférences autour du libre et l’open source (forcément) et de la souveraineté numérique (mot très à la mode), avec une préférence assumée pour le concret :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Souveraineté numérique, gouvernance et modèles économiques open source&lt;/li&gt;
+&lt;li&gt;Infrastructures ouvertes, cloud et plateformes souveraines&lt;/li&gt;
+&lt;li&gt;IA ouverte, modèles, data et écosystèmes souverains&lt;/li&gt;
+&lt;li&gt;Cybersécurité, confiance et résilience open source&lt;/li&gt;
+&lt;li&gt;Plateforme applicative d'entreprise souveraine&lt;/li&gt;
+&lt;li&gt;Culture, compétences et métiers de l'open source&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Les propositions de conférences sont donc à déposer avant le 24 juin 2026 à 23 h 59 sur la page de l'appel à conférences. Si vous avez un sujet à partager, c’est le moment de le soumettre… ou de pousser gentiment quelqu’un de votre communauté à le faire.&lt;/p&gt;
+&lt;h3 id="toc-et-bientôt-le-village-des-associations"&gt;Et bientôt le village des Associations&lt;/h3&gt;
+
+&lt;p&gt;On profite aussi de cette dépêche pour glisser un petit teasing : l’appel à candidatures pour le village des Associations d’Open Source Experience sera bientôt relancé sur LinuxFr.org.&lt;/p&gt;
+
+&lt;p&gt;Et il devrait y avoir de bonnes nouvelles pour les associations du libre. On n’en dit pas plus pour l’instant — oui, c’est vilain, mais c’est pour la bonne cause — et oui, j'utilise des tirets cadratins récursifs pour ne pas les laisser aux IA ;-)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f696d61676573322e696d67626f782e636f6d2f39632f33342f5134424a62704c365f6f2e706e67/Q4BJbpL6_o.png" alt="Affiche CFP OSXP prolongé" title="Source : https://images2.imgbox.com/9c/34/Q4BJbpL6_o.png"&gt;&lt;/p&gt;
+
+&lt;p&gt;Et rendez-vous les 9 et 10 décembre 2026 à Paris, porte de Versailles.&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;a href="https://linuxfr.org/news/open-source-experience-prolonge-son-appel-a-conferences-jusqu-au-24-juin.epub"&gt;Télécharger ce contenu au format EPUB&lt;/a&gt;&lt;/div&gt;    &lt;p&gt;
+      &lt;strong&gt;Commentaires :&lt;/strong&gt;
+      &lt;a href="https://linuxfr.org/nodes/144354/comments.atom"&gt;voir le flux Atom&lt;/a&gt;
+      &lt;a href="https://linuxfr.org/news/open-source-experience-prolonge-son-appel-a-conferences-jusqu-au-24-juin#comments"&gt;ouvrir dans le navigateur&lt;/a&gt;
+    &lt;/p&gt;
+</content>
+    <author>
+      <name>Florent Zara</name>
+    </author>
+    <author>
+      <name>Benoît Sibaud</name>
+    </author>
+    <category term="Open Source Experience"/>
+    <category term="osxp"/>
+    <category term="appel_à_contribution"/>
+    <category term="conférence"/>
+    <category term="paris"/>
+    <category term="intelligence_artificielle"/>
+    <category term="cybersécurité"/>
+    <category term="souveraineté"/>
+    <wfw:commentRss>https://linuxfr.org/nodes/144354/comments.atom</wfw:commentRss>
+  </entry>
+  <entry>
+    <id>tag:linuxfr.org,2005:News/43043</id>
+    <published>2026-06-20T10:12:12+02:00</published>
+    <updated>2026-06-20T10:12:12+02:00</updated>
+    <link rel="alternate" type="text/html" href="https://linuxfr.org/news/darkmoon-un-moteur-libre-de-pentest-autonome-avec-agents-ia-mcp-et-outillage-conteneurise"/>
+    <title>DarkMoon : un moteur libre de pentest autonome avec agents IA, MCP et outillage conteneurisé</title>
+    <rights>Licence CC By‑SA http://creativecommons.org/licenses/by-sa/4.0/deed.fr</rights>
+    <content type="html">&lt;div&gt;&lt;p&gt;DarkMoon est un projet libre de cybersécurité publié sous licence GNU GPLv3. Il propose un moteur de test d’intrusion automatisé, lancé en conteneur Docker, qui orchestre des outils de sécurité existants, des agents spécialisés et un modèle de langage configurable.&lt;/p&gt;
+
+&lt;p&gt;Concrètement, l’utilisateur donne une cible autorisée. DarkMoon lance des étapes de reconnaissance, identifie des technologies exposées, choisit certains outils ou agents selon le contexte, puis produit des journaux et un rapport de pentest en Markdown.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f6769746875622e636f6d2f415343495433312f4461726b2d4d6f6f6e2f7261772f6d61737465722f646f63732f706963732f6c6f676f5f626c75652e706e67/logo_blue.png" alt="Logo DarkMoon" title="Source : https://github.com/ASCIT31/Dark-Moon/raw/master/docs/pics/logo_blue.png"&gt;&lt;/p&gt;
+
+&lt;p&gt;Le projet est récent. Le premier commit visible sur GitHub date de novembre 2025, le dépôt a été rendu public en mai 2026, et une première release a été publiée récemment. Au moment de la rédaction, les mainteneurs indiquent un peu plus de 500 clonages du dépôt et environ 1300 téléchargements des images Docker. Ces éléments donnent un premier signal d’usage, sans en faire pour autant un outil éprouvé en production.&lt;/p&gt;
+&lt;/div&gt;&lt;ul&gt;&lt;li&gt;lien nᵒ 1 : &lt;a title="https://github.com/ASCIT31/Dark-Moon" hreflang="en" href="https://linuxfr.org/redirect/117628"&gt;Dépôt GitHub&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 2 : &lt;a title="https://docs.dark-moon.org/" hreflang="en" href="https://linuxfr.org/redirect/117629"&gt;Documentation officielle de Dark Moon&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 3 : &lt;a title="https://youtu.be/1bFRVuMkZzY?si=E6DmHEXBt4sVnaXc" hreflang="en" href="https://linuxfr.org/redirect/117630"&gt;Vidéo de démonstration de Dark Moon sur Juice Shop&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 4 : &lt;a title="https://dark-moon.org/" hreflang="en" href="https://linuxfr.org/redirect/117631"&gt;Site officiel de Dark Moon&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;h2 class="sommaire"&gt;Sommaire&lt;/h2&gt;
+&lt;ul class="toc"&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#toc-ce-que-fait-darkmoon"&gt;Ce que fait DarkMoon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-un-projet-libre-orient%C3%A9-s%C3%A9curit%C3%A9-offensive-contr%C3%B4l%C3%A9e"&gt;Un projet libre orienté sécurité offensive contrôlée&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-architecture-g%C3%A9n%C3%A9rale"&gt;Architecture générale&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-installation"&gt;Installation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-choix-du-mod%C3%A8le-de-langage"&gt;Choix du modèle de langage&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-exemple-de-campagne"&gt;Exemple de campagne&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-d%C3%A9monstration-sur-owasp-juice-shop"&gt;Démonstration sur OWASP Juice Shop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-d%C3%A9tection-et-choix-des-actions"&gt;Détection et choix des actions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-outils-int%C3%A9gr%C3%A9s"&gt;Outils intégrés&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-journaux-et-rapport-markdown"&gt;Journaux et rapport Markdown&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-cadre-dusage-et-limites"&gt;Cadre d’usage et limites&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-contribuer"&gt;Contribuer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="toc-ce-que-fait-darkmoon"&gt;Ce que fait DarkMoon&lt;/h3&gt;
+
+&lt;p&gt;DarkMoon essaie de répondre à une question simple : peut-on automatiser une partie d’un pentest sans se limiter à lancer un scanner unique ?&lt;/p&gt;
+
+&lt;p&gt;Le fonctionnement attendu est le suivant :&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;on fournit une cible autorisée ;&lt;/li&gt;
+&lt;li&gt;le moteur lance des outils de reconnaissance ;&lt;/li&gt;
+&lt;li&gt;il collecte des indices : ports, services, CMS, API, frameworks, chemins, en-têtes, comportements applicatifs ;&lt;/li&gt;
+&lt;li&gt;il choisit les modules utiles selon ce qu’il observe ;&lt;/li&gt;
+&lt;li&gt;il exécute les outils dans un conteneur ;&lt;/li&gt;
+&lt;li&gt;il conserve les journaux ;&lt;/li&gt;
+&lt;li&gt;il génère un rapport Markdown.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="toc-un-projet-libre-orienté-sécurité-offensive-contrôlée"&gt;Un projet libre orienté sécurité offensive contrôlée&lt;/h3&gt;
+
+&lt;p&gt;DarkMoon est publié sous licence libre GNU GPLv3. Le dépôt GitHub contient les scripts d’installation, l’orchestration Docker, les composants de l’outil, les configurations et la documentation associée.&lt;/p&gt;
+
+&lt;p&gt;Le projet n’a pas vocation à remplacer l’expertise humaine d’un pentester. Il vise plutôt à automatiser des tâches répétitives, à aider à la corrélation des résultats, et à produire des sorties plus facilement exploitables. Dans un audit réel, l’interprétation, la validation des constats, la priorisation et le respect du cadre légal restent des responsabilités humaines.&lt;/p&gt;
+
+&lt;p&gt;L’usage prévu est strictement limité aux environnements autorisés: laboratoires, machines volontairement vulnérables, programmes de bug bounty, audits internes ou périmètres contractuels.&lt;/p&gt;
+&lt;h3 id="toc-architecture-générale"&gt;Architecture générale&lt;/h3&gt;
+
+&lt;p&gt;DarkMoon repose sur trois blocs principaux :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;un conteneur Docker qui fournit l’environnement d’exécution.&lt;/li&gt;
+&lt;li&gt;un lanceur &lt;code&gt;darkmoon.sh&lt;/code&gt; pour démarrer les campagnes et suivre les journaux.&lt;/li&gt;
+&lt;li&gt;une logique d’orchestration qui choisit les outils ou agents à lancer selon les éléments détectés.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;La séparation entre le modèle, le contrôle et l’exécution est importante. Le modèle peut proposer une stratégie, mais les actions passent par une couche de contrôle avant d’être exécutées dans le conteneur. Cela permet de garder une trace des actions et de limiter l’exécution directe sur l’hôte.&lt;/p&gt;
+&lt;h3 id="toc-installation"&gt;Installation&lt;/h3&gt;
+
+&lt;p&gt;L’installation documentée repose sur Docker et Docker Compose. L’utilisateur clone le dépôt, rend les scripts exécutables, puis lance l’installation.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="bash"&gt;git clone https://github.com/ASCIT31/Dark-Moon.git
+&lt;span class="nb"&gt;cd&lt;/span&gt; Dark-Moon
+chmod +x install.sh darkmoon.sh
+./install.sh&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Le script prépare l’environnement, construit les images nécessaires et initialise les volumes. Une fois l’installation terminée, DarkMoon peut être lancé depuis la racine du dépôt.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="bash"&gt;./darkmoon.sh&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Il est aussi possible de lancer directement une cible depuis la ligne de commande.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="bash"&gt;./darkmoon.sh &lt;span class="s2"&gt;"TARGET: http://172.19.0.3:3000"&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f646f63732e6461726b2d6d6f6f6e2e6f72672f6173736574732f706963732f73746172742d61737365736d656e742e706e67/start-assesment.png" alt="Démarrage d'une évaluation DarkMoon depuis l'interface terminal" title="Source : https://docs.dark-moon.org/assets/pics/start-assesment.png"&gt;&lt;/p&gt;
+&lt;h3 id="toc-choix-du-modèle-de-langage"&gt;Choix du modèle de langage&lt;/h3&gt;
+
+&lt;p&gt;DarkMoon ne force pas un fournisseur unique de LLM. Lors de l’installation, on peut configurer un fournisseur cloud comme OpenAI, Anthropic ou OpenRouter, mais aussi un modèle local via Ollama, llama.cpp ou une URL compatible avec l’API OpenAI.&lt;/p&gt;
+
+&lt;p&gt;C’est un point important pour un outil de sécurité. Selon le contexte, on peut préférer un modèle distant plus performant, ou un modèle local pour éviter d’envoyer des informations de cible, de journaux ou de résultats vers un service externe.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f646f63732e6461726b2d6d6f6f6e2e6f72672f6173736574732f706963732f70726f76696465722d6b65792e706e67/provider-key.png" alt="Configuration du fournisseur LLM : cloud, modèle local ou endpoint compatible OpenAI" title="Source : https://docs.dark-moon.org/assets/pics/provider-key.png"&gt;&lt;/p&gt;
+&lt;h3 id="toc-exemple-de-campagne"&gt;Exemple de campagne&lt;/h3&gt;
+
+&lt;p&gt;Une campagne DarkMoon commence par la définition d’un périmètre. La forme minimale consiste à fournir une cible :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="bash"&gt;./darkmoon.sh &lt;span class="s2"&gt;"TARGET: http://172.19.0.3:3000"&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Une forme plus complète permet de préciser le programme, les cibles incluses, les exclusions, les familles de vulnérabilités à privilégier, le niveau de bruit acceptable et les règles d’engagement.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="bash"&gt;./darkmoon.sh &lt;span class="s2"&gt;"TARGET: https://app.example.org PROGRAM='Audit interne' TARGETS=*.example.org,API:https://api.example.org OUT=payments.example.org,10.0.0.0/8 FOCUS=sqli,rce,ssrf,idor EXCLUDE=brute-force NOISE=moderate FORMAT=standard RULES='POC only;no real user data'"&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Après le lancement, l’outil fournit un identifiant de session. Les journaux peuvent ensuite être suivis avec:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="bash"&gt;./darkmoon.sh --log &amp;lt;session_id&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f646f63732e6461726b2d6d6f6f6e2e6f72672f6173736574732f706963732f6c6f672d636f6d6d616e642e706e67/log-command.png" alt="Commande de suivi des journaux d'une session DarkMoon" title="Source : https://docs.dark-moon.org/assets/pics/log-command.png"&gt;&lt;/p&gt;
+&lt;h3 id="toc-démonstration-sur-owasp-juice-shop"&gt;Démonstration sur OWASP Juice Shop&lt;/h3&gt;
+
+&lt;p&gt;Une démonstration vidéo montre DarkMoon exécuté contre OWASP Juice Shop, une application volontairement vulnérable conçue pour l’apprentissage et les tests de sécurité applicative. Ce choix est important: il permet d’illustrer le fonctionnement du moteur sur une cible réaliste, mais explicitement prévue pour l’entraînement, sans viser un système tiers.&lt;/p&gt;
+
+&lt;p&gt;La vidéo présente le déroulement général d’une campagne: lancement depuis la ligne de commande, analyse de la cible, collecte de signaux techniques, sélection des actions à mener et production progressive d’observations exploitables. Elle permet aussi de mieux comprendre la logique d’orchestration: DarkMoon ne se limite pas à lancer un unique scanner, mais enchaîne plusieurs étapes selon ce qu’il découvre.&lt;/p&gt;
+
+&lt;p&gt;Lien de la démonstration : &lt;a href="https://youtu.be/1bFRVuMkZzY?si=zyj3F965bRrHrE7w"&gt;DarkMoon sur OWASP Juice Shop&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;L’intérêt de Juice Shop dans ce contexte est double. D’un côté, l’application contient de nombreuses familles de vulnérabilités web connues, ce qui permet de tester la capacité de détection et d’enchaînement du moteur. De l’autre, elle fournit un cadre légal et reproductible pour expérimenter l’outil, comparer les résultats et améliorer les agents sans exposer de service réel.&lt;/p&gt;
+&lt;h3 id="toc-détection-et-choix-des-actions"&gt;Détection et choix des actions&lt;/h3&gt;
+
+&lt;p&gt;Le moteur commence par collecter des signaux techniques : ports ouverts, services exposés, technologies web, frameworks, CMS, API, en-têtes HTTP, chemins visibles ou comportements applicatifs.&lt;/p&gt;
+
+&lt;p&gt;Ces informations servent ensuite à choisir les actions suivantes. Une cible WordPress, une API GraphQL ou un environnement Kubernetes ne déclenchent pas les mêmes outils ni les mêmes agents.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f646f63732e6461726b2d6d6f6f6e2e6f72672f6173736574732f706963732f656e756d65726174696f6e2e706e67/enumeration.png" alt="Résumé du modèle d'environnement détecté par DarkMoon" title="Source : https://docs.dark-moon.org/assets/pics/enumeration.png"&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f646f63732e6461726b2d6d6f6f6e2e6f72672f6173736574732f706963732f6d61747269782e706e67/matrix.png" alt="Matrice de détection et sélection des agents DarkMoon" title="Source : https://docs.dark-moon.org/assets/pics/matrix.png"&gt;&lt;/p&gt;
+&lt;h3 id="toc-outils-intégrés"&gt;Outils intégrés&lt;/h3&gt;
+
+&lt;p&gt;DarkMoon ne réécrit pas les outils de sécurité existants. Il les regroupe dans une image Docker et les appelle selon le contexte détecté.&lt;/p&gt;
+
+&lt;p&gt;Parmi les outils cités dans la documentation ou dans les articles qui présentent le projet, on trouve notamment Naabu, Masscan, Nuclei, ffuf, sqlmap, Arjun, wafw00f, Subfinder, Katana, Waybackurls, httpx, WPScan, CMSeeK, Hydra, dig, ainsi que des outils liés à BloodHound, Impacket, kubectl, Kubescape ou Kubeletctl.&lt;/p&gt;
+
+&lt;p&gt;Le point important n’est pas la liste exacte des outils, qui peut évoluer, mais la logique d’orchestration: détecter ce qui est pertinent, lancer l’outil adapté, lire la sortie, puis décider de l’étape suivante.&lt;/p&gt;
+&lt;h3 id="toc-journaux-et-rapport-markdown"&gt;Journaux et rapport Markdown&lt;/h3&gt;
+
+&lt;p&gt;Une campagne produit des journaux et des artefacts. L’utilisateur peut suivre l’exécution, consulter les étapes et récupérer les résultats dans les répertoires de sortie prévus.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f646f63732e6461726b2d6d6f6f6e2e6f72672f6173736574732f706963732f6c6f672e706e67/log.png" alt="Sortie de journal d'une campagne DarkMoon" title="Source : https://docs.dark-moon.org/assets/pics/log.png"&gt;&lt;/p&gt;
+
+&lt;p&gt;DarkMoon génère aussi un rapport de pentest en Markdown. Ce choix est simple: le fichier est lisible dans un terminal, versionnable avec Git, relisible dans une forge, modifiable à la main et convertible ensuite en HTML ou en PDF.&lt;/p&gt;
+
+&lt;p&gt;Le rapport doit conserver le contexte de la campagne : cible, périmètre, hypothèses, commandes ou actions utiles, preuves collectées, vulnérabilités relevées, criticité, impact potentiel et pistes de correction.&lt;/p&gt;
+&lt;h3 id="toc-cadre-dusage-et-limites"&gt;Cadre d’usage et limites&lt;/h3&gt;
+
+&lt;p&gt;DarkMoon est un outil offensif. Il doit être utilisé uniquement sur des systèmes pour lesquels l’utilisateur dispose d’une autorisation explicite: laboratoire local, machine volontairement vulnérable, programme de bug bounty, audit interne ou périmètre contractuel.&lt;/p&gt;
+
+&lt;p&gt;L’automatisation ne réduit pas les responsabilités de l’utilisateur: définir le périmètre, obtenir les autorisations, éviter les impacts de production et manipuler les données avec précaution.&lt;/p&gt;
+
+&lt;p&gt;Les limites sont celles de tout outil de pentest automatisé:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;faux positifs possibles.&lt;/li&gt;
+&lt;li&gt;faux négatifs possibles.&lt;/li&gt;
+&lt;li&gt;dépendance aux outils appelés.&lt;/li&gt;
+&lt;li&gt;dépendance au modèle de langage choisi.&lt;/li&gt;
+&lt;li&gt;interprétation humaine nécessaire.&lt;/li&gt;
+&lt;li&gt;risque de bruit sur les systèmes testés.&lt;/li&gt;
+&lt;li&gt;nécessité de tester en environnement maîtrisé avant tout usage sérieux.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Un modèle peut proposer une action inutile, trop large ou mal adaptée au contexte. La couche de contrôle et les journaux sont donc utiles, mais ils ne dispensent pas d’une revue humaine.&lt;/p&gt;
+&lt;h3 id="toc-contribuer"&gt;Contribuer&lt;/h3&gt;
+
+&lt;p&gt;Le projet est ouvert aux retours techniques. Les contributions les plus utiles concernent:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;l’installation sur différentes distributions.&lt;/li&gt;
+&lt;li&gt;la documentation.&lt;/li&gt;
+&lt;li&gt;la reproductibilité des exemples.&lt;/li&gt;
+&lt;li&gt;la qualité des rapports Markdown.&lt;/li&gt;
+&lt;li&gt;la réduction des faux positifs.&lt;/li&gt;
+&lt;li&gt;l’ajout d’agents spécialisés.&lt;/li&gt;
+&lt;li&gt;la revue des scripts Docker et shell.&lt;/li&gt;
+&lt;li&gt;les garde-fous d’exécution.&lt;/li&gt;
+&lt;li&gt;les tests sur des laboratoires vulnérables.&lt;/li&gt;
+&lt;li&gt;les issues claires et reproductibles.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Les remarques sur la clarté du fonctionnement sont également bienvenues, surtout pour éviter de présenter l’outil comme plus mature qu’il ne l’est réellement.&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;a href="https://linuxfr.org/news/darkmoon-un-moteur-libre-de-pentest-autonome-avec-agents-ia-mcp-et-outillage-conteneurise.epub"&gt;Télécharger ce contenu au format EPUB&lt;/a&gt;&lt;/div&gt;    &lt;p&gt;
+      &lt;strong&gt;Commentaires :&lt;/strong&gt;
+      &lt;a href="https://linuxfr.org/nodes/143931/comments.atom"&gt;voir le flux Atom&lt;/a&gt;
+      &lt;a href="https://linuxfr.org/news/darkmoon-un-moteur-libre-de-pentest-autonome-avec-agents-ia-mcp-et-outillage-conteneurise#comments"&gt;ouvrir dans le navigateur&lt;/a&gt;
+    &lt;/p&gt;
+</content>
+    <author>
+      <name>Mehdi</name>
+    </author>
+    <author>
+      <name>Benoît Sibaud</name>
+    </author>
+    <category term="Sécurité"/>
+    <category term="cybersécurité"/>
+    <category term="docker"/>
+    <category term="pentest"/>
+    <category term="intelligence_artificielle"/>
+    <category term="grands_modèles_de_langage"/>
+    <category term="wsl"/>
+    <wfw:commentRss>https://linuxfr.org/nodes/143931/comments.atom</wfw:commentRss>
+  </entry>
+  <entry>
+    <id>tag:linuxfr.org,2005:News/43083</id>
+    <published>2026-06-19T19:16:52+02:00</published>
+    <updated>2026-06-19T19:16:52+02:00</updated>
+    <link rel="alternate" type="text/html" href="https://linuxfr.org/news/estampille-l-outil-de-gestion-de-tests-ultra-leger"/>
+    <title>Estampille : l'outil de gestion de tests ultra léger.</title>
+    <rights>Licence CC By‑SA http://creativecommons.org/licenses/by-sa/4.0/deed.fr</rights>
+    <content type="html">&lt;div&gt;&lt;p&gt;Voici Estampille. Estampille vise à remplacer les fichiers tableurs partout où l’installation d’une suite complète de tests (Squash, HPALM…) n’est pas possible. Il est distribué sous licence GNU GPL.&lt;/p&gt;
+
+&lt;p&gt;Cet outil permet de rédiger des cas de test composés de pas de tests. Il permet d’exécuter manuellement ces cas de test autant de fois que nécessaire. Un cas de test peut être appelé dans d’autres cas de tests pour factoriser la rédaction des cas. Les résultats d’exécution sont exportables sous forme de dossiers PDF.&lt;br&gt;
+Enfin une page de statistiques offre une vue générale de l’avancement des tests.&lt;/p&gt;
+
+&lt;p&gt;Contrairement aux suites logicielles de tests existantes, Estampille n’a pas besoin de base de données, ni de serveur dédié. Les tests et exécutions de tests sont stockées sous la forme de fichiers JSON partageables facilement ; que ce soit par courriel, répertoire réseau partagé, synchronisation cloud, etc.&lt;/p&gt;
+
+&lt;p&gt;Cet outil ultra léger (&amp;lt;300 ko tests unitaires compris) est écrit en python et utilise flask pour présenter l’interface graphique sur le navigateur web. Il fonctionne indifféremment sous Linux ou Windows.&lt;/p&gt;
+
+&lt;p&gt;Voilà déjà la fin d’une dépêche courte pour un outil simple qui répond à un besoin concret.&lt;/p&gt;
+&lt;/div&gt;&lt;ul&gt;&lt;li&gt;lien nᵒ 1 : &lt;a title="https://codeberg.org/Agapanthe-edition/estampille" hreflang="fr" href="https://linuxfr.org/redirect/117738"&gt;dépôt de code source&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;a href="https://linuxfr.org/news/estampille-l-outil-de-gestion-de-tests-ultra-leger.epub"&gt;Télécharger ce contenu au format EPUB&lt;/a&gt;&lt;/div&gt;    &lt;p&gt;
+      &lt;strong&gt;Commentaires :&lt;/strong&gt;
+      &lt;a href="https://linuxfr.org/nodes/144273/comments.atom"&gt;voir le flux Atom&lt;/a&gt;
+      &lt;a href="https://linuxfr.org/news/estampille-l-outil-de-gestion-de-tests-ultra-leger#comments"&gt;ouvrir dans le navigateur&lt;/a&gt;
+    &lt;/p&gt;
+</content>
+    <author>
+      <name>Kalinka</name>
+    </author>
+    <author>
+      <name>bobble bubble</name>
+    </author>
+    <author>
+      <name>Benoît Sibaud</name>
+    </author>
+    <category term="Programmation"/>
+    <category term="test"/>
+    <wfw:commentRss>https://linuxfr.org/nodes/144273/comments.atom</wfw:commentRss>
+  </entry>
+  <entry>
+    <id>tag:linuxfr.org,2005:News/43030</id>
+    <published>2026-06-19T18:34:11+02:00</published>
+    <updated>2026-06-20T09:50:30+02:00</updated>
+    <link rel="alternate" type="text/html" href="https://linuxfr.org/news/la-certification-du-materiel-appliquee-aux-ordiphones-la-securite-comme-pretexte-pour-constituer-un-oligopole"/>
+    <title>La certification du matériel appliquée aux ordiphones: la sécurité comme prétexte pour constituer un oligopole ?</title>
+    <rights>Licence CC By‑SA http://creativecommons.org/licenses/by-sa/4.0/deed.fr</rights>
+    <content type="html">&lt;div&gt;&lt;p&gt;Apple et Google font la promotion de leur technologie de certification de matériel.&lt;/p&gt;
+
+&lt;p&gt;Au nom de la sécurité, les deux gros fournisseurs d’OS mobiles sont en train de verrouiller un marché où ils seraient les seuls acteurs mondiaux à décider qui a le droit d’utiliser tel ou tel matériel.&lt;/p&gt;
+&lt;/div&gt;&lt;ul&gt;&lt;li&gt;lien nᵒ 1 : &lt;a title="https://grapheneos.org/articles/attestation-compatibility-guide" hreflang="en" href="https://linuxfr.org/redirect/117552"&gt;GrapheneOS attestation compatibility guide&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 2 : &lt;a title="https://hal.science/hal-05267004v1" hreflang="fr" href="https://linuxfr.org/redirect/117553"&gt;Article de l&amp;#39;OFCE sur la constitution des oligopoles par les GAFAMs&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 3 : &lt;a title="https://fr.wikipedia.org/wiki/Oligopole" hreflang="fr" href="https://linuxfr.org/redirect/117554"&gt;Article Wikipédia sur des oligopoles&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;h2 id="toc-le-principe"&gt;Le principe&lt;/h2&gt;
+
+&lt;p&gt;Le but de ces technologies est d’interdire aux gens d’utiliser du matériel et du logiciel non approuvé par Google et Apple.&lt;/p&gt;
+
+&lt;p&gt;Faussement présenté comme une fonctionnalité de sécurité, les &lt;a href="//linuxfr.org/news/banques-en-ligne-l-authentification-forte-doit-elle-imposer-android-ou-iphone"&gt;banques&lt;/a&gt; et les &lt;a href="//linuxfr.org/users/thoasm/liens/open-source-intelligence-investigation-age-verification-lobbying-dark-money-model-legislation-institutional-capture"&gt;gouvernements&lt;/a&gt; les adoptent avec enthousiasme, car cela leur permet d’imposer l’usage de logiciels privateurs à leurs clients/citoyens, quitte à sacrifier la &lt;a href="//linuxfr.org/news/souverainete-numerique-reduction-des-dependances-extra-europeennes-migration-de-windows-vers-linux-a-la-dinum"&gt;souveraineté&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="toc-les-technologies"&gt;Les technologies&lt;/h2&gt;
+&lt;h3 id="toc-api-play-integrity-de-google"&gt;API Play Integrity de Google&lt;/h3&gt;
+
+&lt;p&gt;Cette &lt;a href="https://developer.android.com/google/play/integrity?hl=fr"&gt;API Android&lt;/a&gt; permet à une application de vérifier :&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;qu’elle n’a pas été modifiée par l’utilisateur ;&lt;/li&gt;
+&lt;li&gt;que l’utilisateur a bien payé pour l’utiliser ;&lt;/li&gt;
+&lt;li&gt;que l’exécution n’a pas lieu sur un émulateur ;&lt;/li&gt;
+&lt;li&gt;que le matériel sur lequel elle s’exécute est certifié par Google.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f646576656c6f7065722e616e64726f69642e636f6d2f7374617469632f696d616765732f676f6f676c652f706c61792f696e746567726974792f706c61792d696e746567726974792d6170692d6f766572766965772e706e67/play-integrity-api-overview.png" alt="Google play integrity api overview" title="Source : https://developer.android.com/static/images/google/play/integrity/play-integrity-api-overview.png"&gt;&lt;/p&gt;
+
+&lt;p&gt;Quelques fournisseurs d’Android proposent des alternatives à ce service :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href="https://uattest.net/"&gt;Unified Attestation&lt;/a&gt;, créé par &lt;a href="https://volla.online/en/index.php"&gt;Volla&lt;/a&gt; ;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="https://developer.android.com/privacy-and-security/security-key-attestation?hl=fr"&gt;Android hardware attestation&lt;/a&gt;, présenté par &lt;a href="https://grapheneos.org/articles/attestation-compatibility-guide"&gt;Graphene OS comme une alternative à Google’s Play Integrity API plus ouverte&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="toc-api-app-attest-dapple"&gt;API App Attest d'Apple&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="https://developer.apple.com/documentation/devicecheck/preparing-to-use-the-app-attest-service"&gt;https://developer.apple.com/documentation/devicecheck/preparing-to-use-the-app-attest-service&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="toc-privacy-pass"&gt;Privacy Pass&lt;/h3&gt;
+
+&lt;p&gt;Ce &lt;a href="https://privacypass.github.io/"&gt;protocole&lt;/a&gt; a pour but d’authentifier un utilisateur anonyme. Cela peut sembler contradictoire, mais il s’agit de remplacer les solutions pour stopper les vils bots (captcha, &lt;a href="https://anubis.techaro.lol/"&gt;anubis&lt;/a&gt;…).&lt;/p&gt;
+
+&lt;p&gt;Concrètement l’utilisateur doit obtenir un jeton avant d’accéder à un service.&lt;/p&gt;
+
+&lt;p&gt;Malheureusement de vils humains d’Apple et Cloudflare ont trouvé opportun d’implémenter ce système en rendant &lt;a href="https://blog.cloudflare.com/eliminating-captchas-on-iphones-and-macs-using-new-standard/"&gt;obligatoire l’usage d’un matériel certifié&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f63662d6173736574732e7777772e636c6f7564666c6172652e636f6d2f7a6b76686c61673939676b622f327436626868377651635252624f565a68654e6750482f35336463636364343438393637643632623238643765346237376262653337362f696d616765322d342e706e67/image2-4.png" alt="Anti privacy pass" title="Source : https://cf-assets.www.cloudflare.com/zkvhlag99gkb/2t6bhh7vQcRRbOVZheNgPH/53dcccd448967d62b28d7e4b77bbe376/image2-4.png"&gt;&lt;/p&gt;
+&lt;h3 id="toc-recaptcha"&gt;reCAPTCHA&lt;/h3&gt;
+
+&lt;p&gt;Cette solution de Google impose aussi l’usage des services Google pour &lt;a href="https://support.google.com/recaptcha/answer/16609652"&gt;vérifier un mobile&lt;/a&gt; pour pouvoir accéder à certains services, notamment des sites web.&lt;/p&gt;
+&lt;h2 id="toc-la-certification-de-matériel-du-point-de-vue-des-utilisateurs"&gt;La certification de matériel du point de vue des utilisateurs&lt;/h2&gt;
+
+&lt;p&gt;Pour le consommateur, la certification du matériel (appliqué aux ordiphones) revient à :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;limiter son choix de matériel neuf ;&lt;/li&gt;
+&lt;li&gt;limiter son choix de matériel d’occasion ;&lt;/li&gt;
+&lt;li&gt;accélérer l’obsolescence du matériel possédé.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Bref il faudra plus régulièrement « tout racheter ».&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f7777772e64616b6172616374752e636f6d2f70686f746f2f6172742f64656661756c742f333334353032342d343830323336362e6a70673f763d31333138333538393336/3345024-4802366.jpg?v=1318358936" alt="Paul Emploi" title="Source : https://www.dakaractu.com/photo/art/default/3345024-4802366.jpg?v=1318358936"&gt;&lt;br&gt;
+(Source: sketch des Guignols sur les "iAiles-dans-les-dos", une révolution de Steeve Jobs qui innove au paradis, 2011)&lt;/p&gt;
+
+&lt;p&gt;Pour le citoyen, c’est :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;l’usage obligatoire de logiciels privateurs ;&lt;/li&gt;
+&lt;li&gt;une inscription forcé et donc l’acceptation des contrats de société “agressives” sur la vie privée et les données personnelles.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Pour les États et l’Union Européenne, c’est un nouvel abandon de souveraineté.&lt;/p&gt;
+&lt;h2 id="toc-certifier-du-matériel-cest-privateur-certifier-des-gens-cest-pire"&gt;Certifier du matériel, c’est privateur. Certifier des gens c’est pire.&lt;/h2&gt;
+
+&lt;p&gt;Si vous avez un diplôme d’ingénieur, un permis de chasse, un passe sanitaire ou un tatouage mafieux, vous savez que les organisations adorent certifier les personnes, par exemple pour être bien certaine de recruter un bon tireur pour une mission spéciale en pleine pandémie.&lt;/p&gt;
+
+&lt;p&gt;Toutefois si vous êtes un braconnier antivax de l’école 42, vous pouvez aussi télétravailler du côté obscur, par exemple comme développeur Android.&lt;/p&gt;
+
+&lt;p&gt;Enfin jusqu’ici, car Google demandera bientôt que tout développeur d’applications Android s’inscrive avec des obligations comme fournir une pièce d’identité officielle et lister tous ses identifiants d’applications actuels et futurs…&lt;/p&gt;
+
+&lt;p&gt;Une campagne est en cours pour défendre le droit des &lt;s&gt;braconniers antivax de l’école 42&lt;/s&gt;gens normaux de continuer à développer librement sur Android : &lt;a href="https://keepandroidopen.org/fr/"&gt;https://keepandroidopen.org/fr/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;a href="https://linuxfr.org/news/la-certification-du-materiel-appliquee-aux-ordiphones-la-securite-comme-pretexte-pour-constituer-un-oligopole.epub"&gt;Télécharger ce contenu au format EPUB&lt;/a&gt;&lt;/div&gt;    &lt;p&gt;
+      &lt;strong&gt;Commentaires :&lt;/strong&gt;
+      &lt;a href="https://linuxfr.org/nodes/143342/comments.atom"&gt;voir le flux Atom&lt;/a&gt;
+      &lt;a href="https://linuxfr.org/news/la-certification-du-materiel-appliquee-aux-ordiphones-la-securite-comme-pretexte-pour-constituer-un-oligopole#comments"&gt;ouvrir dans le navigateur&lt;/a&gt;
+    &lt;/p&gt;
+</content>
+    <author>
+      <name>devnewton 🍺</name>
+    </author>
+    <author>
+      <name>Benoît Sibaud</name>
+    </author>
+    <author>
+      <name>volts</name>
+    </author>
+    <author>
+      <name>BAud</name>
+    </author>
+    <author>
+      <name>Ltrlg</name>
+    </author>
+    <author>
+      <name>Ysabeau  🧶</name>
+    </author>
+    <category term="Matériel"/>
+    <category term="apple"/>
+    <category term="android"/>
+    <category term="smartphone"/>
+    <category term="souveraineté_numerique"/>
+    <category term="certification"/>
+    <category term="merdification"/>
+    <category term="états-unis"/>
+    <wfw:commentRss>https://linuxfr.org/nodes/143342/comments.atom</wfw:commentRss>
+  </entry>
+  <entry>
+    <id>tag:linuxfr.org,2005:News/43065</id>
+    <published>2026-06-18T12:48:53+02:00</published>
+    <updated>2026-06-18T12:48:53+02:00</updated>
+    <link rel="alternate" type="text/html" href="https://linuxfr.org/news/meilleures-contributions-linuxfr-org-les-primees-de-mai-2026"/>
+    <title>🏆 Meilleures contributions LinuxFr.org : les primées de mai 2026</title>
+    <content type="html">&lt;div&gt;&lt;p&gt;Nous continuons sur notre lancée de récompenser celles et ceux qui chaque mois contribuent au site &lt;em&gt;LinuxFr.org&lt;/em&gt; (dépêches, commentaires, logo, journaux, correctifs, etc.). Vous n’êtes pas sans risquer de gagner un livre des éditions &lt;a href="https://www.editions-eyrolles.com/"&gt;Eyrolles&lt;/a&gt;, &lt;a href="https://www.editions-eni.fr/"&gt;ENI&lt;/a&gt; et &lt;a href="https://www.d-booker.fr/"&gt;D-Booker&lt;/a&gt;. Voici les gagnants du mois de mai 2026 :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;em&gt;&lt;a href="//linuxfr.org/users/jehan"&gt;Jehan&lt;/a&gt;&lt;/em&gt;, pour son « &lt;a href="//linuxfr.org/nodes/143391/comments/2021822"&gt;commentaire sur le journal : [LinuxFr] Confiance, IA et contenu&lt;/a&gt; » ;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="//linuxfr.org/users/jflesch"&gt;Jérôme Flesch&lt;/a&gt;, pour son journal « &lt;a href="//linuxfr.org/users/jflesch/journaux/auto-heberger-ses-ia"&gt;Auto-héberger ses IA&lt;/a&gt; » ;&lt;/li&gt;
+&lt;li&gt;
+&lt;em&gt;&lt;a href="//linuxfr.org/users/vendrediouletrollsauvage"&gt;volts&lt;/a&gt;&lt;/em&gt;, pour sa dépêche « &lt;a href="//linuxfr.org/news/veille-communautaire-sur-des-intelligences-artificielles-du-mois-d-avril-2026"&gt;Veille communautaire sur des intelligences artificielles du mois d'avril 2026&lt;/a&gt; » ;&lt;/li&gt;
+&lt;li&gt;
+&lt;em&gt;&lt;a href="//linuxfr.org/users/yinqi"&gt;yinqi&lt;/a&gt;&lt;/em&gt;, pour sa dépêche « &lt;a href="//linuxfr.org/news/souverainete-numerique-reduction-des-dependances-extra-europeennes-migration-de-windows-vers-linux-a-la-dinum"&gt;Souveraineté numérique : réduction des dépendances extra-européennes, migration de Windows vers Linux à la DINUM&lt;/a&gt; ».&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Les livres gagnés sont détaillés en seconde partie de la dépêche. N’oubliez pas de contribuer, &lt;em&gt;LinuxFr.org&lt;/em&gt; vit pour vous et par vous !&lt;/p&gt;
+&lt;/div&gt;&lt;ul&gt;&lt;li&gt;lien nᵒ 1 : &lt;a title="https://linuxfr.org/proposer-un-contenu" hreflang="fr" href="https://linuxfr.org/redirect/117673"&gt;Contribuez&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 2 : &lt;a title="https://linuxfr.org/wiki/participer-a-linuxfr" hreflang="fr" href="https://linuxfr.org/redirect/117674"&gt;Tous les moyens (ou presque) de participer&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 3 : &lt;a title="https://linuxfr.org/news/meilleures-contributions-linuxfr-org-les-primees-d-avril-2026" hreflang="fr" href="https://linuxfr.org/redirect/117675"&gt;Récompenses précédentes (avril 2026)&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;h3 id="toc-les-livres--sélectionnés"&gt;Les livres 📚 sélectionnés&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;em&gt;&lt;a href="https://www.editions-eni.fr/livre/mongodb-comprendre-et-optimiser-l-exploitation-de-vos-donnees-avec-exercices-et-corriges-2e-edition-9782409046407"&gt;MongoDB — Comprendre et optimiser l'exploitation de vos données (avec exercices et corrigés) — 2&lt;sup&gt;e&lt;/sup&gt; édition&lt;/a&gt;&lt;/em&gt; ;&lt;/li&gt;
+&lt;li&gt;
+&lt;em&gt;&lt;a href="https://www.editions-eni.fr/livre/guide-juridique-du-numerique-contrats-propriete-intellectuelle-donnees-personnelles-e-commerce-9782409038587"&gt;Guide juridique du numérique — Contrats, propriété intellectuelle, données personnelles, e-commerce…&lt;/a&gt;&lt;/em&gt; ;&lt;/li&gt;
+&lt;li&gt;
+&lt;em&gt;&lt;a href="https://www.d-booker.fr/solutions-informatiques/809-1344-dolibarr-pour-commerce-et-gestion-de-produits-3ed.html"&gt;Bien gérer son entreprise avec Dolibarr (Commerce et gestion de produits) — 3&lt;sup&gt;e&lt;/sup&gt; édition&lt;/a&gt;&lt;/em&gt; .&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="https://linuxfr.org/images/logos/logoshift.png" alt="Bandeau LinuxFr.org"&gt;&lt;/p&gt;
+
+&lt;p&gt;Certaines personnes n’ont pas pu être jointes ou n’ont pas répondu. Les lots ont été réattribués automatiquement. N’oubliez pas de mettre une adresse de courriel valable dans votre compte ou lors de la proposition d’une dépêche. En effet, c’est notre seul moyen de vous contacter, que ce soit pour les lots ou des questions sur votre dépêche lors de sa modération. Tous nos remerciements aux contributeurs du site ainsi qu’aux éditions &lt;a href="https://www.editions-eyrolles.com/"&gt;Eyrolles&lt;/a&gt;,  &lt;a href="https://www.editions-eni.fr/"&gt;ENI&lt;/a&gt; et &lt;a href="https://www.d-booker.fr/"&gt;D-Booker&lt;/a&gt;.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;a href="https://www.editions-eni.fr"&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f692e696d6775722e636f6d2f754c724e5463742e706e67/uLrNTct.png" alt="Logo éditions ENI" title="Source : https://i.imgur.com/uLrNTct.png"&gt;&lt;/a&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href="https://www.editions-eyrolles.com"&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f692e696d6775722e636f6d2f4f3064593778552e706e67/O0dY7xU.png" alt="Logo éditions Eyrolles" title="Source : https://i.imgur.com/O0dY7xU.png"&gt;&lt;/a&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href="https://www.d-booker.fr/"&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f7777772e642d626f6f6b65722e66722f7468656d65732f636c61737369632f6173736574732f696d672f6c6f676f2e706e67/logo.png" alt="Logo éditions B-BookeR" title="Source : https://www.d-booker.fr/themes/classic/assets/img/logo.png"&gt;&lt;/a&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;&lt;div&gt;&lt;a href="https://linuxfr.org/news/meilleures-contributions-linuxfr-org-les-primees-de-mai-2026.epub"&gt;Télécharger ce contenu au format EPUB&lt;/a&gt;&lt;/div&gt;    &lt;p&gt;
+      &lt;strong&gt;Commentaires :&lt;/strong&gt;
+      &lt;a href="https://linuxfr.org/nodes/144103/comments.atom"&gt;voir le flux Atom&lt;/a&gt;
+      &lt;a href="https://linuxfr.org/news/meilleures-contributions-linuxfr-org-les-primees-de-mai-2026#comments"&gt;ouvrir dans le navigateur&lt;/a&gt;
+    &lt;/p&gt;
+</content>
+    <author>
+      <name>Florent Zara</name>
+    </author>
+    <category term="LinuxFr.org"/>
+    <category term="prix_du_mois"/>
+    <category term="intelligence_artificielle"/>
+    <category term="souveraineté_numerique"/>
+    <category term="dinum"/>
+    <category term="migration"/>
+    <category term="adieu_windows"/>
+    <wfw:commentRss>https://linuxfr.org/nodes/144103/comments.atom</wfw:commentRss>
+  </entry>
+  <entry>
+    <id>tag:linuxfr.org,2005:News/43066</id>
+    <published>2026-06-18T09:22:14+02:00</published>
+    <updated>2026-06-18T09:22:14+02:00</updated>
+    <link rel="alternate" type="text/html" href="https://linuxfr.org/news/les-journaux-linuxfr-org-les-mieux-notes-de-mai-2026"/>
+    <title>🪶 Les journaux LinuxFr.org les mieux notés de mai 2026</title>
+    <rights>Licence CC By‑SA http://creativecommons.org/licenses/by-sa/4.0/deed.fr</rights>
+    <content type="html">&lt;div&gt;&lt;p&gt;LinuxFr.org propose des dépêches et articles, soumis par tout un chacun, puis revus et corrigés par l’équipe de modération avant publication. C’est la partie la plus visible de LinuxFr.org, ce sont les dépêches qui sont le plus lues et suivies, sur le site, via Atom/RSS, ou bien via partage par messagerie instantanée, par courriel, ou encore via médias sociaux.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://linuxfr.org/images/logos/anim.gif" alt="Bannière LinuxFr.org"&gt;&lt;/p&gt;
+
+&lt;p&gt;Ce que l’on sait moins, c’est que LinuxFr.org vous propose également de publier directement vos propres articles, sans validation &lt;em&gt;a priori&lt;/em&gt; de lʼéquipe de modération. Ceux-ci s’appellent des journaux. Voici un florilège d’une dizaine de ces journaux parmi les mieux notés par les utilisateurs et les utilisatrices… qui notent. Lumière sur ceux du mois de mai passé.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;« &lt;a href="//linuxfr.org/users/liorel/journaux/ce-virus-qui-vous-hante"&gt;Ce virus qui vous hante&lt;/a&gt; » par &lt;em&gt;Liorel&lt;/em&gt; ;&lt;/li&gt;
+&lt;li&gt;« &lt;a href="//linuxfr.org/users/nyco/journaux/darty-le-libre-et-linux"&gt;Darty, le libre et Linux&lt;/a&gt; » par &lt;em&gt;Nÿco&lt;/em&gt; ;&lt;/li&gt;
+&lt;li&gt;« &lt;a href="//linuxfr.org/users/floxy/journaux/pierre-ficheux-bronsonise"&gt;Pierre Ficheux bronsonisé 😢&lt;/a&gt; » par &lt;em&gt;Florent Zara&lt;/em&gt; ;&lt;/li&gt;
+&lt;li&gt;« &lt;a href="//linuxfr.org/users/jflesch/journaux/auto-heberger-ses-ia"&gt;Auto-héberger ses IA&lt;/a&gt; » par &lt;em&gt;Jérôme Flesch&lt;/em&gt; ;&lt;/li&gt;
+&lt;li&gt;« &lt;a href="//linuxfr.org/users/gbetous/journaux/ia-mon-parcours-initiatique"&gt;IA : mon parcours initiatique&lt;/a&gt; » par &lt;em&gt;gUI&lt;/em&gt; ;&lt;/li&gt;
+&lt;li&gt;« &lt;a href="//linuxfr.org/users/guiv42/journaux/on-nous-cache-tout-on-nous-dit-rien-rendez-moi-mon-filesystem"&gt;On nous cache tout on nous dit rien (rendez-moi mon filesystem !)&lt;/a&gt; » par &lt;em&gt;guiv42&lt;/em&gt; ;&lt;/li&gt;
+&lt;li&gt;« &lt;a href="//linuxfr.org/users/luc-skywalker/journaux/un-seaglider-open-source-et-diy"&gt;Un seaglider open source et diy&lt;/a&gt; » par &lt;em&gt;Luc-Skywalker&lt;/em&gt; ;&lt;/li&gt;
+&lt;li&gt;« &lt;a href="//linuxfr.org/users/geheme/journaux/lsdisplay-lsgpu-lister-ecrans-et-gpus-depuis-le-terminal-dans-l-esprit-de-lspci-lscpu-lsusb-v-0-1-0-appel-a-tests"&gt;lsdisplay / lsgpu — lister écrans et GPUs depuis le terminal dans l'esprit de lspci, lscpu, lsusb: v.0.1.0 appel à tests&lt;/a&gt; » par &lt;em&gt;géhème&lt;/em&gt; ;&lt;/li&gt;
+&lt;li&gt;« &lt;a href="//linuxfr.org/users/gnapin/journaux/avis-sur-le-livre-richard-stallman-et-la-revolution-du-logiciel-libre"&gt;Avis sur le livre "Richard Stallman et la révolution du logiciel libre"&lt;/a&gt; » par &lt;em&gt;Thomas J.&lt;/em&gt; ;&lt;/li&gt;
+&lt;li&gt;« &lt;a href="//linuxfr.org/users/ysabeau/journaux/etiquetez-et-qr-codez-comme-un-chef-ou-une-cheffe-avec-libreoffice"&gt;Étiquetez et Qr Codez comme un chef ou une cheffe avec LibreOffice&lt;/a&gt; » par &lt;em&gt;Ysabeau 🧶&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;ul&gt;&lt;li&gt;lien nᵒ 1 : &lt;a title="https://linuxfr.org/redaction" hreflang="fr" href="https://linuxfr.org/redirect/117676"&gt;Participez à l’écriture d’un article&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 2 : &lt;a title="https://linuxfr.org/journaux/nouveau" hreflang="fr" href="https://linuxfr.org/redirect/117677"&gt;Publiez votre journal&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 3 : &lt;a title="https://linuxfr.org/news/nouveau" hreflang="fr" href="https://linuxfr.org/redirect/117678"&gt;Proposez une dépêche&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;a href="https://linuxfr.org/news/les-journaux-linuxfr-org-les-mieux-notes-de-mai-2026.epub"&gt;Télécharger ce contenu au format EPUB&lt;/a&gt;&lt;/div&gt;    &lt;p&gt;
+      &lt;strong&gt;Commentaires :&lt;/strong&gt;
+      &lt;a href="https://linuxfr.org/nodes/144105/comments.atom"&gt;voir le flux Atom&lt;/a&gt;
+      &lt;a href="https://linuxfr.org/news/les-journaux-linuxfr-org-les-mieux-notes-de-mai-2026#comments"&gt;ouvrir dans le navigateur&lt;/a&gt;
+    &lt;/p&gt;
+</content>
+    <author>
+      <name>Florent Zara</name>
+    </author>
+    <category term="LinuxFr.org"/>
+    <category term="intelligence_artificielle"/>
+    <category term="libreoffice"/>
+    <category term="richard_stallman"/>
+    <wfw:commentRss>https://linuxfr.org/nodes/144105/comments.atom</wfw:commentRss>
+  </entry>
+  <entry>
+    <id>tag:linuxfr.org,2005:News/43086</id>
+    <published>2026-06-17T22:44:11+02:00</published>
+    <updated>2026-06-17T22:44:11+02:00</updated>
+    <link rel="alternate" type="text/html" href="https://linuxfr.org/news/la-fondation-pour-le-progres-humain-et-le-logiciel-libre-libre-a-vous-du-9-juin-2026-podcasts-et-references"/>
+    <title>La Fondation pour le progrès humain et le logiciel libre — « Libre à vous ! » du 9 juin 2026 — Podcasts et références</title>
+    <rights>Licence CC By‑SA http://creativecommons.org/licenses/by-sa/4.0/deed.fr</rights>
+    <content type="html">&lt;div&gt;&lt;p&gt;278e émission &lt;a href="https://libreavous.org"&gt;« Libre à vous ! »&lt;/a&gt; de l’April. &lt;a href="https://media.april.org/audio/radio-cause-commune/libre-a-vous/emissions/20260609/libre-a-vous-20260609.ogg"&gt;Podcast&lt;/a&gt; et programme :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;sujet principal : la Fondation pour le progrès humain et le libre avec Antoine Vaskou et Vincent Calame&lt;/li&gt;
+&lt;li&gt;chronique « Que libérer d’autre que du logiciel » avec Antanak&lt;/li&gt;
+&lt;li&gt;chronique « Lectures buissonnières » de Vincent Calame sur « Présentation de la revue Curseurs » &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;ul&gt;&lt;li&gt;lien nᵒ 1 : &lt;a title="https://media.april.org/audio/radio-cause-commune/libre-a-vous/emissions/20260609/libre-a-vous-20260609.ogg" hreflang="fr" href="https://linuxfr.org/redirect/117743"&gt;Podcast de la 278ᵉ émission&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 2 : &lt;a title="https://libreavous.org/278" hreflang="fr" href="https://linuxfr.org/redirect/117744"&gt;Les références pour la 278ᵉ émission et les podcasts par sujets&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 3 : &lt;a title="https://libreavous.org/rss" hreflang="fr" href="https://linuxfr.org/redirect/117745"&gt;S&amp;#39;abonner au podcast&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 4 : &lt;a title="https://www.libreavous.org/listes-de-diffusion" hreflang="fr" href="https://linuxfr.org/redirect/117746"&gt;S&amp;#39;abonner à la lettre d&amp;#39;actus&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 5 : &lt;a title="https://libreavous.org" hreflang="fr" href="https://linuxfr.org/redirect/117747"&gt;Libre à vous !&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 6 : &lt;a title="https://cause-commune.fm/" hreflang="fr" href="https://linuxfr.org/redirect/117748"&gt;Radio Cause Commune&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;p&gt;Rendez‐vous en direct chaque mardi de 15 h 30 à 17 h sur 93,1 MHz en Île‐de‐France. L’émission est diffusée simultanément sur le &lt;a href="https://cause-commune.fm/"&gt;site Web de la radio Cause Commune&lt;/a&gt;.  Vous pouvez nous laisser un message sur le répondeur de la radio : pour réagir à l’un des sujets de l’émission, pour partager un témoignage, vos idées, vos suggestions, vos encouragements ou pour nous poser une question. Le numéro du répondeur : +33 9 72 51 55 46. &lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;a href="https://linuxfr.org/news/la-fondation-pour-le-progres-humain-et-le-logiciel-libre-libre-a-vous-du-9-juin-2026-podcasts-et-references.epub"&gt;Télécharger ce contenu au format EPUB&lt;/a&gt;&lt;/div&gt;    &lt;p&gt;
+      &lt;strong&gt;Commentaires :&lt;/strong&gt;
+      &lt;a href="https://linuxfr.org/nodes/144315/comments.atom"&gt;voir le flux Atom&lt;/a&gt;
+      &lt;a href="https://linuxfr.org/news/la-fondation-pour-le-progres-humain-et-le-logiciel-libre-libre-a-vous-du-9-juin-2026-podcasts-et-references#comments"&gt;ouvrir dans le navigateur&lt;/a&gt;
+    &lt;/p&gt;
+</content>
+    <author>
+      <name>Frederic Couchet</name>
+    </author>
+    <author>
+      <name>Benoît Sibaud</name>
+    </author>
+    <category term="Communauté"/>
+    <category term="radio_cause_commune"/>
+    <category term="libre_à_vous"/>
+    <wfw:commentRss>https://linuxfr.org/nodes/144315/comments.atom</wfw:commentRss>
+  </entry>
+  <entry>
+    <id>tag:linuxfr.org,2005:News/43085</id>
+    <published>2026-06-16T07:34:21+02:00</published>
+    <updated>2026-06-16T07:34:21+02:00</updated>
+    <link rel="alternate" type="text/html" href="https://linuxfr.org/news/revue-de-presse-de-l-april-pour-la-semaine-24-de-l-annee-2026"/>
+    <title>Revue de presse de l’April pour la semaine 24 de l’année 2026</title>
+    <rights>Licence CC By‑SA http://creativecommons.org/licenses/by-sa/4.0/deed.fr</rights>
+    <content type="html">&lt;div&gt;&lt;p&gt;Cette revue de presse sur Internet fait partie du travail de veille mené par l’April dans le cadre de son action de défense et de promotion du logiciel libre. Les positions exposées dans les articles sont celles de leurs auteurs et ne rejoignent pas forcément celles de l’April.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.strategies.fr/actualites/culture-tech/LQ6258986C/la-souverainete-numerique-quel-prix.html"&gt;[Stratégies] La souveraineté numérique, à quel prix?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ictjournal.ch/news/2026-06-11/lancement-deuro-office-sous-le-feu-des-critiques-de-libreoffice"&gt;[ICTjournal] Lancement d'Euro-Office, sous le feu des critiques de LibreOffice&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.silicon.fr/open-source-1375/open-source-strategie-ue-227560"&gt;[Silicon.fr] Open source: ce que l'UE vise désormais&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.clubic.com/actualite-615775-paquet-souverainete.html"&gt;[clubic.com] Les Big Tech contrôlent plus de 70% du cloud européen: l'UE vient d'allouer 2 milliards d'euros à l'open source&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;ul&gt;&lt;li&gt;lien nᵒ 1 : &lt;a title="https://www.april.org" hreflang="fr" href="https://linuxfr.org/redirect/117739"&gt;April&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 2 : &lt;a title="https://www.april.org/revue-de-presse" hreflang="fr" href="https://linuxfr.org/redirect/117740"&gt;Revue de presse de l&amp;#39;April&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 3 : &lt;a title="https://linuxfr.org/news/revue-de-presse-de-l-april-pour-la-semaine-23-de-l-annee-2026" hreflang="fr" href="https://linuxfr.org/redirect/117741"&gt;Revue de presse de la semaine précédente&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 4 : &lt;a title="https://filsdu.net" hreflang="fr" href="https://linuxfr.org/redirect/117742"&gt;🕸 Fils du Net&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;h2 id="toc-stratégies-la-souveraineté-numérique-à-quel-prix"&gt;&lt;a href="https://www.strategies.fr/actualites/culture-tech/LQ6258986C/la-souverainete-numerique-quel-prix.html"&gt;[Stratégies] La souveraineté numérique, à quel prix?&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;✍ Martin Carnot, le jeudi 11 juin 2026.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;264 milliards d’euros. C’est ce que les entreprises européennes versent chaque année à des acteurs américains pour leurs logiciels et services cloud, selon l’étude Asterès publiée en avril 2025. Un montant comparable à la facture énergétique du continent, qui en dit long sur l’enjeu de la souveraineté numérique.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="toc-ictjournal-lancement-deuro-office-sous-le-feu-des-critiques-de-libreoffice"&gt;&lt;a href="https://www.ictjournal.ch/news/2026-06-11/lancement-deuro-office-sous-le-feu-des-critiques-de-libreoffice"&gt;[ICTjournal] Lancement d'Euro-Office, sous le feu des critiques de LibreOffice&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;✍ Yannick Chavanne, le jeudi 11 juin 2026.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Développée à partir d’un fork d’OnlyOffice et soutenue par plusieurs organisations européennes, Euro-Office entend promouvoir une alternative locale aux suites bureautiques dominantes. The Document Foundation, éditeur de LibreOffice, dénonce toutefois un projet en contradiction avec certains principes de souveraineté numérique.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Et aussi: &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.generation-nt.com/actualites/euro-office-alternative-microsoft-frein-2076899"&gt;[Génération NT] Euro-Office: l'alternative européenne à Microsoft qui démarre avec un frein à main&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.zdnet.fr/actualites/euro-office-le-nouveau-venu-dans-la-guerre-des-suites-collaboratives-tente-de-simposer-496603.htm"&gt;[ZDNET] Guerre de l'open source et polémiques, tout ce qu'il faut savoir sur le lancement d'Euro Office par NextCloud&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="toc-siliconfr-open-source-ce-que-lue-vise-désormais"&gt;&lt;a href="https://www.silicon.fr/open-source-1375/open-source-strategie-ue-227560"&gt;[Silicon.fr] Open source: ce que l'UE vise désormais&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;✍ Clément Bohic, le mardi 9 juin 2026.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;La nouvelle stratégie open source de l’UE ouvre des pistes en matière de gouvernance, de résilience et de commande publique.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="toc-clubiccom-les-big-tech-contrôlent-plus-de-70-du-cloud-européen-lue-vient-dallouer-2-milliards-deuros-à-lopen-source"&gt;&lt;a href="https://www.clubic.com/actualite-615775-paquet-souverainete.html"&gt;[clubic.com] Les Big Tech contrôlent plus de 70% du cloud européen: l'UE vient d'allouer 2 milliards d'euros à l'open source&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;✍ Guillaume Belfiore, le lundi 8 juin 2026.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;La Commission européenne a publié en fin de semaine dernière son paquet de souveraineté technologique. Ce dernier combine un Chips Act 2.0, une législation sur le cloud et l’IA, une feuille de route sur l’énergie et une stratégie open source inédite. Et il était temps. Aujourd’hui, l’UE achète plus de 80% de ses technologies numériques à des fournisseurs non européens.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;&lt;div&gt;&lt;a href="https://linuxfr.org/news/revue-de-presse-de-l-april-pour-la-semaine-24-de-l-annee-2026.epub"&gt;Télécharger ce contenu au format EPUB&lt;/a&gt;&lt;/div&gt;    &lt;p&gt;
+      &lt;strong&gt;Commentaires :&lt;/strong&gt;
+      &lt;a href="https://linuxfr.org/nodes/144299/comments.atom"&gt;voir le flux Atom&lt;/a&gt;
+      &lt;a href="https://linuxfr.org/news/revue-de-presse-de-l-april-pour-la-semaine-24-de-l-annee-2026#comments"&gt;ouvrir dans le navigateur&lt;/a&gt;
+    &lt;/p&gt;
+</content>
+    <author>
+      <name>echarp</name>
+    </author>
+    <category term="Internet"/>
+    <category term="revue_de_presse"/>
+    <category term="souveraineté_numerique"/>
+    <category term="union_européenne"/>
+    <category term="open_source"/>
+    <wfw:commentRss>https://linuxfr.org/nodes/144299/comments.atom</wfw:commentRss>
+  </entry>
+  <entry>
+    <id>tag:linuxfr.org,2005:News/43080</id>
+    <published>2026-06-12T11:24:43+02:00</published>
+    <updated>2026-06-20T19:02:51+02:00</updated>
+    <link rel="alternate" type="text/html" href="https://linuxfr.org/news/prenez-5-minutes-pour-repondre-au-questionnaire-2026-votre-avis-sur-libre-a-vous"/>
+    <title>Prenez 5 minutes pour répondre au questionnaire 2026 « Votre avis sur libre à vous ! »</title>
+    <rights>Licence CC By‑SA http://creativecommons.org/licenses/by-sa/4.0/deed.fr</rights>
+    <content type="html">&lt;div&gt;&lt;p&gt;&lt;a href="https://www.libreavous.org"&gt;Libre à vous !&lt;/a&gt; est l’émission de radio proposée depuis 2018 par l’April sur la radio Cause Commune, « la voix des possibles ». L'émission est diffusée chaque mardi de 15h30 à 17h00 sur 93,1 MHz en Île‐de‐France et simultanément sur le site web de la radio. Le podcast et la transcription sont disponibles après la diffusion.&lt;/p&gt;
+
+&lt;p&gt;Nous proposons un questionnaire pour connaître l'auditorat de notre émission de radio. Vos réponses à ce questionnaire sont très précieuses pour nous : elles nous permettront d'évaluer l'impact de notre émission et de mieux vous connaître. De votre côté, ce questionnaire est une occasion de nous faire des retours.&lt;/p&gt;
+
+&lt;p&gt;Vous pouvez &lt;a href="https://questionnaires.april.org/index.php/969152"&gt;répondre au questionnaire&lt;/a&gt; en quelques minutes (5 à 10 minutes).&lt;/p&gt;
+&lt;/div&gt;&lt;ul&gt;&lt;li&gt;lien nᵒ 1 : &lt;a title="https://questionnaires.april.org/index.php/969152" hreflang="fr" href="https://linuxfr.org/redirect/117733"&gt;Répondre au questionnaire&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 2 : &lt;a title="https://www.libreavous.org/" hreflang="fr" href="https://linuxfr.org/redirect/117734"&gt;Libre à vous !&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 3 : &lt;a title="https://cause-commune.fm/" hreflang="fr" href="https://linuxfr.org/redirect/117735"&gt;Radio Cause Commune&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;a href="https://linuxfr.org/news/prenez-5-minutes-pour-repondre-au-questionnaire-2026-votre-avis-sur-libre-a-vous.epub"&gt;Télécharger ce contenu au format EPUB&lt;/a&gt;&lt;/div&gt;    &lt;p&gt;
+      &lt;strong&gt;Commentaires :&lt;/strong&gt;
+      &lt;a href="https://linuxfr.org/nodes/144248/comments.atom"&gt;voir le flux Atom&lt;/a&gt;
+      &lt;a href="https://linuxfr.org/news/prenez-5-minutes-pour-repondre-au-questionnaire-2026-votre-avis-sur-libre-a-vous#comments"&gt;ouvrir dans le navigateur&lt;/a&gt;
+    &lt;/p&gt;
+</content>
+    <author>
+      <name>Frederic Couchet</name>
+    </author>
+    <author>
+      <name>Benoît Sibaud</name>
+    </author>
+    <category term="Communauté"/>
+    <category term="radio_cause_commune"/>
+    <category term="libre_à_vous"/>
+    <wfw:commentRss>https://linuxfr.org/nodes/144248/comments.atom</wfw:commentRss>
+  </entry>
+  <entry>
+    <id>tag:linuxfr.org,2005:News/43079</id>
+    <published>2026-06-10T22:01:30+02:00</published>
+    <updated>2026-06-10T22:01:30+02:00</updated>
+    <link rel="alternate" type="text/html" href="https://linuxfr.org/news/amnesty-international-france-et-la-ldh-libre-a-vous-du-2-juin-2026-podcasts-et-references"/>
+    <title>Amnesty International France et la LDH - « Libre à vous ! » du 2 juin 2026 - Podcasts et références</title>
+    <rights>Licence CC By‑SA http://creativecommons.org/licenses/by-sa/4.0/deed.fr</rights>
+    <content type="html">&lt;div&gt;&lt;p&gt;Deux-cent-soixante-dix-septième émission &lt;a href="https://libreavous.org"&gt;« Libre à vous ! »&lt;/a&gt; de l’April. &lt;a href="https://media.april.org/audio/radio-cause-commune/libre-a-vous/emissions/20260602/libre-a-vous-20260602.ogg"&gt;Podcast&lt;/a&gt; et programme :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;sujet principal : Quand les organisations de défense des droits humains se saisissent des enjeux numériques, avec Katia Roux, chargée de plaidoyer « technologie et droits humains » pour Amnesty International France et Maryse Artiguelong, coresponsable du groupe de travail « Libertés et technologies de l’information et de la communication » pour la Ligue des Droits Humains&lt;/li&gt;
+&lt;li&gt;La suite de &lt;em&gt;Lectures buissonnières&lt;/em&gt; de Vincent Calame, sur l’ouvrage d’Isabelle Collet « Le numérique est l’affaire de toutes ».&lt;/li&gt;
+&lt;li&gt;Un nouvel épisode de &lt;em&gt;À cœur vaillant, la voie est libre&lt;/em&gt; de Laurent et Lorette Costy : « Retex Ipsum Lorette »&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Rendez‐vous en direct chaque mardi de 15 h 30 à 17 h sur 93,1 FM en Île‐de‐France. L’émission est diffusée simultanément sur le &lt;a href="https://cause-commune.fm/"&gt;site Web de la radio Cause Commune&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;&lt;ul&gt;&lt;li&gt;lien nᵒ 1 : &lt;a title="https://media.april.org/audio/radio-cause-commune/libre-a-vous/emissions/20260602/libre-a-vous-20260602.ogg" hreflang="fr" href="https://linuxfr.org/redirect/117720"&gt;Podcast de l&amp;#39;émission&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 2 : &lt;a title="https://www.libreavous.org/277" hreflang="fr" href="https://linuxfr.org/redirect/117721"&gt;Les références pour l&amp;#39;émission et les podcasts par sujets&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 3 : &lt;a title="https://www.librealire.org/emission-libre-a-vous-diffusee-mardi-2-juin-2026-sur-radio-cause-commune" hreflang="fr" href="https://linuxfr.org/redirect/117722"&gt;La transcription de l&amp;#39;émission&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 4 : &lt;a title="https://libreavous.org/rss" hreflang="fr" href="https://linuxfr.org/redirect/117723"&gt;S&amp;#39;abonner au podcast&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 5 : &lt;a title="https://www.libreavous.org/listes-de-diffusion" hreflang="fr" href="https://linuxfr.org/redirect/117724"&gt;S&amp;#39;abonner à la lettre d&amp;#39;actus&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 6 : &lt;a title="https://www.libreavous.org/" hreflang="fr" href="https://linuxfr.org/redirect/117725"&gt;Libre à vous !&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 7 : &lt;a title="https://cause-commune.fm/" hreflang="fr" href="https://linuxfr.org/redirect/117726"&gt;Radio Cause Commune&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;a href="https://linuxfr.org/news/amnesty-international-france-et-la-ldh-libre-a-vous-du-2-juin-2026-podcasts-et-references.epub"&gt;Télécharger ce contenu au format EPUB&lt;/a&gt;&lt;/div&gt;    &lt;p&gt;
+      &lt;strong&gt;Commentaires :&lt;/strong&gt;
+      &lt;a href="https://linuxfr.org/nodes/144233/comments.atom"&gt;voir le flux Atom&lt;/a&gt;
+      &lt;a href="https://linuxfr.org/news/amnesty-international-france-et-la-ldh-libre-a-vous-du-2-juin-2026-podcasts-et-references#comments"&gt;ouvrir dans le navigateur&lt;/a&gt;
+    &lt;/p&gt;
+</content>
+    <author>
+      <name>Etienne Gonnu</name>
+    </author>
+    <author>
+      <name>bobble bubble</name>
+    </author>
+    <category term="Communauté"/>
+    <category term="radio_cause_commune"/>
+    <category term="libre_à_vous"/>
+    <category term="amnesty_international"/>
+    <category term="ligue_des_droits_humains"/>
+    <wfw:commentRss>https://linuxfr.org/nodes/144233/comments.atom</wfw:commentRss>
+  </entry>
+  <entry>
+    <id>tag:linuxfr.org,2005:News/43077</id>
+    <published>2026-06-10T07:43:14+02:00</published>
+    <updated>2026-06-10T07:43:14+02:00</updated>
+    <link rel="alternate" type="text/html" href="https://linuxfr.org/news/revue-de-presse-de-l-april-pour-la-semaine-23-de-l-annee-2026"/>
+    <title>Revue de presse de l’April pour la semaine 23 de l’année 2026</title>
+    <rights>Licence CC By‑SA http://creativecommons.org/licenses/by-sa/4.0/deed.fr</rights>
+    <content type="html">&lt;div&gt;&lt;p&gt;Cette revue de presse sur Internet fait partie du travail de veille mené par l’April dans le cadre de son action de défense et de promotion du logiciel libre. Les positions exposées dans les articles sont celles de leurs auteurs et ne rejoignent pas forcément celles de l’April.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.lesnumeriques.com/intelligence-artificielle/ce-navigateur-open-source-ferme-ses-contributions-le-code-genere-par-ia-seme-trop-le-chaos-n257158.html"&gt;[Les Numeriques] Ce navigateur open source ferme ses contributions, le code généré par IA sème trop le chaos&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.lemonde.fr/pixels/article/2026/06/02/l-association-hop-obtient-un-proces-contre-le-fabricant-d-imprimantes-epson_6696377_4408996.html"&gt;[Le Monde.fr] L’association HOP obtient un procès contre le fabricant d’imprimantes Epson&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.lesnumeriques.com/societe-numerique/argent-public-code-public-le-logiciel-libre-devient-prioritaire-l-europe-veut-en-finir-avec-microsoft-dans-ses-administrations-n256815.html"&gt;[Les Numeriques] 'Argent public, code public' : le logiciel libre devient prioritaire, l'Europe veut en finir avec Microsoft dans ses administrations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.zdnet.fr/actualites/la-securite-open-source-est-dans-un-etat-deplorable-ibm-et-red-hat-parient-que-5-milliards-de-dollars-et-20-000-ingenieurs-pourront-y-remedier-495937.htm"&gt;[ZDNET] La sécurité open source est dans un état déplorable : IBM et Red Hat parient que 5 milliards de dollars et 20 000 ingénieurs pourront y remédier&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;ul&gt;&lt;li&gt;lien nᵒ 1 : &lt;a title="https://www.april.org" hreflang="fr" href="https://linuxfr.org/redirect/117714"&gt;April&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 2 : &lt;a title="https://www.april.org/revue-de-presse" hreflang="fr" href="https://linuxfr.org/redirect/117715"&gt;Revue de presse de l&amp;#39;April&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 3 : &lt;a title="https://linuxfr.org/news/revue-de-presse-de-l-april-pour-la-semaine-22-de-l-annee-2026" hreflang="fr" href="https://linuxfr.org/redirect/117716"&gt;Revue de presse de la semaine précédente&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 4 : &lt;a title="https://filsdu.net" hreflang="fr" href="https://linuxfr.org/redirect/117717"&gt;🕸 Fils du Net&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;h2 id="toc-les-numeriques-ce-navigateur-open-source-ferme-ses-contributions-le-code-généré-par-ia-sème-trop-le-chaos"&gt;&lt;a href="https://www.lesnumeriques.com/intelligence-artificielle/ce-navigateur-open-source-ferme-ses-contributions-le-code-genere-par-ia-seme-trop-le-chaos-n257158.html"&gt;[Les Numeriques] Ce navigateur open source ferme ses contributions, le code généré par IA sème trop le chaos&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;✍ Nassim Chentouf, le dimanche 7 juin 2026.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Le code généré par IA sème le chaos chez Ladybird, navigateur open source. Résultat, c’est la fin des contributions extérieures. Il n’y aura que les responsables du projet qui pourront toucher au code.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="toc-le-mondefr-lassociation-hop-obtient-un-procès-contre-le-fabricant-dimprimantes-epson"&gt;&lt;a href="https://www.lemonde.fr/pixels/article/2026/06/02/l-association-hop-obtient-un-proces-contre-le-fabricant-d-imprimantes-epson_6696377_4408996.html"&gt;[Le Monde.fr] L’association HOP obtient un procès contre le fabricant d’imprimantes Epson&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;Le mardi 2 juin 2026.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Une première audience aura lieu à Nanterre le 2 juillet, huit ans après la plainte déposée par Halte à l’obsolescence programmée (HOP). L’association reproche notamment au constructeur de réduire à dessein la durée de vie de ses cartouches d’encre.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="toc-les-numeriques-argent-public-code-public-le-logiciel-libre-devient-prioritaire-leurope-veut-en-finir-avec-microsoft-dans-ses-administrations"&gt;&lt;a href="https://www.lesnumeriques.com/societe-numerique/argent-public-code-public-le-logiciel-libre-devient-prioritaire-l-europe-veut-en-finir-avec-microsoft-dans-ses-administrations-n256815.html"&gt;[Les Numeriques] 'Argent public, code public': le logiciel libre devient prioritaire, l'Europe veut en finir avec Microsoft dans ses administrations&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;✍ Aymeric Geoffre-Rouland, le lundi 1 juin 2026.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;La Commission européenne élève le logiciel libre au rang d’instrument de politique industrielle, au même titre que les semi-conducteurs. Le CNLL salue l’ambition, mais pointe un budget qui frise l’anecdotique.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Et aussi: &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.01net.com/actualites/leurope-veut-faire-de-lopen-source-une-arme-de-souverainete-numerique.html"&gt;[01net.] L'Europe veut faire de l'open source une arme de souveraineté numérique&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.lefigaro.fr/economie/data-centers-puces-open-source-le-plan-de-l-europe-pour-reduire-sa-dependance-aux-technologies-americaines-20260603"&gt;[Le Figaro] Data centers, puces, open source… Le plan de l'Europe pour réduire sa dépendance aux technologies américaines (€)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://siecledigital.fr/2026/06/02/pourquoi-leurope-mise-desormais-sur-le-logiciel-libre-pour-son-avenir-numerique"&gt;[Siècle Digital] Pourquoi l’Europe mise désormais sur le logiciel libre pour son avenir numérique?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.zdnet.fr/actualites/souverainete-numerique-leurope-prepare-son-bouclier-contre-les-geants-us-de-la-tech-495940.htm"&gt;[ZDNET] Souveraineté numérique: L'Europe prépare son bouclier contre les géants US de la Tech&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="toc-zdnet-la-sécurité-open-source-est-dans-un-état-déplorable-ibm-et-red-hat-parient-que-5-milliards-de-dollars-et-20-000-ingénieurs-pourront-y-remédier"&gt;&lt;a href="https://www.zdnet.fr/actualites/la-securite-open-source-est-dans-un-etat-deplorable-ibm-et-red-hat-parient-que-5-milliards-de-dollars-et-20-000-ingenieurs-pourront-y-remedier-495937.htm"&gt;[ZDNET] La sécurité open source est dans un état déplorable: IBM et Red Hat parient que 5 milliards de dollars et 20 000 ingénieurs pourront y remédier&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;✍ Steven Vaughan-Nichols, le lundi 1 juin 2026.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Le projet Lightwell est une initiative basée sur l’IA visant à détecter et à corriger les failles de sécurité dans les logiciels libres à une échelle industrielle. Voici ce que nous savons à ce jour.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;&lt;div&gt;&lt;a href="https://linuxfr.org/news/revue-de-presse-de-l-april-pour-la-semaine-23-de-l-annee-2026.epub"&gt;Télécharger ce contenu au format EPUB&lt;/a&gt;&lt;/div&gt;    &lt;p&gt;
+      &lt;strong&gt;Commentaires :&lt;/strong&gt;
+      &lt;a href="https://linuxfr.org/nodes/144207/comments.atom"&gt;voir le flux Atom&lt;/a&gt;
+      &lt;a href="https://linuxfr.org/news/revue-de-presse-de-l-april-pour-la-semaine-23-de-l-annee-2026#comments"&gt;ouvrir dans le navigateur&lt;/a&gt;
+    &lt;/p&gt;
+</content>
+    <author>
+      <name>echarp</name>
+    </author>
+    <author>
+      <name>bobble bubble</name>
+    </author>
+    <category term="Internet"/>
+    <category term="sécurité"/>
+    <category term="revue_de_presse"/>
+    <category term="red_hat"/>
+    <category term="hop"/>
+    <category term="intelligence_artificielle"/>
+    <category term="union_européenne"/>
+    <category term="microsoft"/>
+    <wfw:commentRss>https://linuxfr.org/nodes/144207/comments.atom</wfw:commentRss>
+  </entry>
+  <entry>
+    <id>tag:linuxfr.org,2005:News/43020</id>
+    <published>2026-06-08T21:24:33+02:00</published>
+    <updated>2026-06-08T21:24:33+02:00</updated>
+    <link rel="alternate" type="text/html" href="https://linuxfr.org/news/lettre-d-information-xmpp-de-mars-2026"/>
+    <title>Lettre d'information XMPP de mars 2026</title>
+    <rights>Licence CC By‑SA http://creativecommons.org/licenses/by-sa/4.0/deed.fr</rights>
+    <content type="html">&lt;div&gt;&lt;p&gt;&lt;em&gt;N. D. T. — Ceci est une traduction de la lettre d’information publiée régulièrement par l’équipe de communication de la XSF, essayant de conserver les tournures de phrase et l’esprit de l’original. Elle est réalisée et publiée conjointement sur les sites &lt;a href="https://xmpp.org/categories/newsletter/"&gt;XMPP.org&lt;/a&gt; et &lt;a href="//linuxfr.org/tags/xmpp/public"&gt;LinuxFr.org&lt;/a&gt; selon &lt;a href="https://wiki.xmpp.org/web/French_translations"&gt;une procédure définie&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f786d70702e6f72672f696d616765732f6e6577736c65747465722f786d70705f6e6577736c65747465725f62616e6e65722e737667/xmpp_newsletter_banner.svg" alt="Bannière de la lettre d'information XMPP" title="Source : https://xmpp.org/images/newsletter/xmpp_newsletter_banner.svg"&gt;&lt;/p&gt;
+
+&lt;p&gt;Bienvenue dans la lettre d'information XMPP, ravi de vous retrouver ! Ce numéro couvre le mois de mars 2026.&lt;/p&gt;
+
+&lt;p&gt;La &lt;a href="https://xmpp.org/categories/newsletter/"&gt;lettre d'information XMPP&lt;/a&gt; vous est proposée par l'&lt;a href="https://xmpp.org/about/xsf/comm-team/"&gt;Équipe de communication de la XSF&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Comme tout autre projet accompli par la XSF, la lettre d'information est le résultat du travail volontaire de ses membres et des personnes y contribuant. Si vous êtes satisfait des services et logiciels que vous utilisez peut-être, n'hésitez pas à dire merci ou aider ces projets.&lt;/p&gt;
+
+&lt;p&gt;Vous souhaitez contribuer à &lt;a href="https://xmpp.org/about/xsf/comm-team/"&gt;l'équipe de communication de la XSF&lt;/a&gt; ? Lisez en bas de page.&lt;/p&gt;
+&lt;/div&gt;&lt;ul&gt;&lt;/ul&gt;&lt;div&gt;&lt;h2 class="sommaire"&gt;Sommaire&lt;/h2&gt;
+&lt;ul class="toc"&gt;
+&lt;li&gt;
+&lt;a href="#toc-annonces-de-la-xsf"&gt;Annonces de la XSF&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#toc-appel-%C3%A0-candidatures-xsf"&gt;Appel à candidatures XSF&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-%C3%89v%C3%A8nements-xmpp"&gt;Évènements XMPP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-vid%C3%A9os-et-conf%C3%A9rences-xmpp"&gt;Vidéos et conférences XMPP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-articles-xmpp"&gt;Articles XMPP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="#toc-nouvelles-des-logiciels-xmpp"&gt;Nouvelles des logiciels XMPP&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#toc-clients-et-applications-xmpp"&gt;Clients et Applications XMPP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-serveurs-xmpp"&gt;Serveurs XMPP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-biblioth%C3%A8ques-et-outils-xmpp"&gt;Bibliothèques et outils XMPP&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="#toc-extensions-et-sp%C3%A9cifications"&gt;Extensions et spécifications&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#toc-extensions-propos%C3%A9es"&gt;Extensions proposées&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-nouvelles-extensions"&gt;Nouvelles extensions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-extensions-d%C3%A9f%C3%A9r%C3%A9es"&gt;Extensions déférées&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-extensions-mises-%C3%A0-jour"&gt;Extensions mises à jour&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-dernier-appel"&gt;Dernier appel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-extensions-stables"&gt;Extensions stables&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-extensions-d%C3%A9pr%C3%A9ci%C3%A9es"&gt;Extensions dépréciées&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-extensions-rejet%C3%A9es"&gt;Extensions rejetées&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="#toc-partagez-les-nouvelles"&gt;Partagez les nouvelles&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#toc-contributions-et-traductions-de-la-lettre-dinformation"&gt;Contributions et traductions de la lettre d'information&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-aidez-nous-%C3%A0-cr%C3%A9er-la-lettre-dinformation"&gt;Aidez-nous à créer la lettre d'information&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc-licence"&gt;Licence&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="toc-annonces-de-la-xsf"&gt;Annonces de la XSF&lt;/h2&gt;
+&lt;h3 id="toc-appel-à-candidatures-xsf"&gt;Appel à candidatures XSF&lt;/h3&gt;
+
+&lt;p&gt;Être un membre élu de la XMPP Standards Foundation est un engagement pour un standard ouvert et un engagement professionnel dans / pour la communauté XMPP. Devenir membre aide la XSF à rester une organisation saine, ce qui lui tient à cœur. Cela permet également d'obtenir un droit de vote pour les sujets techniques et administratifs au sein de la XSF. La candidature est un acte simple et gratuit qui vous permet également de vous impliquer plus facilement. Si vous êtes intéressés par rejoindre la XMPP Standards Foundation en tant que membre, merci de candidater pour notre &lt;strong&gt;2ème appel trimestriel&lt;/strong&gt; &lt;a href="https://wiki.xmpp.org/web/Membership_Applications_Q2_2026"&gt;avant le 17 mai 2026 à 00:00 UTC&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="toc-Évènements-xmpp"&gt;Évènements XMPP&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Pour 2026, le &lt;a href="https://wiki.xmpp.org/web/Sprints/2026-06_Berlin"&gt;XMPP Sprint à Berlin&lt;/a&gt; aura lieu en juin, du vendredi 19 au dimanche 21, dans les bureaux de la &lt;a href="https://www.openstreetmap.org/node/2551527703#map=19/52.498414/13.381049"&gt;Wikimedia Deutschland e.V.&lt;/a&gt; à Berlin, en Allemagne. Si cet événement vous intéresse, venez nous rejoindre ! Pensez à vous inscrire &lt;a href="https://wiki.xmpp.org/web/Sprints/2026-06_Berlin#Attendees"&gt;ici&lt;/a&gt;, afin que nous sachions combien de personnes seront présentes et que nous puissions planifier en conséquence. Si vous avez des questions ou des interrogations, rejoignez-nous sur le salon de discussion : &lt;a href="xmpp:sprints@muc.xmpp.org?join"&gt;sprints@muc.xmpp.org&lt;/a&gt;!&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;XMPP au FOSSY 2026 : l'édition de cette année de &lt;a href="https://2026.fossy.ca/"&gt;FOSSY&lt;/a&gt;, la quatrième conférence annuelle &lt;em&gt;Free and Open Source Software&lt;/em&gt;, se tiendra au mois d'août, du jeudi 6 au dimanche 9, à &lt;a href="https://www.ubc.ca/"&gt;l'université de British Columbia&lt;/a&gt; à Vancouver au Canada. Comme toujours, la &lt;a href="https://2026.fossy.ca/pages/tracks/"&gt;thématique XMPP&lt;/a&gt; sera présente, et &lt;a href="https://2026.fossy.ca/call-for-proposals/"&gt;l'appel à propositions&lt;/a&gt; est ouvert jusqu'au 30 avril 2026.&lt;br&gt;
+Cette année encore, &lt;a href="https://jmp.chat/"&gt;JMP&lt;/a&gt; a le plaisir d'annoncer sa proposition de financement pour les intervenants potentiels qui souhaiteraient animer une conférence sur la thématique XMPP. N'hésitez pas à vous rendre sur &lt;a href="xmpp:discuss@conference.soprani.ca?join"&gt;discuss@conference.soprani.ca&lt;/a&gt; pour demander plus d'informations.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="toc-vidéos-et-conférences-xmpp"&gt;Vidéos et conférences XMPP&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href="https://gultsch.video/w/8FL21NETdAjnM23hWkYeiZ"&gt;IETF125 Hackathon: XEP-0202 Entity Time&lt;/a&gt;, par &lt;a href="https://gultsch.de/"&gt;Daniel Gultsch&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="toc-articles-xmpp"&gt;Articles XMPP&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://mov.im/community/pubsub.movim.eu/Movim/fb46d699-adc1-4fda-a76e-71ca1d246b80"&gt;Parlons des espaces dans XMPP&lt;/a&gt; par Timothée Jaussoin pour le &lt;a href="https://mov.im/community/pubsub.movim.eu/Movim"&gt;blog de Movim&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://dan.envs.net/blog/2026/2026-03-05-our-new-xmpp-muc-banbot"&gt;Notre nouveau BanBot pour salons XMPP (EN)&lt;/a&gt; par &lt;a href="https://dan.envs.net/contact"&gt;~dan&lt;/a&gt; pour &lt;a href="https://dan.envs.net/"&gt;le site Web ~dan sur envs.net&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://gultsch.de/posts/xmpp-via-http/"&gt;Envoyer des messages Jabber/XMPP via HTTP (EN)&lt;/a&gt;, par &lt;a href="https://gultsch.de/"&gt;Daniel Gultsch&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://gultsch.de/posts/self-hosting-up/"&gt;Auto-héberger UnifiedPush avec Conversations comme "distributeur" (EN)&lt;/a&gt;, par &lt;a href="https://gultsch.de/"&gt;Daniel Gultsch&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://the.teabag.ninja/2026/03/14/installing-ejabberd/"&gt;Installer ejabberd (EN)&lt;/a&gt;, par eltheanine pour &lt;a href="https://the.teabag.ninja/"&gt;The Teabag Ninja&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://www.process-one.net/blog/fluux-messenger-0-14-0/"&gt;Fluux Messenger 0.14.0 - Contrôle total des salons &amp;amp; des profils de contact enrichis (EN)&lt;/a&gt;, par &lt;a href="https://www.process-one.net/author/mremond/"&gt;Mickaël Rémond&lt;/a&gt; pour le &lt;a href="https://www.process-one.net/blog/"&gt;blog ProcessOne&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://gsvd.dev/blog/my-prosody-setup-with-docker-compose"&gt;Mon déploiement Prosody avec Docker Compose (EN)&lt;/a&gt;, par &lt;a href="https://gsvd.dev/contact"&gt;gsvd.dev&lt;/a&gt; pour le &lt;a href="https://gsvd.dev/blog"&gt;blog gsvd.dev&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://slidge.im/blog/2026/03/14/slidge-family-growing/"&gt;La famille Slidge s'agrandit (EN)&lt;/a&gt;, du &lt;a href="https://slidge.im/blog/"&gt;blog slidge.im&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://joinjabber.org/"&gt;JoinJabber&lt;/a&gt; : grâce à l'excellent travail fourni par l'un des membres de notre communauté, l'intégralité du site est désormais disponible en &lt;a href="https://joinjabber.org/pt-br/"&gt;Portugais (BR)&lt;/a&gt; ! Vous pouvez consulter l'état d'avancement de la traduction sur leur &lt;a href="https://translate.codeberg.org/projects/joinjabber/website/"&gt;page de status web translation&lt;/a&gt; et aider sur les autres traductions !&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://github.com/parenworks/CLabber/blob/feature/native-xmpp/README.org"&gt;Présentation de CLabber (EN)&lt;/a&gt; : Un client XMPP pour terminal (TUI) écrit en Common Lisp.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://monal-im.org/post/00016-upgrade-ejabberd-on-debian/"&gt;Mettez à jour ejabberd dans Debian MAINTENANT (EN)&lt;/a&gt; : il y a des chances que vous fassiez tourner un service &lt;a href="https://www.ejabberd.im/"&gt;ejabberd&lt;/a&gt; basé sur &lt;a href="https://www.debian.org/"&gt;Debian&lt;/a&gt;. Malheureusement, les notifications push de tous les utilisateurs &lt;a href="https://monal-im.org/"&gt;Monal&lt;/a&gt; de ce serveur vont dysfonctionner dans moins de 2 mois. Et il est probable que certaines de vos connexions S2S soient déjà en échec aujourd'hui. Par Thilo Molitor pour le &lt;a href="https://monal-im.org/post/"&gt;blog monal-im&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="toc-nouvelles-des-logiciels-xmpp"&gt;Nouvelles des logiciels XMPP&lt;/h2&gt;
+&lt;h3 id="toc-clients-et-applications-xmpp"&gt;Clients et Applications XMPP&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/cmeng-git/atalk-android/blob/master/README.md"&gt;aTalk&lt;/a&gt; a publié les versions &lt;a href="https://github.com/cmeng-git/atalk-android/releases/tag/5.2.0"&gt;5.2.0&lt;/a&gt; et &lt;a href="https://github.com/cmeng-git/atalk-android/releases/tag/5.2.1"&gt;5.2.1&lt;/a&gt; de son application de messagerie instantanée chiffrée Android supportant les appels vidéo et les fonctionnalités GPS. La première implémente la &lt;a href="https://xmpp.org/extensions/xep-0384.html"&gt;XEP-0384&lt;/a&gt; (chiffrement OMEMO), le déchiffrement des messages OMEMO, met à jour smack pour prendre en charge la &lt;a href="https://xmpp.org/extensions/xep-0420.html"&gt;XEP-0420&lt;/a&gt; (Chiffrement de contenu Stanza) ainsi que d’autres changements et corrections de bugs, tandis que la seconde corrige un bug de récupération des messages. Vous pouvez aller voir les journaux des versions intermédiaires de &lt;a href="https://github.com/cmeng-git/atalk-android/compare/5.1.0...5.2.0"&gt;5.1.0 à 5.2.0&lt;/a&gt; et &lt;a href="https://github.com/cmeng-git/atalk-android/compare/5.2.0...5.2.1"&gt;5.2.0 à 5.2.1&lt;/a&gt; pour tous les détails.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href="https://conversations.im/"&gt;Conversations&lt;/a&gt; a sorti les versions &lt;a href="https://codeberg.org/iNPUTmice/Conversations/releases/tag/2.19.13"&gt;2.19.13&lt;/a&gt;, &lt;a href="https://codeberg.org/iNPUTmice/Conversations/releases/tag/2.19.14"&gt;2.19.14&lt;/a&gt; et &lt;a href="https://codeberg.org/iNPUTmice/Conversations/releases/tag/2.19.15"&gt;2.9.15&lt;/a&gt; for Android.
+Ces versions incluent des correctifs pour un plantage lors du changement de modèle d'accès au bundle OMEMO, un plantage en partageant des adresses XMPP &lt;a href="https://quicksy.im/"&gt;Quicksy&lt;/a&gt;, un correctif pour la création d'un compte &lt;a href="https://quicksy.im/"&gt;Quicksy&lt;/a&gt; depuis d'anciens téléphones, affiche les &lt;code&gt;hats&lt;/code&gt; dans les salons publics le cas échéant, affiche un avertissement dans la discussion si un contact se trouve dans un autre fuseau horaire et qu'il fait nuit pour lui, une refactorisation de la gestion automatique du mode DND (ndt : ne pas déranger) (en se reposant sur le mécanisme DND du système sous-jacent), et un avertissement dans la fenêtre de discussion si le contact est en mode DND. Vous pouvez jeter un œil au &lt;a href="https://codeberg.org/iNPUTmice/Conversations/src/branch/master/CHANGELOG.md"&gt;journal des modifications&lt;/a&gt; pour tous les détails, ou encore consulter les journaux intermédiaires de &lt;a href="https://codeberg.org/iNPUTmice/Conversations/compare/2.19.12...2.19.13"&gt;2.19.12 à 2.19.13&lt;/a&gt;, &lt;a href="https://codeberg.org/iNPUTmice/Conversations/compare/2.19.13...2.19.14"&gt;2.19.13 à 2.19.14&lt;/a&gt; et/ou &lt;a href="https://codeberg.org/iNPUTmice/Conversations/compare/2.19.14...2.19.15"&gt;2.19.14 à 2.19.15&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f786d70702e6f72672f696d616765732f6e6577736c65747465722f323032362d30342d30352f636f6e766572736174696f6e732d636f6e746163742d74696d652e706e67/conversations-contact-time.png" alt="Conversations affichant l'heure locale du contact dans la fenêtre de chat" title="Source : https://xmpp.org/images/newsletter/2026-04-05/conversations-contact-time.png"&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://cheogram.com/"&gt;Cheogram&lt;/a&gt; a sorti la version &lt;a href="https://git.sr.ht/%7Esingpolyma/cheogram-android/refs/2.19.0-5"&gt;2.19.0-5&lt;/a&gt; pour Android. Une version corrective qui répare de nombreux plantages, n'utilise plus jamais de résolution DNS itérative pour DNSSEC, utilise désormais jabber.fr comme serveur de secours, récupère les correctifs de sécurité du projet amont, permet la recherche d'émoji par émoji (par exemple pour les réactions), une meilleure logique isApp pour décider s'il faut afficher la liste des commandes par défaut ou non et corrige les avatars de salons sur d'anciens serveurs. N'oubliez pas de consulter le &lt;a href="https://git.sr.ht/%7Esingpolyma/cheogram-android/refs"&gt;journal des modifications&lt;/a&gt; pour tous les détails.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://github.com/processone/fluux-messenger/blob/main/README.md"&gt;Fluux Messenger&lt;/a&gt; a publié les versions &lt;a href="https://github.com/processone/fluux-messenger/releases/tag/v0.13.3"&gt;0.13.3&lt;/a&gt; et &lt;a href="https://github.com/processone/fluux-messenger/releases/tag/v0.14.0"&gt;0.14.0&lt;/a&gt; de son client XMPP moderne et multi-platforme pour les communautés et les organisations avec une liste d'ajouts, de nouvelles fonctionnalités, d'améliorations et de corrections de bogues bien plus longue que ce que nous pourrions mentionner ici ! Vous pouvez directement aller voir le &lt;a href="https://github.com/processone/fluux-messenger/blob/main/CHANGELOG.md"&gt;journal des modifications complet&lt;/a&gt; ou lisez les journaux de modification intermédiaires entre les versions &lt;a href="https://github.com/processone/fluux-messenger/compare/v0.13.2...v0.13.3"&gt;0.13.2 et 0.13.3&lt;/a&gt; et/ou les versions &lt;a href="https://github.com/processone/fluux-messenger/compare/v0.13.3...v0.14.0"&gt;0.13.3 et 0.14.0&lt;/a&gt; pour tous les détails !&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f786d70702e6f72672f2f696d616765732f6e6577736c65747465722f323032362d30342d30352f666c7575782d6d657373656e6765722e706e67/fluux-messenger.png" alt="Le client XMPP pour les équipes Fluux" title="Source : https://xmpp.org//images/newsletter/2026-04-05/fluux-messenger.png"&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href="https://gajim.org/"&gt;Gajim&lt;/a&gt; a sorti la version &lt;a href="https://gajim.org/fr/posts/2026-03-30-gajim-2.4.5-released/"&gt;2.4.5&lt;/a&gt; de son appli de chat libre et complète pour XMPP. Cette version vous informe lorsque quelqu'un a réagi à un de vos messages. Elle inclut également la mise à jour automatique du fuseau horaire, des améliorations pour macOS ainsi que des corrections de bugs. Merci pour toutes vos contributions ! Vous pouvez consulter le &lt;a href="https://dev.gajim.org/gajim/gajim/-/blob/master/ChangeLog"&gt;journal des modifications&lt;/a&gt; pour tous les détails.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f786d70702e6f72672f696d616765732f6e6577736c65747465722f323032362d30342d30352f67616a696d2d74696d657a6f6e652d7570646174652e706e67/gajim-timezone-update.png" alt="Mise à jour automatique de fuseau horaire de Gajim" title="Source : https://xmpp.org/images/newsletter/2026-04-05/gajim-timezone-update.png"&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href="https://monal-im.org/"&gt;Monal&lt;/a&gt; a publié la version &lt;a href="https://github.com/monal-im/Monal/releases/tag/Build_iOS_1085"&gt;6.4.19&lt;/a&gt; pour iOS et macOS comportant une liste assez conséquente de correctifs.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://monocles.eu/more"&gt;Monocles&lt;/a&gt; a publié la version &lt;a href="https://codeberg.org/monocles/monocles_chat/releases/tag/CodebergRelease-v2.1.4"&gt;2.1.4&lt;/a&gt; de son client de messagerie pour Android. Cette version apporte des corrections pour la modération des messages, les textes tronqués, la gestion des clics sur les liens, la disparition de la fenêtre contextuelle des réactions, la destruction des MUC, un plantage lorsque le corps du message n'est pas "spannable", l'autorisation de la caméra/micro dans la webview de l'interface de commande et le choix d'une solution de repli pour le « channel binding » lorsque le serveur ne prend pas en charge la &lt;a href="https://xmpp.org/extensions/xep-0440.html"&gt;XEP-0440&lt;/a&gt; (SASL Channel-Binding Type Capability).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://poez.io/fr/"&gt;Poezio&lt;/a&gt; a publié la version &lt;a href="https://codeberg.org/poezio/poezio/releases/tag/v0.16"&gt;0.16&lt;/a&gt; de son client XMPP en console. Cette version implémente  &lt;a href="https://xmpp.org/extensions/xep-0425.html"&gt;XEP-0425&lt;/a&gt; (Moderated Message Retraction) pour la modération côté réception, la &lt;a href="https://xmpp.org/extensions/xep-0424.html"&gt;XEP-0424&lt;/a&gt; (Message Retraction) pour les événements de rétractation, la &lt;a href="https://xmpp.org/extensions/xep-0377.html"&gt;XEP-0377&lt;/a&gt; (Blocking Command Reports) avec un nouveau plugin &lt;code&gt;/report&lt;/code&gt; pour signaler le spam, une nouvelle commande &lt;code&gt;/tcp-reconnect&lt;/code&gt; pour couper les connexions TCP sur les réseaux défaillants, une option &lt;code&gt;tls_verify_cert&lt;/code&gt; pouvant être réglée sur &lt;code&gt;false&lt;/code&gt; si l'utilisateur le souhaite, ainsi que plusieurs correctifs. Vous trouverez tous les détails dans l'&lt;a href="https://blog.mathieui.net/en/poezio-0-16.html"&gt;annonce de publication&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f786d70702e6f72672f696d616765732f6e6577736c65747465722f323032362d30342d30352f706f657a696f2d6d6f6465726174652e706e67/poezio-moderate.png" alt="Test de rétractation d'un message modéré dans Poezio" title="Source : https://xmpp.org/images/newsletter/2026-04-05/poezio-moderate.png"&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://profanity-im.github.io/"&gt;Profanity&lt;/a&gt; a publié la version &lt;a href="https://github.com/profanity-im/profanity/releases/tag/0.17.0"&gt;0.17.0&lt;/a&gt; de son client XMPP en console écrit en C. L'annonce de cette version est si longue qu'elle s'étend sur 200 lignes riches en informations, ce qui est bien plus que ce que nous pourrions lister ici, donc pensez à consulter le &lt;a href="https://github.com/profanity-im/profanity/blob/master/CHANGELOG"&gt;journal des modifications&lt;/a&gt; pour tous les détails !&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://sourceforge.net/projects/psiplus/"&gt;Psi+&lt;/a&gt; a publié &lt;a href="https://sourceforge.net/projects/psiplus/files/Windows/Personal-Builds/KukuRuzo/"&gt;l'installeur de la version 1.5.2132.0&lt;/a&gt; de sa branche de développement du client XMPP &lt;a href="https://sourceforge.net/projects/psi/"&gt;Psi&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://github.com/dwd/Wimsy/blob/main/README.md"&gt;Wimsy&lt;/a&gt; a publié la version &lt;a href="https://github.com/dwd/Wimsy/releases/tag/v0.0.5"&gt;0.0.5&lt;/a&gt; de son client XMPP multi-platforme conçu avec Flutter.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://github.com/nioc/xmpp-web/blob/master/README.md"&gt;xmpp-web&lt;/a&gt; a publié la version &lt;a href="https://github.com/nioc/xmpp-web/releases/tag/0.12.0"&gt;0.12.0&lt;/a&gt; de son client de discussions web léger pour le serveur XMPP. Vous pouvez lire le journal des modifications intermédiaire de &lt;a href="https://github.com/nioc/xmpp-web/compare/0.11.0...0.12.0"&gt;0.11.0 à 0.12.0&lt;/a&gt; pour tous les détails.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="toc-serveurs-xmpp"&gt;Serveurs XMPP&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;La &lt;a href="https://www.igniterealtime.org/"&gt;communauté Ignite Realtime&lt;/a&gt; est heureuse d'annoncer la sortie de &lt;a href="https://discourse.igniterealtime.org/t/openfire-5-0-4-release/96411"&gt;Openfire 5.0.4&lt;/a&gt;. Cette version poursuit les efforts pour fournir une série de versions 5.0.x stables pendant la finalisation de la version 5.1.0 qui approche. Veuillez consulter le &lt;a href="https://download.igniterealtime.org/openfire/docs/latest/changelog.html"&gt;journal des modifications&lt;/a&gt; pour tous les détails ou encore le journal intermédiaire entre les versions &lt;a href="https://github.com/igniterealtime/Openfire/compare/v5.0.3...v5.0.4"&gt;0.5.3 à 0.5.4&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://www.erlang-solutions.com/technologies/mongooseim/"&gt;MongooseIM&lt;/a&gt; a publié &lt;a href="https://github.com/esl/MongooseIM/releases/tag/6.6.0"&gt;MongooseIM 6.6.0&lt;/a&gt; avec plus d'ajouts, de changements et de corrections que ce que nous pouvons raisonnablement énumérer ici ! Assurez-vous de lire le &lt;a href="https://github.com/esl/MongooseIM/blob/master/CHANGELOG.md"&gt;journal des modifications&lt;/a&gt; pour tous les détails !&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://www.process-one.net/"&gt;ProcessOne&lt;/a&gt; a le plaisir d'annoncer une nouvelle version corrective : &lt;a href="https://www.process-one.net/blog/ejabberd-26-03/"&gt;ejabberd 26.03&lt;/a&gt;. Elle apporte la prise en charge des pré-approbations d'abonnement, et plus de 100 révisions truffées de corrections de bogue, dont beaucoup sont dédiées au nouveau mod_invites, incluant également des correctifs de sécurité. Veillez à consulter le &lt;a href="https://www.process-one.net/blog/ejabberd-26-03/#a-namechangeloga-changelog"&gt;journal des modifications&lt;/a&gt; pour tous les détails et une liste complète des correctifs et améliorations dans cette version.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="toc-bibliothèques-et-outils-xmpp"&gt;Bibliothèques et outils XMPP&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://codeberg.org/slidge/matridge/src/branch/main/README.md"&gt;matridge&lt;/a&gt;, le pont entre XMPP et &lt;a href="https://matrix.org/"&gt;Matrix&lt;/a&gt; basé sur &lt;a href="https://slidge.im/"&gt;Slidge&lt;/a&gt; et &lt;a href="https://matrix-nio.readthedocs.io/en/latest/"&gt;nio&lt;/a&gt;, a publié la version &lt;a href="https://codeberg.org/slidge/matridge/releases/tag/v0.3.3"&gt;0.3.3&lt;/a&gt;. Vous pouvez lire le journal des modifications &lt;a href="https://codeberg.org/slidge/matridge/compare/v0.3.2...v0.3.3"&gt;entre la 0.3.2 et la 0.3.3&lt;/a&gt; pour tous les détails.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Les versions &lt;a href="https://invent.kde.org/libraries/qxmpp/-/tags/v1.14.4"&gt;1.14.4&lt;/a&gt; et &lt;a href="https://invent.kde.org/libraries/qxmpp/-/tags/v1.14.5"&gt;1.14.5&lt;/a&gt; de &lt;a href="https://invent.kde.org/libraries/qxmpp/-/blob/master/README.md"&gt;QXmpp&lt;/a&gt;, la bibliothèque client et serveur XMPP multiplateforme C++, ont été publiées. Tous les détails dans le &lt;a href="https://invent.kde.org/libraries/qxmpp/-/blob/master/CHANGELOG.md"&gt;journal des modifications&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://codeberg.org/thomas.leister/rusty-filer/src/branch/develop/README.md"&gt;Rusty-Filer&lt;/a&gt;, un serveur de fichiers XMPP externe pour les partages de fichiers en HTTP. C'est une alternative aux serveurs de fichiers HTTP internes de Ejabberd et Prosody, écrite en Rust et dont la version &lt;a href="https://codeberg.org/thomas.leister/rusty-filer/releases/tag/v1.0.0"&gt;1.0.0&lt;/a&gt; vient de sortir.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://codeberg.org/tpikonen/siltamesh/src/branch/main/README.md"&gt;Siltamesh&lt;/a&gt;, une passerelle simple entre &lt;a href="https://meshtastic.org/"&gt;Meshtastic&lt;/a&gt; et les réseaux XMPP, vient de sortir en version &lt;a href="https://codeberg.org/tpikonen/siltamesh/src/tag/0.2.0"&gt;0.2.0&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://codeberg.org/slidge/slidge-whatsapp/src/branch/main/README.md"&gt;slidge-whatsapp&lt;/a&gt;, la passerelle &lt;a href="https://www.whatsapp.com/"&gt;WhatsApp&lt;/a&gt; pour XMPP basée sur &lt;a href="https://slidge.im/"&gt;Slidge&lt;/a&gt; et &lt;a href="https://github.com/tulir/whatsmeow/blob/main/README.md"&gt;whatsmeow&lt;/a&gt;, est sortie en version &lt;a href="https://codeberg.org/slidge/slidge-whatsapp/releases/tag/v0.3.11beta1"&gt;0.3.11beta1&lt;/a&gt;. Vous pouvez consulter le journal des modifications intermédiaire de &lt;a href="https://codeberg.org/slidge/slidge-whatsapp/compare/v0.3.10...v0.3.11beta1"&gt;0.3.10 à 0.3.11beta1&lt;/a&gt; pour tous les détails.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://codeberg.org/slidge/slidgnal/src/branch/main/README.md"&gt;slidgnal&lt;/a&gt;, une &lt;a href="https://xmpp.org/extensions/xep-0100.html"&gt;passerelle&lt;/a&gt; de type marionnettiste (puppeteering gateway) entre &lt;a href="https://signal.org/"&gt;Signal&lt;/a&gt; et XMPP &lt;a href="https://slidge.im/docs/slidgnal/main/user/features.html"&gt;riche en fonctionnalités&lt;/a&gt;, basée sur &lt;a href="https://slidge.im/"&gt;slidge&lt;/a&gt; et &lt;a href="https://github.com/mautrix/signal/tree/main/pkg/signalmeow"&gt;signalmeow&lt;/a&gt;, est sortie en version &lt;a href="https://codeberg.org/slidge/slidgnal/releases/tag/v0.3.0beta10"&gt;0.3.0beta10&lt;/a&gt;. Vous pouvez consulter le journal des modifications intermédiaire de &lt;a href="https://codeberg.org/slidge/slidgnal/compare/v0.3.0beta9...v0.3.0beta10"&gt;0.3.0beta9 à 0.3.0beta10&lt;/a&gt; pour tous les détails.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://codeberg.org/poezio/slixmpp/src/branch/master/README.rst"&gt;Slixmpp&lt;/a&gt;, la bibliothèque XMPP sous licence MIT pour Python 3.7+  est sortie en version &lt;a href="https://codeberg.org/poezio/slixmpp/releases/tag/slix-1.14.1"&gt;1.14.1&lt;/a&gt;. Vous pouvez lire l'&lt;a href="https://blog.mathieui.net/en/slixmpp-1-14.html"&gt;annonce officielle de publication&lt;/a&gt; pour tous les détails.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://github.com/ekollof/xepher/blob/master/README.md"&gt;Xepher&lt;/a&gt; est un plugin écrit en C++23 qui ajoute à &lt;a href="https://weechat.org/"&gt;WeeChat&lt;/a&gt; la prise en charge complète de XMPP. Il cible la suite de conformité &lt;a href="https://xmpp.org/extensions/xep-0459.html"&gt;XEP-0459&lt;/a&gt; (XMPP Compliance Suite 2022) et implémente un large ensemble de XEP modernes — incluant &lt;a href="https://xmpp.org/extensions/xep-0384.html"&gt;XEP-0384&lt;/a&gt; (chiffrement OMEMO), &lt;a href="https://xmpp.org/extensions/xep-0313.html"&gt;XEP-0313&lt;/a&gt; (Message Archive Management), &lt;a href="https://xmpp.org/extensions/xep-0363.html"&gt;XEP-0363&lt;/a&gt; (HTTP File Upload), &lt;a href="https://xmpp.org/extensions/xep-0472.html"&gt;XEP-0472&lt;/a&gt; (Pubsub Social Feed) pour le microblogage via PubSub, et plus encore.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="toc-extensions-et-spécifications"&gt;Extensions et spécifications&lt;/h2&gt;
+
+&lt;p&gt;La XMPP Standards Foundation développe des extensions à XMPP dans sa &lt;a href="https://xmpp.org/extensions/"&gt;série de XEP&lt;/a&gt; en plus des &lt;a href="https://xmpp.org/rfcs/"&gt;RFC XMPP&lt;/a&gt;. Des développeuses, développeurs et autres personnes expertes en normes du monde entier collaborent à ces extensions, élaborant de nouvelles spécifications pour les pratiques émergentes et affinant les méthodes existantes. Proposées par n'importe qui, celles qui remportent le plus de succès finissent par être classées comme finales ou actives, selon leur type, tandis que les autres sont soigneusement archivées comme différées. Ce cycle de vie est décrit dans la &lt;a href="https://xmpp.org/extensions/xep-0001.html"&gt;XEP-0001&lt;/a&gt;, qui contient les définitions formelles et canoniques des types, des états et des processus. &lt;a href="https://xmpp.org/about/standards-process.html"&gt;Vous pouvez en savoir plus sur le processus de normalisation ici&lt;/a&gt;. La communication autour des normes et des extensions se fait via la &lt;a href="https://mail.jabber.org/postorius/lists/standards.xmpp.org/"&gt;liste de diffusion des normes&lt;/a&gt; (&lt;a href="https://mail.jabber.org/hyperkitty/list/standards@xmpp.org/"&gt;archives en ligne&lt;/a&gt;).&lt;/p&gt;
+&lt;h3 id="toc-extensions-proposées"&gt;Extensions proposées&lt;/h3&gt;
+
+&lt;p&gt;Le processus de développement d'une XEP commence par la rédaction d'une idée et sa soumission à l'&lt;a href="https://xmpp.org/about/xsf/editor-team/"&gt;éditeur XMPP&lt;/a&gt;. Dans un délai de deux semaines, le &lt;a href="https://xmpp.org/about/xmpp-standards-foundation/#council"&gt;Conseil&lt;/a&gt; décide d'accepter ou non cette proposition en tant que XEP expérimentale.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href="https://xmpp.org/extensions/inbox/explicit-mentions.html"&gt;Mentions explicites&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Cette spécification définit un moyen de mentionner explicitement une personne ou un groupe de personnes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="toc-nouvelles-extensions"&gt;Nouvelles extensions&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Pas de nouvelle XEP ce mois-ci.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="toc-extensions-déférées"&gt;Extensions déférées&lt;/h3&gt;
+
+&lt;p&gt;Si une XEP expérimentale n’est pas mise à jour pendant plus de douze mois, elle sera retirée de la catégorie Expérimentale pour être classée comme Déférée. Si une mise à jour intervient, la XEP sera replacée dans la catégorie Expérimentale.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Pas de XEP déférée ce mois-ci.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="toc-extensions-mises-à-jour"&gt;Extensions mises à jour&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Version 0.2.1 de &lt;a href="https://xmpp.org/extensions/xep-0461.html"&gt;XEP-0461&lt;/a&gt; (Réponses aux messages)
+
+&lt;ul&gt;
+&lt;li&gt;Mise à jour de l'exemple pour utiliser l'espace de noms de secours adéquat. (mye)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Version 0.1.1 de &lt;a href="https://xmpp.org/extensions/xep-0473.html"&gt;XEP-0473&lt;/a&gt; (OpenPGP pour XMPP Pubsub)
+
+&lt;ul&gt;
+&lt;li&gt;Correction d'une incohérence entre le texte et l'exemple ; c'est l'attribut &lt;code&gt;key&lt;/code&gt; qui porte l'identifiant du secret partagé (auparavant c'était &lt;code&gt;secret&lt;/code&gt;). (jp)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Version 0.1.1 de &lt;a href="https://xmpp.org/extensions/xep-0493.html"&gt;XEP-0493&lt;/a&gt; (Connexion client OAuth)
+
+&lt;ul&gt;
+&lt;li&gt;Correction de la référence à la &lt;a href="https://datatracker.ietf.org/doc/rfc7628/"&gt;RFC 7628&lt;/a&gt; pour &lt;code&gt;SASL OAUTHBEARER&lt;/code&gt; (Éditeur XEP : dg)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Version 0.1.1 de &lt;a href="https://xmpp.org/extensions/xep-0511.html"&gt;XEP-0511&lt;/a&gt; (Métadonnées de lien)
+
+&lt;ul&gt;
+&lt;li&gt;Ajout d'une considération de sécurité. Ajout d'un texte alternatif à l'exemple. (spw)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="toc-dernier-appel"&gt;Dernier appel&lt;/h3&gt;
+
+&lt;p&gt;Les derniers appels sont lancés une fois que tout le monde semble satisfait de l'état actuel d'une XEP. Une fois que le &lt;a href="https://xmpp.org/about/xmpp-standards-foundation/#council"&gt;Conseil&lt;/a&gt; a décidé que la XEP semble prête, l'&lt;a href="https://xmpp.org/about/xsf/editor-team/"&gt;Éditeur XMPP&lt;/a&gt; émet un dernier appel pour recueillir des commentaires. Les commentaires recueillis lors du dernier appel peuvent aider à améliorer la XEP avant de le renvoyer au Conseil pour qu'il passe à l'état Stable.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href="https://mail.jabber.org/hyperkitty/list/standards@xmpp.org/thread/4IF5UK2HVQDRUEV4LINWHUQFBRE2C63U/"&gt;Dernier appel&lt;/a&gt; à commentaires sur la &lt;a href="https://xmpp.org/extensions/xep-0377.html"&gt;XEP-0377&lt;/a&gt; (Blocking Command Reports)
+
+&lt;ul&gt;
+&lt;li&gt;Ce dernier appel commence le 2026-03-31 et devrait se terminera le 2026-04-14 à la fin de la session de travail.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="toc-extensions-stables"&gt;Extensions stables&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Pas de XEP passant à stable ce mois.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="toc-extensions-dépréciées"&gt;Extensions dépréciées&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Pas de XEP dépréciée ce mois.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="toc-extensions-rejetées"&gt;Extensions rejetées&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Pas de XEP rejetée ce mois.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="toc-partagez-les-nouvelles"&gt;Partagez les nouvelles&lt;/h2&gt;
+
+&lt;p&gt;Veuillez partager cette nouvelle sur d'autres réseaux :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://fosstodon.org/@xmpp/"&gt;Mastodon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mov.im/community/news.xmpp.org/Newsletter"&gt;Movim&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bsky.app/profile/xmpp.org"&gt;Bluesky&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.linkedin.com/company/xmpp-standards-foundation/"&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/channel/UCf3Kq2ElJDFQhYDdjn18RuA"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://slrpnk.net/c/xmpp"&gt;Instance Lemmy (non officielle)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.reddit.com/r/xmpp/"&gt;Reddit (non officiel)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.facebook.com/jabber"&gt;Page Facebook XMPP (non officielle)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Consultez également notre &lt;a href="https://xmpp.org/feeds/all.atom.xml"&gt;flux RSS&lt;/a&gt; !&lt;/p&gt;
+
+&lt;p&gt;Vous recherchez des offres d'emploi ou souhaitez engager un consultant professionnel pour votre projet XMPP ? Consultez notre &lt;a href="https://xmpp.work/"&gt;tableau d'affichage des offres d'emploi XMPP&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id="toc-contributions-et-traductions-de-la-lettre-dinformation"&gt;Contributions et traductions de la lettre d'information&lt;/h3&gt;
+
+&lt;p&gt;Il s'agit d'un effort communautaire, et nous tenons à remercier les traductrices et traducteurs pour leur contribution.&lt;br&gt;
+Les bénévoles et les nouvelles langues sont les bienvenues !&lt;br&gt;
+Les traductions de la lettre d'information XMPP seront publiées ici (avec un certain retard) :&lt;/p&gt;
+
+&lt;p&gt;Contributions à la lettre d'information de ce mois-ci : &lt;em&gt;emus, cal0pteryx, Gonzalo Raúl Nemmi, Ludovic Bocquet, Sairam Bisoyi, XSF iTeam&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Contributions à la traduction :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href="//linuxfr.org/tags/xmpp/public"&gt;Français&lt;/a&gt;: &lt;em&gt;Adrien Bourmault (neox), anubis, seveso, impromptux&lt;/em&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="/categories/newsletter/"&gt;Italien&lt;/a&gt;: &lt;em&gt;Mario Sabatino, Roberto Resoli&lt;/em&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="/categories/newsletter/"&gt;Portugais&lt;/a&gt;: &lt;em&gt;Paulo&lt;/em&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="toc-aidez-nous-à-créer-la-lettre-dinformation"&gt;Aidez-nous à créer la lettre d'information&lt;/h2&gt;
+
+&lt;p&gt;Cette lettre d'information XMPP est produite en collaboration avec la communauté XMPP. Chaque numéro mensuel est rédigé dans ce &lt;a href="https://pad.nixnet.services/oHnY_ZvLT8SoFyCqIC2ung"&gt;simple pad&lt;/a&gt;. À la fin de chaque mois, le contenu du pad est fusionné dans le &lt;a href="https://github.com/xsf/xmpp.org/milestone/3"&gt;dépôt GitHub de la XSF&lt;/a&gt;. Nous sommes toujours ravis d'accueillir de nouvelles personnes contributrices. N'hésitez pas à rejoindre la discussion dans notre &lt;a href="xmpp:commteam@muc.xmpp.org?join"&gt;groupe de discussion Comm-Team (MUC)&lt;/a&gt; et à nous aider ainsi à poursuivre cet effort communautaire. Vous avez un projet et souhaitez le faire connaître ? N'hésitez pas à partager vos actualités ou événements ici, et à les promouvoir auprès d'un large public.&lt;/p&gt;
+
+&lt;p&gt;Tâches que nous effectuons régulièrement :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;collecte d'actualités dans l'univers XMPP&lt;/li&gt;
+&lt;li&gt;résumés &lt;em&gt;courts&lt;/em&gt; d'actualités et d'événements&lt;/li&gt;
+&lt;li&gt;résumé de la communication mensuelle sur les extensions (XEP)&lt;/li&gt;
+&lt;li&gt;révision du projet de lettre d'information&lt;/li&gt;
+&lt;li&gt;préparation d'images pour les médias&lt;/li&gt;
+&lt;li&gt;traductions&lt;/li&gt;
+&lt;li&gt;communication via les comptes des médias&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="toc-licence"&gt;Licence&lt;/h2&gt;
+
+&lt;p&gt;Cette lettre d'information est publiée sous licence &lt;a href="https://creativecommons.org/licenses/by-sa/4.0/"&gt;CC BY-SA&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;a href="https://linuxfr.org/news/lettre-d-information-xmpp-de-mars-2026.epub"&gt;Télécharger ce contenu au format EPUB&lt;/a&gt;&lt;/div&gt;    &lt;p&gt;
+      &lt;strong&gt;Commentaires :&lt;/strong&gt;
+      &lt;a href="https://linuxfr.org/nodes/143269/comments.atom"&gt;voir le flux Atom&lt;/a&gt;
+      &lt;a href="https://linuxfr.org/news/lettre-d-information-xmpp-de-mars-2026#comments"&gt;ouvrir dans le navigateur&lt;/a&gt;
+    &lt;/p&gt;
+</content>
+    <author>
+      <name>Adrien 'neox' Bourmault</name>
+    </author>
+    <author>
+      <name>anubis</name>
+    </author>
+    <author>
+      <name>seveso</name>
+    </author>
+    <author>
+      <name>impromptux</name>
+    </author>
+    <author>
+      <name>Benoît Sibaud</name>
+    </author>
+    <category term="XMPP"/>
+    <category term="xmpp"/>
+    <wfw:commentRss>https://linuxfr.org/nodes/143269/comments.atom</wfw:commentRss>
+  </entry>
+  <entry>
+    <id>tag:linuxfr.org,2005:News/43071</id>
+    <published>2026-06-08T15:47:25+02:00</published>
+    <updated>2026-06-08T15:47:25+02:00</updated>
+    <link rel="alternate" type="text/html" href="https://linuxfr.org/news/nouveautes-de-juin-2026-de-la-communaute-scenari"/>
+    <title>Nouveautés de juin 2026 de la communauté Scenari</title>
+    <rights>Licence CC By‑SA http://creativecommons.org/licenses/by-sa/4.0/deed.fr</rights>
+    <content type="html">&lt;div&gt;&lt;p&gt;Scenari est un ensemble de logiciels open source dédiés à la &lt;strong&gt;production collaborative, publication et diffusion de documents multi-support&lt;/strong&gt;. Vous rédigez &lt;strong&gt;une seule fois&lt;/strong&gt; votre contenu et vous pouvez les &lt;strong&gt;générer sous plusieurs formes&lt;/strong&gt; : site web, PDF, OpenDocument, diaporama, paquet &lt;a href="https://fr.wikipedia.org/wiki/Sharable_Content_Object_Reference_Model"&gt;SCORM&lt;/a&gt; (Sharable Content Object Reference Model)… Vous ne vous concentrez que sur le contenu et l’outil se charge de créer un &lt;strong&gt;rendu professionnel accessible et responsive&lt;/strong&gt; (qui s’adapte à la taille de l’écran).&lt;/p&gt;
+
+&lt;p&gt;À chaque métier/contexte son modèle Scenari :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href="https://download.scenari.software/Opale"&gt;Opale&lt;/a&gt; pour la formation &lt;/li&gt;
+&lt;li&gt;
+&lt;a href="https://download.scenari.software/Dokiel"&gt;Dokiel&lt;/a&gt; pour la documentation &lt;/li&gt;
+&lt;li&gt;
+&lt;a href="https://download.scenari.software/Optim"&gt;Optim&lt;/a&gt; pour les présentations génériques &lt;/li&gt;
+&lt;li&gt;
+&lt;a href="https://download.scenari.software/Topaze"&gt;Topaze&lt;/a&gt; pour les études de cas &lt;/li&gt;
+&lt;li&gt;
+&lt;a href="https://download.scenari.software/Parcours"&gt;Parcours&lt;/a&gt; pour créer des scénarios de formation &lt;/li&gt;
+&lt;li&gt;et bien d’autres…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;ul&gt;&lt;li&gt;lien nᵒ 1 : &lt;a title="https://scenari.software/" hreflang="fr" href="https://linuxfr.org/redirect/117691"&gt;Explication de Scenari&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 2 : &lt;a title="https://scenari.org/co/demarrer.html" hreflang="fr" href="https://linuxfr.org/redirect/117692"&gt;Pour démarrer&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 3 : &lt;a title="https://download.scenari.software/" hreflang="fr" href="https://linuxfr.org/redirect/117693"&gt;Téléchargements&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 4 : &lt;a title="https://scenari.org/" hreflang="fr" href="https://linuxfr.org/redirect/117694"&gt;Communauté Scenari&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 5 : &lt;a title="https://framapiaf.org/@scenari" hreflang="fr" href="https://linuxfr.org/redirect/117695"&gt;Mastodon&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 6 : &lt;a title="https://bsky.app/profile/scenari-tech.bsky.social" hreflang="fr" href="https://linuxfr.org/redirect/117696"&gt;Bluesky&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 7 : &lt;a title="https://t.me/scenari_org" hreflang="fr" href="https://linuxfr.org/redirect/117697"&gt;Telegram&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 8 : &lt;a title="https://www.linkedin.com/company/association-scenari/" hreflang="fr" href="https://linuxfr.org/redirect/117698"&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;&lt;li&gt;lien nᵒ 9 : &lt;a title="https://tube.picasoft.net/a/assoscenari/video-channels" hreflang="fr" href="https://linuxfr.org/redirect/117699"&gt;Canal Peertube&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;h2 class="sommaire"&gt;Sommaire&lt;/h2&gt;
+&lt;ul class="toc"&gt;
+&lt;li&gt;&lt;a href="#toc--visio-de-d%C3%A9couverte-de-scenari"&gt;🚀 Visio de découverte de Scenari&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc--parole-de-la-communaut%C3%A9"&gt;💗 Parole de la communauté&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc--derniers-jours-pour-sinscrire-aux-rencontres-scenari-2026"&gt;📣 Derniers jours pour s’inscrire aux Rencontres Scenari 2026&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc--mod%C3%A8les-scenari-nouvellement-r%C3%A9f%C3%A9renc%C3%A9s"&gt;📣 Modèles Scenari nouvellement référencés&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc--tutoriel-et-gabarits-scenari-pour-les-profs-de-svt"&gt;📣 Tutoriel et gabarits Scenari pour les profs de SVT&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc--besoin-dun-coup-de-pouce-pour-la-communaut%C3%A9"&gt;📣 Besoin d’un coup de pouce pour la communauté&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc--archipel-2026-sur-les-enjeux-de-lanthropoc%C3%A8ne-compi%C3%A8gne---6-au-9-juillet"&gt;📣 « Archipel 2026 » sur les enjeux de l’Anthropocène (Compiègne - 6 au 9 juillet)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc--le-savais-tu"&gt;✨ Le savais-tu ?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc--le-chiffre-du-mois"&gt;📊 Le chiffre du mois&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toc--scenari-pr%C3%A9sent-dans-"&gt;🦋 Scenari présent dans …&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="toc--visio-de-découverte-de-scenari"&gt;🚀 Visio de découverte de Scenari&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f666f72756d732e7363656e6172692e6f72672f75706c6f6164732f64656661756c742f6f726967696e616c2f32582f372f373235353766373166366337666132663966303334323033343634353334653831303566646261312e706e67/72557f71f6c7fa2f9f034203464534e8105fdba1.png" alt="icone découverte de Scenari|200x200" title="Source : https://forums.scenari.org/uploads/default/original/2X/7/72557f71f6c7fa2f9f034203464534e8105fdba1.png"&gt;&lt;/p&gt;
+
+&lt;p&gt;🤔 Tu as des questions sur #Scenari avant de tester ?&lt;br&gt;
+🧙‍♂️ Tu voudrais une petite #demo ?&lt;br&gt;
+🚀 Tu commences à utiliser #Scenari et tu as besoin d’un peu de soutien ?&lt;/p&gt;
+
+&lt;p&gt;🗓️ rdv vendredi 12 juin 2026 de 16h00 à 17h00 sur &lt;a href="https://scenari.org/visio/miniwebinaire"&gt;https://scenari.org/visio/miniwebinaire&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;On t’expliquera tout !&lt;/p&gt;
+
+&lt;p&gt;📣 &lt;a href="https://www.agendadulibre.org/events/35129"&gt;Lien Agenda du Libre&lt;/a&gt;&lt;br&gt;
+📣 &lt;a href="https://mobilizon.picasoft.net/events/a1e4cdda-9a87-4ea8-af9e-ccdfb3ccea8a"&gt;Lien Mobilizon&lt;/a&gt;&lt;br&gt;
+📣 &lt;a href="https://www.linkedin.com/events/7468624672209657856?viewAsMember=true"&gt;Lien LinkedIn&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="toc--parole-de-la-communauté"&gt;💗 Parole de la communauté&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Mon premier contact avec Scenari date de 2010 au Centre Régional de Documentation Pédagogique de Montpellier où nous cherchions, avec l'équipe de formateurs que je coordonnais, à disposer d'un outil pour les supports de formation créés collaborativement. Rapidement, nous avons déployé un serveur Scenari qui nous a permis, grâce à Opale et sa gestion des versions, de disposer d'une banque de définitions utilisables dans certains contextes. Nous avons ensuite développé nos usages avec Dokiel, pour toutes les applications sur lesquelles nous formions, mais aussi WebMedia.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;L'organisation mise en place a préfiguré le modèle Canoprof, grâce au travail mené par Christophe Rhein en Limousin et Bernard Gugger en Bourgogne avec lesquels j'ai eu le plaisir de travailler.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Scenari a ensuite accompagné ma vie professionnelle à Centrale Méditerranée, où j'ai participé à un groupe de travail menée par l'Université de Lille pour créer une documentation mutualisée sur Moodle. Ici encore, tout le potentiel collaboratif de Scenari a fait merveille en mettant autour de la table (ou plutôt de l'ordinateur !) des établissements utilisateurs de Moodle avec des usages très différents.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Enfin, lorsque j'ai rejoint en 2024 le Centre Ministériel d'Appui aux formations à distance, j'ai eu la joie de rejoindre une équipe très impliquée dans l'utilisation de Scenari grâce au travail de Guy Vedrenne et Frédéric Waymel. Au quotidien, nous utilisons majoritairement le modèle Opale, mais également Dokiel, Webmedia et Topaze. Notre usage d'un serveur Scenari permet une culture d'équipe autour de l'outil et nous sommes en train de déployer les fonctions de relecture intégrées à Scenari pour faciliter les recettes. Nous embarquons également des contenus H5P dans Opale pour enrichir les activités proposées aux apprenants.&lt;/em&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f666f72756d732e7363656e6172692e6f72672f75706c6f6164732f64656661756c742f6f726967696e616c2f32582f392f393633336136643232323066653533346538653933343461316236396463663536643639393132312e706e67/9633a6d2220fe534e8e9344a1b69dcf56d699121.png" alt="Photo de Stephen Lédé" title="Source : https://forums.scenari.org/uploads/default/original/2X/9/9633a6d2220fe534e8e9344a1b69dcf56d699121.png"&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;strong&gt;Stephen Lédé&lt;/strong&gt;, ingénieur e-formation au Secrétariat Général des Ministères des Territoires Écologie Logement.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Modèles utilisés : &lt;a href="https://doc.scenari.software/Opale"&gt;Opale&lt;/a&gt;, &lt;a href="https://doc.scenari.software/Topaze"&gt;Topaze&lt;/a&gt;, &lt;a href="https://doc.scenari.software/Dokiel"&gt;Dokiel&lt;/a&gt;,  &lt;a href="https://doc.scenari.software/Webmedia"&gt;Webmedia&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="toc--derniers-jours-pour-sinscrire-aux-rencontres-scenari-2026"&gt;📣 Derniers jours pour s’inscrire aux Rencontres Scenari 2026&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f666f72756d732e7363656e6172692e6f72672f75706c6f6164732f64656661756c742f6f726967696e616c2f32582f352f356362393832663466376631323231383364653165333133363762643337663339333834353331342e706e67/5cb982f4f7f122183de1e31367bd37f393845314.png" alt="Rencontres Scenari 2026 inscriptions derniers jours|200x200" title="Source : https://forums.scenari.org/uploads/default/original/2X/5/5cb982f4f7f122183de1e31367bd37f393845314.png"&gt;&lt;/p&gt;
+
+&lt;p&gt;La période d’inscription aux Rencontres Scenari 2026 à l’ENSAM Aix-en-Provence commence à toucher à sa fin !&lt;/p&gt;
+
+&lt;p&gt;Rejoins-nous du lundi 22 (après-midi) au vendredi 26 (matin) juin. &lt;strong&gt;N’attends pas !&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;L’équipe de l’ENSAM Aix a présélectionné quelques hôtels proches. Il y a aussi quelques chambres du CROUS disponibles à &lt;strong&gt;tarif très économique&lt;/strong&gt; mais en quantité limitée. Les détails sur le &lt;a href="https://scenari.org/rencontres2026/co/hebergement.html"&gt;site des Rencontres&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="toc--modèles-scenari-nouvellement-référencés"&gt;📣 Modèles Scenari nouvellement référencés&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f666f72756d732e7363656e6172692e6f72672f75706c6f6164732f64656661756c742f6f726967696e616c2f32582f662f663239636463316631316161303365366664666138636334666666346163383662656161623938342e706e67/f29cdc1f11aa03e6fdfa8cc4fff4ac86beaab984.png" alt="icone référencements Scenari|169x200" title="Source : https://forums.scenari.org/uploads/default/original/2X/f/f29cdc1f11aa03e6fdfa8cc4fff4ac86beaab984.png"&gt;&lt;/p&gt;
+
+&lt;p&gt;Pour contribuer à la diffusion des logiciels Scenari, ceux-ci sont &lt;strong&gt;référencés dans différents catalogues&lt;/strong&gt;. Sur le &lt;strong&gt;Comptoir du libre&lt;/strong&gt; notamment, plusieurs fiches de modèle Scenari ont été ajoutées : &lt;a href="https://comptoir-du-libre.org/fr/softwares/878"&gt;Parcours&lt;/a&gt;, &lt;a href="https://comptoir-du-libre.org/fr/softwares/879"&gt;Process&lt;/a&gt;, &lt;a href="https://comptoir-du-libre.org/fr/softwares/880"&gt;Lexico&lt;/a&gt; et &lt;a href="https://comptoir-du-libre.org/fr/softwares/881"&gt;IDKey&lt;/a&gt;. Merci à &lt;a href="https://forums.scenari.org/u/cac"&gt;Camila&lt;/a&gt; pour ce travail !&lt;/p&gt;
+
+&lt;p&gt;Sur chaque fiche, tu peux &lt;strong&gt;te déclarer comme utilisateur, prestataire, et apporter un témoignage&lt;/strong&gt;. On t’invite à prendre 5min pour le faire ! 🙏&lt;/p&gt;
+
+&lt;p&gt;Retrouve l’ensemble des fiches sur la &lt;a href="https://forums.scenari.org/t/wiki-referencements-doutils-scenari/7044"&gt;page wiki dédiée du forum&lt;/a&gt; et contacte &lt;a href="https://forums.scenari.org/u/sd_lecnam"&gt;Sandrine&lt;/a&gt; si tu penses que tu peux prendre en charge la maintenance d’une fiche.&lt;/p&gt;
+&lt;h2 id="toc--tutoriel-et-gabarits-scenari-pour-les-profs-de-svt"&gt;📣 Tutoriel et gabarits Scenari pour les profs de SVT&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f666f72756d732e7363656e6172692e6f72672f75706c6f6164732f64656661756c742f6f726967696e616c2f32582f372f376461363639363731306464396236653634363933396133333236653532623733303461343464302e706e67/7da6696710dd9b6e646939a3326e52b7304a44d0.png" alt="icone tutos|200x119" title="Source : https://forums.scenari.org/uploads/default/original/2X/7/7da6696710dd9b6e646939a3326e52b7304a44d0.png"&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://forums.scenari.org/u/dsechet"&gt;Dephine Séchet&lt;/a&gt;, adhérente de l’association, professeure de SVT et formatrice académique a créé un tutoriel et des gabarits très complets basés &lt;a href="https://forge.apps.education.fr/sechetdelphine/gabarit-canoprof-moins-mieux"&gt;sur Canoprof&lt;/a&gt; et &lt;a href="https://forge.apps.education.fr/sechetdelphine/gabarit-moins-mieux-opale"&gt;sur Opale&lt;/a&gt;, et destinés aux enseignant⋅e⋅s de Sciences de la Vie et de la Terre.&lt;/p&gt;
+
+&lt;p&gt;Comme indiqué par Delphine : Les logiciels Opale et Canoprof avec des gabarits adaptables et des ressources professionnelles intégrés, sont adaptés pour préparer ses cours, et accompagner différentes dimensions du travail d'un enseignant.&lt;/p&gt;
+&lt;h2 id="toc--besoin-dun-coup-de-pouce-pour-la-communauté"&gt;📣 Besoin d’un coup de pouce pour la communauté&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f666f72756d732e7363656e6172692e6f72672f75706c6f6164732f64656661756c742f6f726967696e616c2f32582f662f663033343732313737646333356234396166303632373937613137363961336436323038366533332e706e67/f03472177dc35b49af062797a1769a3d62086e33.png" alt="icone coup de pouce|200x181" title="Source : https://forums.scenari.org/uploads/default/original/2X/f/f03472177dc35b49af062797a1769a3d62086e33.png"&gt;&lt;/p&gt;
+
+&lt;p&gt;Tu aimerais te faire la main sur &lt;a href="https://download.scenari.software/Webmedia"&gt;Webmedia&lt;/a&gt;, ou tu as simplement un peu de temps à dédier à l’association ?&lt;/p&gt;
+
+&lt;p&gt;On recherche un⋅e volontaire pour créer des &lt;strong&gt;publications Webmedia des conférences des Rencontres&lt;/strong&gt; passées.&lt;/p&gt;
+
+&lt;p&gt;Ça permettra de tirer parti au maximum des vidéos des conférences en les enrichissant et ça fera de chouettes demonstrateurs pour Webmedia.&lt;/p&gt;
+
+&lt;p&gt;Si tu peux donner un coup de main (même petit), contacte &lt;a href="mailto:direction@scenari.org"&gt;direction@scenari.org&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="toc--archipel-2026-sur-les-enjeux-de-lanthropocène-compiègne---6-au-9-juillet"&gt;📣 « Archipel 2026 » sur les enjeux de l’Anthropocène (Compiègne - 6 au 9 juillet)&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f666f72756d732e7363656e6172692e6f72672f75706c6f6164732f64656661756c742f6f726967696e616c2f32582f622f623439636632356338353138366330373132353130383432666166353736326235626365616134632e706e67/b49cf25c85186c0712510842faf5762b5bceaa4c.png" alt="logo Congrès Archipel|200x173" title="Source : https://forums.scenari.org/uploads/default/original/2X/b/b49cf25c85186c0712510842faf5762b5bceaa4c.png"&gt;&lt;/p&gt;
+
+&lt;p&gt;Si tu aimes nos conférences décalées aux Rencontres Scenari, tu vas aimer &lt;strong&gt;&lt;a href="https://archipel.scenari-community.org/"&gt;Archipel 2026&lt;/a&gt; consacré aux enjeux socio-écologiques.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://forums.scenari.org/u/stephane_crozat"&gt;Stéphane Crozat&lt;/a&gt;, un des créateurs de Scenari, ancien membre du bureau de l'association, et adhérent depuis toujours, est co-organisateur de cet événement. Hugues Choplin, qui nous avait présenté &lt;a href="https://scenari.org/rencontres2022/co/lowTech_huc.html"&gt;"Un ingénieur low-tech est-il possible ?"&lt;/a&gt; lors des Rencontres 2022 est aussi dans le comité d'organisation.&lt;/p&gt;
+
+&lt;p&gt;Cette conférence pluridisciplinaire accordera une importance toute particulière aux travaux collectifs des participants, à la fois dans les symposiums du matin et dans les ateliers de l’après-midi.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Les inscriptions sont ouvertes jusqu'au 12 juin.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Tu noteras un bel exemple d'usage de Optim pour faire le site &lt;a href="https://archipel.scenari-community.org/"&gt;Archipel 2026&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="toc--le-savais-tu"&gt;✨ Le savais-tu ?&lt;/h2&gt;
+
+&lt;p&gt;Les générateurs &lt;strong&gt;diaporama d’Opale, formation Dokiel et Optim 26&lt;/strong&gt; (qui arrivera prochainement), affichent par défaut &lt;strong&gt;la jauge d’avancement des diapositives dans un format défini&lt;/strong&gt; (sur Opale, elle est exprimée en % par exemple).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tu veux changer ça ? C’est possible 🤩&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Il suffit de faire un skin guidé avec SCENARIstyler et d’y mettre un petit bout de code javascript :&lt;/p&gt;
+
+&lt;p&gt;➡️ Pour Diaporama Opale : &lt;code&gt;slideshow.fCounterTemplate = '&amp;lt;span class="blkPercent"&amp;gt;øblock%ø%&amp;lt;/span&amp;gt;';&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;➡️ Pour Diaporama formation Dokiel : &lt;code&gt;slideshow.fCounterTemplate = '&amp;lt;span class="sld"&amp;gt;øcurrentSlideø&amp;lt;/span&amp;gt;&amp;lt;span class="blk"&amp;gt;.øcurrentBlockInSlideø&amp;lt;/span&amp;gt;';&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;➡️ Pour Diaporama Optim 26 : &lt;code&gt;slideshow.fCounterTemplate ='&amp;lt;span class="blkPercent"&amp;gt;øblock%ø%&amp;lt;/span&amp;gt;';&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;À la place de l’expression entre les caractères &lt;em&gt;ø&lt;/em&gt; tu peux mettre :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;em&gt;øcurrentSlideø&lt;/em&gt; : numéro de la diapositive actuelle&lt;/li&gt;
+&lt;li&gt;
+&lt;em&gt;øtotalSlidesø&lt;/em&gt; : nombre total de diapositives&lt;/li&gt;
+&lt;li&gt;
+&lt;em&gt;øcurrentBlockø&lt;/em&gt; : numéro du bloc actuel dans le diaporama&lt;/li&gt;
+&lt;li&gt;
+&lt;em&gt;øcurrentBlockInSlideø&lt;/em&gt; : numéro du bloc actuel dans la diapositive actuelle&lt;/li&gt;
+&lt;li&gt;
+&lt;em&gt;øtotalBlocksø&lt;/em&gt; : nombre total de blocs dans le diaporama&lt;/li&gt;
+&lt;li&gt;
+&lt;em&gt;øblock%ø&lt;/em&gt; : pourcentage de blocks dans le diaporama&lt;/li&gt;
+&lt;li&gt;
+&lt;em&gt;øslide%ø&lt;/em&gt; : pourcentage de diapositives dans le diaporama&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;On peut même combiner les différents affichages comme par exemple :&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;slideshow.fCounterTemplate = '&amp;lt;span class="blkPercent"&amp;gt;øcurrentSlideø / øtotalSlidesø&amp;lt;/span&amp;gt;';&lt;/code&gt; pour afficher le numéro de la diapositive actuelle / nombre total de diapositives.&lt;/p&gt;
+&lt;h2 id="toc--le-chiffre-du-mois"&gt;📊 Le chiffre du mois&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src="https://img.linuxfr.org/img/68747470733a2f2f666f72756d732e7363656e6172692e6f72672f75706c6f6164732f64656661756c742f6f726967696e616c2f32582f322f326235383432363536386132663730626266363438643466323032303866616438643633313131352e706e67/2b58426568a2f70bbf648d4f20208fad8d631115.png" alt="27" title="Source : https://forums.scenari.org/uploads/default/original/2X/2/2b58426568a2f70bbf648d4f20208fad8d631115.png"&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;strong&gt;27&lt;/strong&gt;, c’est en moyenne le nombre de nouveaux sujets de discussion créés chaque mois sur le &lt;a href="https://forums.scenari.org/"&gt;forum Scenari&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="toc--scenari-présent-dans-"&gt;🦋 Scenari présent dans …&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Le &lt;a href="https://www.csiesr.eu/"&gt;CSIESR&lt;/a&gt; a diffusé l’annonces des Rencontres Scenari 2026 à sa liste de membres.&lt;/li&gt;
+&lt;li&gt;L’April a diffusé l’annonce des Rencontres Scenari 2026 dans son &lt;a href="https://www.april.org/lettre-d-information-interne-des-membres-de-l-april-du-1er-juin-2026"&gt;bulletin d’information&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;div&gt;&lt;a href="https://linuxfr.org/news/nouveautes-de-juin-2026-de-la-communaute-scenari.epub"&gt;Télécharger ce contenu au format EPUB&lt;/a&gt;&lt;/div&gt;    &lt;p&gt;
+      &lt;strong&gt;Commentaires :&lt;/strong&gt;
+      &lt;a href="https://linuxfr.org/nodes/144163/comments.atom"&gt;voir le flux Atom&lt;/a&gt;
+      &lt;a href="https://linuxfr.org/news/nouveautes-de-juin-2026-de-la-communaute-scenari#comments"&gt;ouvrir dans le navigateur&lt;/a&gt;
+    &lt;/p&gt;
+</content>
+    <author>
+      <name>Association Scenari</name>
+    </author>
+    <category term="Communauté"/>
+    <category term="scenari"/>
+    <wfw:commentRss>https://linuxfr.org/nodes/144163/comments.atom</wfw:commentRss>
+  </entry>
+</feed>

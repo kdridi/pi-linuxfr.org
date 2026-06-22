@@ -1,0 +1,6 @@
+{
+  "name": "pi-linuxfr-dataset",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Project-local Pi extension for collecting public LinuxFr raw sources."
+}
