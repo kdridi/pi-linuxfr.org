@@ -12,10 +12,11 @@ The LinuxFr dataset extension lives in:
 .pi/extensions/linuxfr-dataset/
 ```
 
-It registers three Pi tools:
+It registers small, single-purpose Pi tools:
 
 - `linuxfr_collect_pages`: collect explicit public `linuxfr.org` URLs into local raw files.
 - `linuxfr_query_raw`: inspect collected raw sources with simple local filters.
+- `linuxfr_extract_candidates`: extract deduplicated LinuxFr detail URL candidates from already collected local seed sources.
 - `linuxfr_update_wiki`: create or update cited Markdown notes from selected raw sources.
 
 The tools are designed for human-directed collection, not crawling.
@@ -59,7 +60,17 @@ Raw sources remain the source material. Wiki notes are generated knowledge and m
    }
    ```
 
-3. Create a cited wiki note from selected paths or URLs returned by `linuxfr_query_raw`:
+3. Extract candidate detail URLs from already collected seed sources when selection should be reproducible:
+
+   ```json
+   {
+     "sourceType": "tag",
+     "query": "agent llm",
+     "limit": 10
+   }
+   ```
+
+4. Create a cited wiki note from selected paths or URLs returned by `linuxfr_query_raw`:
 
    ```json
    {
@@ -71,7 +82,7 @@ Raw sources remain the source material. Wiki notes are generated knowledge and m
    }
    ```
 
-4. Use the generated note under `data/wiki/notes/` and the cited raw files as local context.
+5. Use the generated note under `data/wiki/notes/` and the cited raw files as local context.
 
 ## Supported MVP sources
 
@@ -110,7 +121,7 @@ This MVP does not implement:
 - authentication;
 - form submission, voting, posting, or account actions;
 - full comments support;
-- automatic collection from feed entries;
+- automatic collection from extracted candidates;
 - a vector database;
 - scheduled jobs;
 - a complex taxonomy;
