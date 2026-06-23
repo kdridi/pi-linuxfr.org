@@ -342,6 +342,10 @@ topic?: string
 
 Validate the full MVP loop with a small representative dataset.
 
+### Status
+
+A lightweight manual validation procedure is documented in [`validation.md`](validation.md). It validates the collect/query/wiki loop with explicit public LinuxFr URLs and keeps generated `data/` files out of Git.
+
 ### Suggested validation set
 
 Collect a bounded sample from:
