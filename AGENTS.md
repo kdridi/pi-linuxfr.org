@@ -145,3 +145,7 @@ Before adding anything new, ask:
 3. Can it wait?
 
 If the answer is yes, prefer waiting.
+
+## Session handoff
+
+When the user asks whether the conversation can be reset, follow the end-of-conversation ritual in `RHYTHM.md`: check the repository state, explain pending commits or confirm the clean handoff point, and provide a readable restart prompt for the next conversation. Show that prompt to the user and, when possible, copy it to the clipboard with `pbcopy`.
