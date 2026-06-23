@@ -136,6 +136,24 @@ This is human-directed collection, not bulk crawling:
 - prefer local cached raw files;
 - do not bypass access controls or technical protections.
 
+## Ticket workflow
+
+Use local tickets for non-trivial repository changes, multi-step work, or work that should be resumable across sessions.
+
+For trivial typo fixes, bootstrap repairs, or user-explicit one-off changes, a ticket is optional. If no ticket is used, keep the change small and explain why.
+
+When work is driven by local tickets, read `tickets/README.md` before changing files.
+
+Use the ticket directories as workflow state:
+
+- `tickets/backlog/` for rough ideas;
+- `tickets/planned/` for implementation-ready tickets;
+- `tickets/ongoing/` for the single active ticket;
+- `tickets/completed/` for implemented and verified tickets;
+- `tickets/rejected/` for tickets intentionally not implemented as written.
+
+At the start of ticketed work, inspect `tickets/ongoing/` first. If a ticket is ongoing, continue only that ticket unless the user explicitly changes direction.
+
 ## Change discipline
 
 Before adding anything new, ask:
