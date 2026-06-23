@@ -240,7 +240,21 @@ function cleanXmlText(rawText: string): string {
 }
 
 function cleanHtmlText(rawText: string): string {
-  return compactWhitespace(decodeBasicEntities(rawText).replace(/<[^>]+>/g, " "));
+  const relevantHtml = firstHtmlSection(rawText, "article") ?? firstHtmlSection(rawText, "main") ?? rawText;
+  const withoutNoisyBlocks = relevantHtml
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ")
+    .replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi, " ")
+    .replace(/<nav\b[^>]*>[\s\S]*?<\/nav>/gi, " ")
+    .replace(/<header\b[^>]*>[\s\S]*?<\/header>/gi, " ")
+    .replace(/<footer\b[^>]*>[\s\S]*?<\/footer>/gi, " ")
+    .replace(/<form\b[^>]*>[\s\S]*?<\/form>/gi, " ");
+  return compactWhitespace(decodeBasicEntities(withoutNoisyBlocks).replace(/<[^>]+>/g, " "));
+}
+
+function firstHtmlSection(rawText: string, tagName: "main" | "article"): string | undefined {
+  const pattern = new RegExp(`<${tagName}\\b[^>]*>([\\s\\S]*?)<\\/${tagName}>`, "i");
+  return pattern.exec(rawText)?.[1];
 }
 
 function decodeBasicEntities(value: string): string {
