@@ -83,6 +83,22 @@ export default function (pi: ExtensionAPI) {
     description: "Run a bounded read-only child Pi advisory diagnostic",
     handler: async (args, ctx) => {
       const prompt = buildChildDiagnosticPrompt(args);
+      const startingText = renderChildDiagnosticStarting();
+
+      if (ctx.mode === "print") {
+        process.stdout.write(`${startingText}\n\n`);
+      } else {
+        pi.sendMessage({
+          customType: "ticket-child-diagnostic-starting",
+          content: startingText,
+          display: true,
+          details: {
+            childTools: [...CHILD_PI_TOOL_ALLOWLIST],
+            childResourcesDisabled: ["extensions", "skills", "prompt templates", "themes", "session persistence"],
+          },
+        });
+      }
+
       const result = await runReadOnlyChildPiAdvisory(ctx.cwd, { prompt });
       const text = renderChildDiagnostic(result);
 
@@ -243,6 +259,17 @@ function buildChildDiagnosticPrompt(args: string): string {
     "Use only read-only inspection if needed.",
     "Return concise Markdown with these sections: Result, Evidence, Safety Boundary.",
     `Task: ${requestedTask}`,
+  ].join("\n");
+}
+
+function renderChildDiagnosticStarting(): string {
+  return [
+    "# Ticket Child Diagnostic",
+    "",
+    "Starting read-only child Pi advisory run...",
+    "",
+    "Safety boundary: child tools are limited to `read`, `grep`, `find`, and `ls`.",
+    "Child extensions, skills, prompt templates, themes, and session persistence are disabled.",
   ].join("\n");
 }
 

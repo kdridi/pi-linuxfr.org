@@ -24,7 +24,7 @@ Read-only command that reports ticket counts by state, the active ongoing ticket
 
 ### `/ticket-child-diagnostic`
 
-Read-only diagnostic command for the reusable child Pi advisory runner. It launches one bounded child Pi process, captures its Markdown output, and displays it to the parent session. The command is for validating the runner primitive; future commands should call the helper directly and write advisory artifacts themselves when appropriate.
+Read-only diagnostic command for the reusable child Pi advisory runner. It immediately displays a starting message, launches one bounded child Pi process, captures its Markdown output, and displays the final result to the parent session. The command is for validating the runner primitive; future commands should call the helper directly and write advisory artifacts themselves when appropriate.
 
 The child process is launched with this safety boundary:
 
