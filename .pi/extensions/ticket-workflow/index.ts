@@ -1,4 +1,4 @@
-import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
+import type { ExtensionAPI, ExtensionCommandContext } from "@earendil-works/pi-coding-agent";
 import { spawn } from "node:child_process";
 import { createHash } from "node:crypto";
 import { existsSync } from "node:fs";
@@ -19,6 +19,24 @@ const CHILD_PI_DEFAULT_TIMEOUT_MS = 120_000;
 
 export type TicketState = (typeof TICKET_STATES)[number];
 export type AdvisoryArtifactType = (typeof ADVISORY_ARTIFACT_TYPES)[number];
+
+export type AdvisoryParentHandoffParams = {
+  commandName: string;
+  originalRequest: string;
+  advisoryResult: string;
+  artifactPath?: string;
+};
+
+export type AdvisoryParentHandoffDelivery =
+  | {
+      sent: true;
+      message: string;
+    }
+  | {
+      sent: false;
+      message: string;
+      suggestedHandoff: string;
+    };
 
 type StateStatus = {
   state: TicketState;
@@ -349,6 +367,67 @@ export async function computeTicketSha256(cwd: string, ticketPath: string): Prom
   const normalizedTicketPath = normalizeRelativeTicketPath(ticketPath);
   const content = await readFile(join(cwd, normalizedTicketPath));
   return createHash("sha256").update(content).digest("hex");
+}
+
+export function buildAdvisoryParentHandoffMessage(params: AdvisoryParentHandoffParams): string {
+  return [
+    "A ticket workflow advisory command completed.",
+    "",
+    `Command: ${params.commandName}`,
+    "",
+    "Original request:",
+    params.originalRequest.trim() || "(none provided)",
+    "",
+    "Advisory artifact:",
+    params.artifactPath?.trim() || "(none)",
+    "",
+    "Advisory result:",
+    params.advisoryResult.trim() || "(no advisory result)",
+    "",
+    "This is advisory only. Ticket files and ticket directories remain authoritative.",
+    "Please synthesize the result for the user, explain what matters, propose the next action, and do not mutate ticket state, edit ticket files, commit, or perform workflow transitions without explicit human approval.",
+  ].join("\n");
+}
+
+export function shouldSendAdvisoryParentHandoff(ctx: Pick<ExtensionCommandContext, "mode">): boolean {
+  return ctx.mode === "tui" || ctx.mode === "rpc";
+}
+
+export function deliverAdvisoryParentHandoff(
+  pi: ExtensionAPI,
+  ctx: Pick<ExtensionCommandContext, "isIdle" | "mode">,
+  params: AdvisoryParentHandoffParams,
+): AdvisoryParentHandoffDelivery {
+  const message = buildAdvisoryParentHandoffMessage(params);
+
+  if (shouldSendAdvisoryParentHandoff(ctx)) {
+    if (ctx.isIdle()) {
+      pi.sendUserMessage(message);
+    } else {
+      pi.sendUserMessage(message, { deliverAs: "followUp" });
+    }
+
+    return { sent: true, message };
+  }
+
+  const suggestedHandoff = renderSuggestedAdvisoryParentHandoff(message);
+
+  if (ctx.mode === "print") {
+    process.stdout.write(`${suggestedHandoff}\n`);
+  }
+
+  return { sent: false, message, suggestedHandoff };
+}
+
+function renderSuggestedAdvisoryParentHandoff(message: string): string {
+  return [
+    "# Suggested Parent LLM Handoff",
+    "",
+    "This command is running in a non-interactive mode, so it did not trigger a parent LLM follow-up.",
+    "Paste this message into an interactive parent Pi session if you want conversational synthesis:",
+    "",
+    message,
+  ].join("\n");
 }
 
 async function inspectState(cwd: string, state: TicketState): Promise<StateStatus> {
