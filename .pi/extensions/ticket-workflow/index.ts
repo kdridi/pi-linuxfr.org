@@ -76,6 +76,13 @@ export type ReadOnlyChildPiAdvisoryResult = {
   timedOut: boolean;
 };
 
+type TicketDependencyStatus = {
+  dependency: string;
+  state?: TicketState;
+  resolved: boolean;
+  note: string;
+};
+
 export default function (pi: ExtensionAPI) {
   pi.registerCommand("ticket-status", {
     description: "Inspect the file-based ticket workflow without mutating repository files",
@@ -211,6 +218,95 @@ export default function (pi: ExtensionAPI) {
           ticketId,
           ticketPath,
           artifactPath,
+          childResult,
+          parentHandoff: delivery,
+        },
+      });
+    },
+  });
+
+  pi.registerCommand("ticket-plan", {
+    description: "Create a read-only advisory implementation plan for a planned ticket",
+    handler: async (args, ctx) => {
+      const ticketId = parseTicketIdArg(args, "ticket-plan");
+      const ticketPath = requirePlannedTicketPath(ctx.cwd, ticketId);
+      const artifactPath = buildAdvisoryArtifactPath(ticketId, "plans");
+      const dependencies = await inspectTicketDependencies(ctx.cwd, ticketPath);
+      const startingText = renderPlanStarting(ticketId, ticketPath, artifactPath, dependencies);
+
+      if (ctx.mode === "print") {
+        process.stdout.write(`${startingText}\n\n`);
+      } else {
+        pi.sendMessage({
+          customType: "ticket-plan-starting",
+          content: startingText,
+          display: true,
+          details: {
+            ticketId,
+            ticketPath,
+            artifactPath,
+            dependencies,
+            childTools: [...CHILD_PI_TOOL_ALLOWLIST],
+          },
+        });
+      }
+
+      const childResult = await runReadOnlyChildPiAdvisory(ctx.cwd, {
+        prompt: buildPlanPrompt(ticketId, ticketPath, dependencies),
+      });
+      const metadata = await buildAdvisoryArtifactMetadata(ctx.cwd, {
+        artifactType: "plans",
+        commandName: "ticket-plan",
+        ticketPath,
+      });
+      const advisoryResult = renderPlanAdvisoryMarkdown(dependencies, childResult.markdown);
+      const artifact = renderPlanArtifact(metadata, advisoryResult);
+
+      await mkdir(join(ctx.cwd, posix.dirname(artifactPath)), { recursive: true });
+      await writeFile(join(ctx.cwd, artifactPath), artifact, "utf8");
+
+      const text = renderPlanResult(ticketId, ticketPath, artifactPath, advisoryResult);
+      const handoffParams = {
+        commandName: "ticket-plan",
+        originalRequest: `/ticket-plan ${args.trim()}`.trim(),
+        advisoryResult,
+        artifactPath,
+      };
+
+      if (ctx.mode === "print") {
+        process.stdout.write(`${text}\n\n`);
+        deliverAdvisoryParentHandoff(pi, ctx, handoffParams);
+        return;
+      }
+
+      if (shouldSendAdvisoryParentHandoff(ctx)) {
+        pi.sendMessage({
+          customType: "ticket-plan",
+          content: text,
+          display: true,
+          details: {
+            ticketId,
+            ticketPath,
+            artifactPath,
+            dependencies,
+            childResult,
+          },
+        });
+        deliverAdvisoryParentHandoff(pi, ctx, handoffParams);
+        return;
+      }
+
+      const delivery = deliverAdvisoryParentHandoff(pi, ctx, handoffParams);
+      const content = delivery.sent ? text : `${text}\n\n${delivery.suggestedHandoff}`;
+      pi.sendMessage({
+        customType: "ticket-plan",
+        content,
+        display: true,
+        details: {
+          ticketId,
+          ticketPath,
+          artifactPath,
+          dependencies,
           childResult,
           parentHandoff: delivery,
         },
@@ -385,6 +481,32 @@ function buildReadinessPrompt(ticketId: string, ticketPath: string): string {
   ].join("\n");
 }
 
+function buildPlanPrompt(ticketId: string, ticketPath: string, dependencies: TicketDependencyStatus[]): string {
+  return [
+    "You are a read-only child Pi advisory session for the pi-linuxfr.org ticket workflow.",
+    "Do not modify files. Do not move tickets. Do not create artifacts. Do not attempt to use write, edit, or bash.",
+    "Prepare an implementation plan for the target planned ticket. The plan is advisory only and must not activate the ticket.",
+    "Read these sources at minimum:",
+    "- tickets/README.md",
+    "- docs/ticket-workflow-commands.md",
+    `- ${ticketPath}`,
+    "Also inspect likely code or documentation files needed to implement the ticket, and completed dependency tickets when useful.",
+    "Dependency pre-check from the parent command:",
+    renderDependencyStatusList(dependencies),
+    "Return concise Markdown with these sections:",
+    "1. Objective Restatement — summarize the exact outcome.",
+    "2. Scope Boundaries — list in-scope and out-of-scope work.",
+    "3. Dependency Review — call out unresolved or uncertain dependencies, or say none.",
+    "4. Likely Files — list likely files and mark uncertainty explicitly.",
+    "5. Implementation Steps — provide a small step-by-step plan.",
+    "6. Acceptance Criteria to Verification Map — map each acceptance criterion to implementation and verification steps where practical.",
+    "7. Risks and Uncertainties — list concrete risks or say none.",
+    "8. Stop Conditions — name conditions that should stop implementation and ask the human before continuing.",
+    "9. Safety Boundary — confirm this was read-only advisory analysis and no ticket transition was performed.",
+    `Target ticket: ${ticketId}`,
+  ].join("\n");
+}
+
 function renderChildDiagnosticStarting(): string {
   return [
     "# Ticket Child Diagnostic",
@@ -465,6 +587,92 @@ function renderReadinessArtifact(metadata: AdvisoryArtifactMetadata, advisoryMar
   ].join("\n");
 }
 
+function renderPlanStarting(
+  ticketId: string,
+  ticketPath: string,
+  artifactPath: string,
+  dependencies: TicketDependencyStatus[],
+): string {
+  return [
+    "# Ticket Plan",
+    "",
+    `Starting read-only implementation planning for ${ticketId}.`,
+    "",
+    `Source ticket: ${ticketPath}`,
+    `Advisory artifact: ${artifactPath}`,
+    "Safety boundary: the command only accepts planned tickets and the child analysis uses `read`, `grep`, `find`, and `ls`.",
+    "",
+    "## Dependency pre-check",
+    "",
+    renderDependencyStatusList(dependencies),
+  ].join("\n");
+}
+
+function renderPlanResult(ticketId: string, ticketPath: string, artifactPath: string, advisoryMarkdown: string): string {
+  return [
+    "# Ticket Plan",
+    "",
+    `Source ticket: ${ticketPath}`,
+    `Advisory artifact: ${artifactPath}`,
+    "",
+    "This result is advisory only. Ticket files and ticket directories remain authoritative.",
+    "No ticket state transition was performed.",
+    "",
+    "## Advisory result",
+    "",
+    advisoryMarkdown || "(no advisory result)",
+    "",
+    "## Recommended parent action",
+    "",
+    `Review the implementation plan for ${ticketId}, ask any required human questions, and only then decide whether to activate the ticket manually.`,
+  ].join("\n");
+}
+
+function renderPlanArtifact(metadata: AdvisoryArtifactMetadata, advisoryMarkdown: string): string {
+  return [
+    renderAdvisoryArtifactFrontmatter(metadata),
+    `# Implementation Plan: ${metadata.ticketId}`,
+    "",
+    metadata.advisoryNotice,
+    "",
+    "## Source",
+    "",
+    `- Ticket: \`${metadata.ticketPath}\``,
+    `- Ticket state at generation: \`${metadata.ticketState ?? "unknown"}\``,
+    `- Ticket SHA-256: \`${metadata.ticketSha256}\``,
+    "",
+    "## Advisory Result",
+    "",
+    advisoryMarkdown || "(no advisory result)",
+  ].join("\n");
+}
+
+function renderPlanAdvisoryMarkdown(dependencies: TicketDependencyStatus[], childMarkdown: string): string {
+  return [
+    "## Parent Dependency Pre-check",
+    "",
+    renderDependencyStatusList(dependencies),
+    "",
+    "## Child Implementation Plan",
+    "",
+    childMarkdown || "(no advisory result)",
+  ].join("\n");
+}
+
+function renderDependencyStatusList(dependencies: TicketDependencyStatus[]): string {
+  if (dependencies.length === 0) {
+    return "- No ticket dependencies declared in frontmatter.";
+  }
+
+  return dependencies
+    .map((dependency) => {
+      const state = dependency.state ? `tickets/${dependency.state}/` : "not found";
+      const marker = dependency.resolved ? "resolved" : "unresolved";
+      return `- \`${dependency.dependency}\` — ${marker}; ${state}; ${dependency.note}`;
+    })
+    .join("\n");
+}
+
 function renderAdvisoryArtifactFrontmatter(metadata: AdvisoryArtifactMetadata): string {
   const lines = [
     "---",
@@ -520,6 +728,60 @@ function requireBacklogTicketPath(cwd: string, ticketId: string): string {
   }
 
   throw new Error(`Ticket ${ticketId} was not found in tickets/backlog/.`);
+}
+
+function requirePlannedTicketPath(cwd: string, ticketId: string): string {
+  const plannedPath = posix.join(TICKET_ROOT, "planned", `${ticketId}.md`);
+
+  if (existsSync(join(cwd, plannedPath))) {
+    return plannedPath;
+  }
+
+  const currentState = TICKET_STATES.find((state) =>
+    existsSync(join(cwd, posix.join(TICKET_ROOT, state, `${ticketId}.md`))),
+  );
+
+  if (currentState) {
+    throw new Error(`Ticket ${ticketId} is in tickets/${currentState}/; /ticket-plan only accepts planned tickets.`);
+  }
+
+  throw new Error(`Ticket ${ticketId} was not found in tickets/planned/.`);
+}
+
+async function inspectTicketDependencies(cwd: string, ticketPath: string): Promise<TicketDependencyStatus[]> {
+  const content = await readFile(join(cwd, ticketPath), "utf8");
+  const dependencies = parseFrontmatterDependencies(content);
+
+  return dependencies.map((dependency) => {
+    const state = TICKET_ID_PATTERN.test(dependency) ? findTicketState(cwd, dependency) : undefined;
+    const resolved = state === "completed";
+    const note = resolved
+      ? "dependency ticket is completed"
+      : state
+        ? `dependency ticket is still in ${state}`
+        : "dependency ticket was not found in the local ticket directories";
+
+    return {
+      dependency,
+      state,
+      resolved,
+      note,
+    };
+  });
+}
+
+function parseFrontmatterDependencies(content: string): string[] {
+  const match = content.match(/^dependencies:\s*\[(.*)\]\s*$/m);
+
+  if (!match) {
+    return [];
+  }
+
+  return Array.from(match[1].matchAll(/["']([^"']+)["']/g), (dependency) => dependency[1]);
+}
+
+function findTicketState(cwd: string, ticketId: string): TicketState | undefined {
+  return TICKET_STATES.find((state) => existsSync(join(cwd, posix.join(TICKET_ROOT, state, `${ticketId}.md`))));
 }
 
 async function inspectTicketStatus(cwd: string): Promise<TicketStatus> {

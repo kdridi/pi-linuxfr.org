@@ -46,6 +46,20 @@ The command refuses tickets outside `tickets/backlog/`. It starts a bounded read
 
 The command does not edit tickets, move tickets, create split tickets, resolve dependencies, or perform workflow transitions.
 
+### `/ticket-plan <ticket-id>`
+
+Read-only advisory command that analyzes a ticket currently in `tickets/planned/` and writes an implementation plan to:
+
+```text
+tickets/.artifacts/plans/<ticket-id>.md
+```
+
+The command refuses tickets outside `tickets/planned/`. It performs a small parent dependency pre-check, starts a bounded read-only child Pi analysis, writes advisory metadata with the source ticket fingerprint, displays the implementation plan, and hands the advisory result back to the parent LLM according to the parent handoff convention.
+
+The plan should restate the objective, summarize scope boundaries, identify likely files while marking uncertainty, outline implementation steps, map acceptance criteria to verification steps where practical, list risks, and name stop conditions for scope drift or missing information.
+
+The command does not activate tickets, edit tickets, resolve dependencies automatically, run a write-capable child, commit changes, or perform workflow transitions.
+
 ## Command interaction classes
 
 Ticket workflow commands fall into two interaction classes:
@@ -55,7 +69,7 @@ Ticket workflow commands fall into two interaction classes:
 
 `/ticket-status` is deterministic and display-only. Future audit commands such as `/ticket-doctor` should also stay deterministic and display-only by default unless a later ticket explicitly adds advisory handoff behavior.
 
-`/ticket-readiness` is advisory and uses the parent LLM handoff pattern below. Future advisory commands such as `/ticket-plan`, `/ticket-verify`, `/ticket-activate-check`, and `/ticket-completion-brief` should use the same pattern.
+`/ticket-readiness` and `/ticket-plan` are advisory and use the parent LLM handoff pattern below. Future advisory commands such as `/ticket-verify`, `/ticket-activate-check`, and `/ticket-completion-brief` should use the same pattern.
 
 ## Advisory parent handoff
 
