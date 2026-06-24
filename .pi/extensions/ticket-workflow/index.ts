@@ -408,6 +408,129 @@ export default function (pi: ExtensionAPI) {
       });
     },
   });
+
+  pi.registerCommand("ticket-completion-brief", {
+    description: "Prepare a read-only advisory completion brief for the single ongoing ticket",
+    handler: async (_args, ctx) => {
+      const ongoing = await requireSingleOngoingTicket(ctx.cwd);
+      const ticketId = ongoing.ticketId;
+      const ticketPath = ongoing.ticketPath;
+      const artifactPath = buildAdvisoryArtifactPath(ticketId, "completion");
+      const changedFiles = await inspectGitChangedFiles(ctx.cwd);
+      const verificationArtifact = await inspectVerificationArtifact(ctx.cwd, ticketId, ticketPath);
+      const ticketTitle = await readTicketTitle(ctx.cwd, ticketPath);
+      const suggestedCommitMessage = buildSuggestedCommitMessage(ticketId, ticketTitle);
+      const checklist = await buildCompletionChecklist(ctx.cwd, ticketPath, changedFiles, verificationArtifact);
+      const startingText = renderCompletionStarting(
+        ticketId,
+        ticketPath,
+        artifactPath,
+        changedFiles,
+        verificationArtifact,
+        suggestedCommitMessage,
+      );
+
+      if (ctx.mode === "print") {
+        process.stdout.write(`${startingText}\n\n`);
+      } else {
+        pi.sendMessage({
+          customType: "ticket-completion-brief-starting",
+          content: startingText,
+          display: true,
+          details: {
+            ticketId,
+            ticketPath,
+            artifactPath,
+            changedFiles,
+            verificationArtifact,
+            suggestedCommitMessage,
+            checklist,
+            childTools: [...CHILD_PI_TOOL_ALLOWLIST],
+          },
+        });
+      }
+
+      const childResult = await runReadOnlyChildPiAdvisory(ctx.cwd, {
+        prompt: buildCompletionBriefPrompt(
+          ticketId,
+          ticketPath,
+          changedFiles,
+          verificationArtifact,
+          suggestedCommitMessage,
+          checklist,
+        ),
+      });
+      const metadata = await buildAdvisoryArtifactMetadata(ctx.cwd, {
+        artifactType: "completion",
+        commandName: "ticket-completion-brief",
+        ticketPath,
+      });
+      const advisoryResult = renderCompletionAdvisoryMarkdown(
+        changedFiles,
+        verificationArtifact,
+        suggestedCommitMessage,
+        checklist,
+        childResult.markdown,
+      );
+      const artifact = renderCompletionArtifact(metadata, advisoryResult);
+
+      await mkdir(join(ctx.cwd, posix.dirname(artifactPath)), { recursive: true });
+      await writeFile(join(ctx.cwd, artifactPath), artifact, "utf8");
+
+      const text = renderCompletionResult(ticketId, ticketPath, artifactPath, advisoryResult);
+      const handoffParams = {
+        commandName: "ticket-completion-brief",
+        originalRequest: "/ticket-completion-brief",
+        advisoryResult,
+        artifactPath,
+      };
+
+      if (ctx.mode === "print") {
+        process.stdout.write(`${text}\n\n`);
+        deliverAdvisoryParentHandoff(pi, ctx, handoffParams);
+        return;
+      }
+
+      if (shouldSendAdvisoryParentHandoff(ctx)) {
+        pi.sendMessage({
+          customType: "ticket-completion-brief",
+          content: text,
+          display: true,
+          details: {
+            ticketId,
+            ticketPath,
+            artifactPath,
+            changedFiles,
+            verificationArtifact,
+            suggestedCommitMessage,
+            checklist,
+            childResult,
+          },
+        });
+        deliverAdvisoryParentHandoff(pi, ctx, handoffParams);
+        return;
+      }
+
+      const delivery = deliverAdvisoryParentHandoff(pi, ctx, handoffParams);
+      const content = delivery.sent ? text : `${text}\n\n${delivery.suggestedHandoff}`;
+      pi.sendMessage({
+        customType: "ticket-completion-brief",
+        content,
+        display: true,
+        details: {
+          ticketId,
+          ticketPath,
+          artifactPath,
+          changedFiles,
+          verificationArtifact,
+          suggestedCommitMessage,
+          checklist,
+          childResult,
+          parentHandoff: delivery,
+        },
+      });
+    },
+  });
 }
 
 export async function runReadOnlyChildPiAdvisory(
@@ -638,6 +761,42 @@ function buildVerifyPrompt(
   ].join("\n");
 }
 
+function buildCompletionBriefPrompt(
+  ticketId: string,
+  ticketPath: string,
+  changedFiles: GitChangedFiles,
+  verificationArtifact: VerificationArtifactStatus,
+  suggestedCommitMessage: string,
+  checklist: CompletionChecklist,
+): string {
+  return [
+    "You are a read-only child Pi advisory session for the pi-linuxfr.org ticket workflow.",
+    "Do not modify files. Do not move tickets. Do not create artifacts. Do not commit. Do not attempt to use write, edit, or bash.",
+    "Prepare a completion brief for the single ongoing ticket without committing or moving it.",
+    "Read these sources at minimum:",
+    "- tickets/README.md (the ongoing -> completed checklist)",
+    `- ${ticketPath}`,
+    "- changed files listed below (read them to confirm implementation scope).",
+    "Verification artifact from the parent command:",
+    renderVerificationArtifactStatus(verificationArtifact),
+    "Changed files snapshot from the parent command:",
+    renderGitChangedFilesList(changedFiles),
+    "Parent-derived completion checklist (confirm or correct each item):",
+    renderCompletionChecklist(checklist),
+    "Suggested commit message from the parent command:",
+    `- \`${suggestedCommitMessage}\``,
+    "Return concise Markdown with these sections:",
+    "1. Verdict — exactly one of ready-for-completion, not-ready, or inconclusive, with one sentence of rationale.",
+    "2. Verification Status — summarize the latest verification artifact and warn if it is missing, stale, failed, or inconclusive.",
+    "3. Changed Files Summary — summarize whether changed files match the ticket scope and are committed or pending.",
+    "4. Remaining Checklist — list the completion requirements from tickets/README.md that are not yet satisfied, with concrete next actions.",
+    "5. Suggested Commit Message — restate or refine the suggested commit message in the PLF-NNN: <title> form.",
+    "6. Completion Readiness Recommendation — recommend whether the ticket is ready for human completion decision, without performing completion, committing, or moving the ticket.",
+    "7. Safety Boundary — confirm this was read-only advisory analysis and no ticket transition, commit, or file mutation was performed.",
+    `Target ticket: ${ticketId}`,
+  ].join("\n");
+}
+
 function renderChildDiagnosticStarting(): string {
   return [
     "# Ticket Child Diagnostic",
@@ -822,6 +981,139 @@ function renderVerifyArtifact(metadata: AdvisoryArtifactMetadata, advisoryMarkdo
     "",
     advisoryMarkdown || "(no advisory result)",
   ].join("\n");
+}
+
+function renderCompletionStarting(
+  ticketId: string,
+  ticketPath: string,
+  artifactPath: string,
+  changedFiles: GitChangedFiles,
+  verificationArtifact: VerificationArtifactStatus,
+  suggestedCommitMessage: string,
+): string {
+  return [
+    "# Ticket Completion Brief",
+    "",
+    `Starting read-only completion brief for ${ticketId}.`,
+    "",
+    `Source ticket: ${ticketPath}`,
+    `Advisory artifact: ${artifactPath}`,
+    "Safety boundary: the command requires exactly one ongoing ticket, does not commit or move tickets, and the child analysis uses `read`, `grep`, `find`, and `ls`.",
+    "",
+    "## Verification artifact pre-check",
+    "",
+    renderVerificationArtifactStatus(verificationArtifact),
+    "",
+    "## Changed files snapshot",
+    "",
+    renderGitChangedFilesList(changedFiles),
+    "",
+    "## Suggested commit message",
+    "",
+    `- \`${suggestedCommitMessage}\``,
+  ].join("\n");
+}
+
+function renderCompletionResult(
+  ticketId: string,
+  ticketPath: string,
+  artifactPath: string,
+  advisoryMarkdown: string,
+): string {
+  return [
+    "# Ticket Completion Brief",
+    "",
+    `Source ticket: ${ticketPath}`,
+    `Advisory artifact: ${artifactPath}`,
+    "",
+    "This result is advisory only. Ticket files and ticket directories remain authoritative.",
+    "No commit, ticket move, or file mutation was performed.",
+    "",
+    "## Advisory result",
+    "",
+    advisoryMarkdown || "(no advisory result)",
+    "",
+    "## Recommended parent action",
+    "",
+    `Review the completion brief for ${ticketId}, explain what matters, and only then decide whether to manually commit, record the commit identifier, and move the ticket to completed/.`,
+  ].join("\n");
+}
+
+function renderCompletionArtifact(metadata: AdvisoryArtifactMetadata, advisoryMarkdown: string): string {
+  return [
+    renderAdvisoryArtifactFrontmatter(metadata),
+    `# Completion Brief: ${metadata.ticketId}`,
+    "",
+    metadata.advisoryNotice,
+    "",
+    "## Source",
+    "",
+    `- Ticket: \`${metadata.ticketPath}\``,
+    `- Ticket state at generation: \`${metadata.ticketState ?? "unknown"}\``,
+    `- Ticket SHA-256: \`${metadata.ticketSha256}\``,
+    "",
+    "## Advisory Result",
+    "",
+    advisoryMarkdown || "(no advisory result)",
+  ].join("\n");
+}
+
+function renderCompletionAdvisoryMarkdown(
+  changedFiles: GitChangedFiles,
+  verificationArtifact: VerificationArtifactStatus,
+  suggestedCommitMessage: string,
+  checklist: CompletionChecklist,
+  childMarkdown: string,
+): string {
+  return [
+    "## Parent Verification Artifact Pre-check",
+    "",
+    renderVerificationArtifactStatus(verificationArtifact),
+    "",
+    "## Parent Changed Files Snapshot",
+    "",
+    renderGitChangedFilesList(changedFiles),
+    "",
+    "## Parent Suggested Commit Message",
+    "",
+    `- \`${suggestedCommitMessage}\``,
+    "",
+    "## Parent Completion Checklist",
+    "",
+    renderCompletionChecklist(checklist),
+    "",
+    "## Child Completion Brief",
+    "",
+    childMarkdown || "(no advisory result)",
+  ].join("\n");
+}
+
+function renderVerificationArtifactStatus(verificationArtifact: VerificationArtifactStatus): string {
+  if (!verificationArtifact.exists) {
+    return "- No verification artifact found. Run /ticket-verify before completing the ticket.";
+  }
+
+  const verdict = verificationArtifact.verdict ?? "unknown";
+  const stale = verificationArtifact.stale
+    ? "STALE: the ticket changed after this verification was generated."
+    : "Verification SHA-256 matches the current ticket.";
+
+  return [
+    `- Path: \`${verificationArtifact.path}\``,
+    `- Generated at: ${verificationArtifact.generatedAt ?? "unknown"}`,
+    `- Verdict: ${verdict}`,
+    `- Status: ${stale}`,
+  ].join("\n");
+}
+
+function renderCompletionChecklist(checklist: CompletionChecklist): string {
+  if (checklist.items.length === 0) {
+    return "- No completion checklist items derived.";
+  }
+
+  return checklist.items
+    .map((item) => `- [${item.status === "satisfied" ? "x" : " "}] ${item.requirement} — ${item.status}; ${item.note}`)
+    .join("\n");
 }
 
 function renderVerifyAdvisoryMarkdown(
@@ -1035,6 +1327,28 @@ type PlanArtifactStatus = {
   currentSha256?: string;
 };
 
+type VerificationArtifactStatus = {
+  exists: boolean;
+  path: string;
+  stale: boolean;
+  verdict?: "pass" | "fail" | "inconclusive";
+  generatedAt?: string;
+  recordedSha256?: string;
+  currentSha256?: string;
+};
+
+type CompletionChecklistStatus = "satisfied" | "pending" | "human-to-confirm";
+
+type CompletionChecklistItem = {
+  requirement: string;
+  status: CompletionChecklistStatus;
+  note: string;
+};
+
+type CompletionChecklist = {
+  items: CompletionChecklistItem[];
+};
+
 async function requireSingleOngoingTicket(cwd: string): Promise<{ ticketId: string; ticketPath: string }> {
   const ongoingDir = join(cwd, TICKET_ROOT, "ongoing");
 
@@ -1126,6 +1440,170 @@ async function inspectPlanArtifact(
     recordedSha256: recordedSha256 || undefined,
     currentSha256: currentSha256 || undefined,
   };
+}
+
+async function inspectVerificationArtifact(
+  cwd: string,
+  ticketId: string,
+  ticketPath: string,
+): Promise<VerificationArtifactStatus> {
+  const artifactPath = buildAdvisoryArtifactPath(ticketId, "verification");
+  const absolutePath = join(cwd, artifactPath);
+
+  if (!existsSync(absolutePath)) {
+    return {
+      exists: false,
+      path: artifactPath,
+      stale: false,
+    };
+  }
+
+  const artifactContent = await readFile(absolutePath, "utf8");
+  const generatedAt = parseAdvisoryField(artifactContent, "generatedAt");
+  const recordedSha256 = parseAdvisoryField(artifactContent, "ticketSha256");
+  const currentSha256 = await computeTicketSha256(cwd, ticketPath);
+  const stale =
+    Boolean(recordedSha256) && Boolean(currentSha256) && recordedSha256 !== currentSha256;
+  const verdict = parseVerificationVerdict(artifactContent);
+
+  return {
+    exists: true,
+    path: artifactPath,
+    stale,
+    verdict,
+    generatedAt,
+    recordedSha256: recordedSha256 || undefined,
+    currentSha256: currentSha256 || undefined,
+  };
+}
+
+function parseVerificationVerdict(content: string): "pass" | "fail" | "inconclusive" | undefined {
+  const verdictMatch = content.match(/verdict[^\n]*?\b(pass|fail|inconclusive)\b/i);
+  if (verdictMatch) {
+    const value = verdictMatch[1].toLowerCase();
+    if (value === "pass" || value === "fail" || value === "inconclusive") {
+      return value;
+    }
+  }
+  const firstVerdict = content.match(/\b(pass|fail|inconclusive)\b/i);
+  if (firstVerdict) {
+    const value = firstVerdict[1].toLowerCase();
+    if (value === "pass" || value === "fail" || value === "inconclusive") {
+      return value;
+    }
+  }
+  return undefined;
+}
+
+async function readTicketTitle(cwd: string, ticketPath: string): Promise<string> {
+  const content = await readFile(join(cwd, ticketPath), "utf8");
+  const frontmatterTitle = parseAdvisoryField(content, "title");
+  if (frontmatterTitle) {
+    return frontmatterTitle;
+  }
+  const headingMatch = content.match(/^#\s+(.+)$/m);
+  if (headingMatch) {
+    return headingMatch[1]
+      .replace(/^PLF-\d+:\s*/i, "")
+      .replace(/\s+$/, "")
+      .trim();
+  }
+  return "ticket work";
+}
+
+function buildSuggestedCommitMessage(ticketId: string, ticketTitle: string): string {
+  const trimmedTitle = ticketTitle.trim().replace(/\.$/, "");
+  return `${ticketId}: ${trimmedTitle}`;
+}
+
+async function buildCompletionChecklist(
+  cwd: string,
+  ticketPath: string,
+  changedFiles: GitChangedFiles,
+  verificationArtifact: VerificationArtifactStatus,
+): Promise<CompletionChecklist> {
+  const content = await readFile(join(cwd, ticketPath), "utf8");
+  const hasUnresolvedAcceptance = /-\s\[\s\]/.test(content);
+  const filesChangedFilled = /##\s*Files Changed[\s\S]*?(?!To be filled)\S/.test(content);
+  const decisionsFilled = /##\s*Decisions[\s\S]*?(?!To be filled)\S/.test(content);
+  const hasChangedFiles = !changedFiles.error && changedFiles.entries.length > 0;
+
+  const verificationOk =
+    verificationArtifact.exists &&
+    !verificationArtifact.stale &&
+    verificationArtifact.verdict === "pass";
+
+  const items: CompletionChecklistItem[] = [
+    {
+      requirement: "Acceptance criteria are satisfied",
+      status: hasUnresolvedAcceptance ? "pending" : "human-to-confirm",
+      note: hasUnresolvedAcceptance
+        ? "The ticket still has unchecked acceptance criteria boxes."
+        : "All acceptance criteria boxes are checked; confirm they truly hold.",
+    },
+    {
+      requirement: "Tests or manual verification were run",
+      status: "human-to-confirm",
+      note: "Run the ticket's verification commands and record results in the ticket.",
+    },
+    {
+      requirement: "Changed files are listed in the ticket",
+      status: filesChangedFilled ? "human-to-confirm" : "pending",
+      note: filesChangedFilled
+        ? "The Files Changed section has content; confirm it matches the actual diff."
+        : "The Files Changed section still says 'To be filled'.",
+    },
+    {
+      requirement: "Implementation plan verification exists and passes",
+      status: verificationArtifact.exists
+        ? verificationArtifact.stale
+          ? "pending"
+          : verificationArtifact.verdict === "pass"
+            ? "satisfied"
+            : "pending"
+        : "pending",
+      note: !verificationArtifact.exists
+        ? "No verification artifact found; run /ticket-verify first."
+        : verificationArtifact.stale
+          ? "The verification artifact is stale; re-run /ticket-verify after ticket changes."
+          : verificationArtifact.verdict === "pass"
+            ? "The latest verification verdict is pass."
+            : `The latest verification verdict is ${verificationArtifact.verdict ?? "unknown"}; resolve before completing.`,
+    },
+    {
+      requirement: "Important decisions are recorded",
+      status: decisionsFilled ? "human-to-confirm" : "pending",
+      note: decisionsFilled
+        ? "The Decisions section has content; confirm it is complete."
+        : "The Decisions section still says 'To be filled'.",
+    },
+    {
+      requirement: "Commit message includes the ticket ID",
+      status: "human-to-confirm",
+      note: "Use the suggested commit message below, which includes the ticket ID.",
+    },
+    {
+      requirement: "Commit includes the focused implementation changes",
+      status: hasChangedFiles ? "human-to-confirm" : "pending",
+      note: changedFiles.error
+        ? `Could not inspect git changes: ${changedFiles.error}`
+        : hasChangedFiles
+          ? "git reports changed files; confirm they are in scope before committing."
+          : "No changed files detected by git yet.",
+    },
+    {
+      requirement: "Final commit identifier is recorded in the ticket",
+      status: "pending",
+      note: "After committing, record the commit hash (discoverable via git log --grep) in the ticket.",
+    },
+    {
+      requirement: "tickets/ongoing/ will be empty after the move to completed/",
+      status: "pending",
+      note: "Move the ticket to completed/ with git mv after committing.",
+    },
+  ];
+
+  return { items };
 }
 
 function parseAdvisoryField(content: string, field: string): string | undefined {

@@ -74,6 +74,20 @@ The brief should review each acceptance criterion, mark it satisfied, failed, or
 
 The command does not complete the ticket, commit changes, move files, run destructive commands, or fix failed verification automatically.
 
+### `/ticket-completion-brief`
+
+Read-only advisory command that prepares a completion checklist for the single ongoing ticket, then writes a completion brief to:
+
+```text
+tickets/.artifacts/completion/<ticket-id>.md
+```
+
+The command requires exactly one `PLF-*.md` file in `tickets/ongoing/`. It performs a bounded parent-side git changed-files snapshot (`git status --porcelain`), reads the latest verification artifact and warns when it is missing, stale, failed, or inconclusive, derives a parent-side completion checklist from the `ongoing -> completed` requirements in `tickets/README.md`, suggests a commit message in the `PLF-NNN: <title>` form, starts a bounded read-only child Pi analysis, writes advisory metadata with the source ticket fingerprint, displays the completion brief, and hands the advisory result back to the parent LLM according to the parent handoff convention.
+
+The brief should summarize verification status and changed files, list remaining completion requirements with concrete next actions, restate or refine the suggested commit message, and provide a verdict such as `ready-for-completion`, `not-ready`, or `inconclusive`, plus a completion-readiness recommendation.
+
+The command does not commit changes, move the ticket to `completed/`, edit the ticket resolution automatically, or decide that completion is allowed without human approval.
+
 ## Command interaction classes
 
 Ticket workflow commands fall into two interaction classes:
@@ -83,7 +97,7 @@ Ticket workflow commands fall into two interaction classes:
 
 `/ticket-status` is deterministic and display-only. Future audit commands such as `/ticket-doctor` should also stay deterministic and display-only by default unless a later ticket explicitly adds advisory handoff behavior.
 
-`/ticket-readiness`, `/ticket-plan`, and `/ticket-verify` are advisory and use the parent LLM handoff pattern below. Future advisory commands such as `/ticket-activate-check` and `/ticket-completion-brief` should use the same pattern.
+`/ticket-readiness`, `/ticket-plan`, `/ticket-verify`, and `/ticket-completion-brief` are advisory and use the parent LLM handoff pattern below. Future advisory commands such as `/ticket-activate-check` should use the same pattern.
 
 ## Advisory parent handoff
 
