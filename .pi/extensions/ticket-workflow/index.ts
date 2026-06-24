@@ -1,5 +1,7 @@
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
+import { spawn } from "node:child_process";
 import { createHash } from "node:crypto";
+import { existsSync } from "node:fs";
 import { readdir, readFile } from "node:fs/promises";
 import { basename, join, posix } from "node:path";
 
@@ -11,6 +13,9 @@ const ADVISORY_ARTIFACT_ROOT = posix.join(TICKET_ROOT, ".artifacts");
 const ADVISORY_ARTIFACT_TYPES = ["readiness", "plans", "verification", "completion"] as const;
 const ADVISORY_ARTIFACT_NOTICE =
   "Advisory artifact only. Ticket files and ticket state directories remain authoritative.";
+const CHILD_PI_GUARD_ENV = "PI_TICKET_CHILD";
+const CHILD_PI_TOOL_ALLOWLIST = ["read", "grep", "find", "ls"] as const;
+const CHILD_PI_DEFAULT_TIMEOUT_MS = 120_000;
 
 export type TicketState = (typeof TICKET_STATES)[number];
 export type AdvisoryArtifactType = (typeof ADVISORY_ARTIFACT_TYPES)[number];
@@ -42,6 +47,17 @@ export type AdvisoryArtifactMetadata = {
   advisoryNotice: string;
 };
 
+export type ReadOnlyChildPiAdvisoryResult = {
+  command: string;
+  args: string[];
+  cwd: string;
+  exitCode: number | null;
+  stdout: string;
+  stderr: string;
+  markdown: string;
+  timedOut: boolean;
+};
+
 export default function (pi: ExtensionAPI) {
   pi.registerCommand("ticket-status", {
     description: "Inspect the file-based ticket workflow without mutating repository files",
@@ -62,6 +78,185 @@ export default function (pi: ExtensionAPI) {
       });
     },
   });
+
+  pi.registerCommand("ticket-child-diagnostic", {
+    description: "Run a bounded read-only child Pi advisory diagnostic",
+    handler: async (args, ctx) => {
+      const prompt = buildChildDiagnosticPrompt(args);
+      const result = await runReadOnlyChildPiAdvisory(ctx.cwd, { prompt });
+      const text = renderChildDiagnostic(result);
+
+      if (ctx.mode === "print") {
+        process.stdout.write(`${text}\n`);
+        return;
+      }
+
+      pi.sendMessage({
+        customType: "ticket-child-diagnostic",
+        content: text,
+        display: true,
+        details: result,
+      });
+    },
+  });
+}
+
+export async function runReadOnlyChildPiAdvisory(
+  cwd: string,
+  params: {
+    prompt: string;
+    timeoutMs?: number;
+    signal?: AbortSignal;
+  },
+): Promise<ReadOnlyChildPiAdvisoryResult> {
+  if (process.env[CHILD_PI_GUARD_ENV]) {
+    throw new Error("Refusing to spawn a nested ticket child Pi session.");
+  }
+
+  const timeoutMs = params.timeoutMs ?? CHILD_PI_DEFAULT_TIMEOUT_MS;
+  const args = buildReadOnlyChildPiArgs(params.prompt);
+  const invocation = getPiInvocation(args);
+  const result = await spawnChildPi(invocation.command, invocation.args, cwd, timeoutMs, params.signal);
+
+  if (result.exitCode !== 0 || result.timedOut) {
+    const reason = result.timedOut ? `timed out after ${timeoutMs}ms` : `exited with code ${result.exitCode}`;
+    const stderr = result.stderr.trim();
+    throw new Error(`Read-only child Pi advisory run failed: ${reason}${stderr ? `\n${stderr}` : ""}`);
+  }
+
+  return result;
+}
+
+function buildReadOnlyChildPiArgs(prompt: string): string[] {
+  return [
+    "--approve",
+    "--no-session",
+    "--no-extensions",
+    "--no-skills",
+    "--no-prompt-templates",
+    "--no-themes",
+    "--tools",
+    CHILD_PI_TOOL_ALLOWLIST.join(","),
+    "-p",
+    prompt,
+  ];
+}
+
+function getPiInvocation(args: string[]): { command: string; args: string[] } {
+  const currentScript = process.argv[1];
+  const isBunVirtualScript = currentScript?.startsWith("/$bunfs/root/");
+
+  if (currentScript && !isBunVirtualScript && existsSync(currentScript)) {
+    return { command: process.execPath, args: [currentScript, ...args] };
+  }
+
+  const execName = basename(process.execPath).toLowerCase();
+  const isGenericRuntime = /^(node|bun)(\.exe)?$/.test(execName);
+
+  if (!isGenericRuntime) {
+    return { command: process.execPath, args };
+  }
+
+  return { command: "pi", args };
+}
+
+async function spawnChildPi(
+  command: string,
+  args: string[],
+  cwd: string,
+  timeoutMs: number,
+  signal: AbortSignal | undefined,
+): Promise<ReadOnlyChildPiAdvisoryResult> {
+  return new Promise((resolve, reject) => {
+    const child = spawn(command, args, {
+      cwd,
+      env: {
+        ...process.env,
+        [CHILD_PI_GUARD_ENV]: "1",
+      },
+      shell: false,
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+
+    let stdout = "";
+    let stderr = "";
+    let timedOut = false;
+
+    const timeout = setTimeout(() => {
+      timedOut = true;
+      child.kill("SIGTERM");
+      setTimeout(() => {
+        if (!child.killed) {
+          child.kill("SIGKILL");
+        }
+      }, 5_000).unref();
+    }, timeoutMs);
+    timeout.unref();
+
+    const abort = () => {
+      child.kill("SIGTERM");
+    };
+
+    if (signal?.aborted) {
+      abort();
+    } else {
+      signal?.addEventListener("abort", abort, { once: true });
+    }
+
+    child.stdout.on("data", (data: Buffer) => {
+      stdout += data.toString("utf8");
+    });
+
+    child.stderr.on("data", (data: Buffer) => {
+      stderr += data.toString("utf8");
+    });
+
+    child.on("error", (error) => {
+      clearTimeout(timeout);
+      signal?.removeEventListener("abort", abort);
+      reject(error);
+    });
+
+    child.on("close", (exitCode) => {
+      clearTimeout(timeout);
+      signal?.removeEventListener("abort", abort);
+      resolve({
+        command,
+        args,
+        cwd,
+        exitCode,
+        stdout,
+        stderr,
+        markdown: stdout.trim(),
+        timedOut,
+      });
+    });
+  });
+}
+
+function buildChildDiagnosticPrompt(args: string): string {
+  const requestedTask = args.trim() || "Confirm that this child session can inspect files read-only.";
+
+  return [
+    "You are a read-only child Pi advisory session for the pi-linuxfr.org ticket workflow.",
+    "Do not modify files. Do not attempt to use write, edit, or bash.",
+    "Use only read-only inspection if needed.",
+    "Return concise Markdown with these sections: Result, Evidence, Safety Boundary.",
+    `Task: ${requestedTask}`,
+  ].join("\n");
+}
+
+function renderChildDiagnostic(result: ReadOnlyChildPiAdvisoryResult): string {
+  return [
+    "# Ticket Child Diagnostic",
+    "",
+    "A child Pi process was launched with read-only tools only: `read`, `grep`, `find`, and `ls`.",
+    "Child extensions, skills, prompt templates, themes, and session persistence were disabled.",
+    "",
+    "## Child output",
+    "",
+    result.markdown || "(no child output)",
+  ].join("\n");
 }
 
 async function inspectTicketStatus(cwd: string): Promise<TicketStatus> {

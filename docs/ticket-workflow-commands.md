@@ -22,6 +22,18 @@ Commands may inspect tickets and produce advisory Markdown artifacts, but they m
 
 Read-only command that reports ticket counts by state, the active ongoing ticket when exactly one exists, missing state directories, and basic workflow errors.
 
+### `/ticket-child-diagnostic`
+
+Read-only diagnostic command for the reusable child Pi advisory runner. It launches one bounded child Pi process, captures its Markdown output, and displays it to the parent session. The command is for validating the runner primitive; future commands should call the helper directly and write advisory artifacts themselves when appropriate.
+
+The child process is launched with this safety boundary:
+
+```bash
+pi --approve --no-session --no-extensions --no-skills --no-prompt-templates --no-themes --tools read,grep,find,ls -p '<prompt>'
+```
+
+The parent also sets `PI_TICKET_CHILD=1` in the child environment and refuses to spawn another child when that variable is already present. The tool allowlist intentionally excludes `write`, `edit`, and `bash`.
+
 ## Advisory artifacts
 
 Future advisory commands should write Markdown artifacts under `tickets/.artifacts/` using deterministic paths:
