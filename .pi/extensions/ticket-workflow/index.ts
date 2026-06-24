@@ -3,6 +3,7 @@ import { spawn } from "node:child_process";
 import { createHash } from "node:crypto";
 import { existsSync } from "node:fs";
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
+import { execFileSync } from "node:child_process";
 import { basename, join, posix } from "node:path";
 
 const TICKET_ROOT = "tickets";
@@ -218,6 +219,100 @@ export default function (pi: ExtensionAPI) {
           ticketId,
           ticketPath,
           artifactPath,
+          childResult,
+          parentHandoff: delivery,
+        },
+      });
+    },
+  });
+
+  pi.registerCommand("ticket-verify", {
+    description: "Create a read-only advisory verification brief for the single ongoing ticket",
+    handler: async (_args, ctx) => {
+      const ongoing = await requireSingleOngoingTicket(ctx.cwd);
+      const ticketId = ongoing.ticketId;
+      const ticketPath = ongoing.ticketPath;
+      const artifactPath = buildAdvisoryArtifactPath(ticketId, "verification");
+      const changedFiles = await inspectGitChangedFiles(ctx.cwd);
+      const planArtifact = await inspectPlanArtifact(ctx.cwd, ticketId, ticketPath);
+      const startingText = renderVerifyStarting(ticketId, ticketPath, artifactPath, changedFiles, planArtifact);
+
+      if (ctx.mode === "print") {
+        process.stdout.write(`${startingText}\n\n`);
+      } else {
+        pi.sendMessage({
+          customType: "ticket-verify-starting",
+          content: startingText,
+          display: true,
+          details: {
+            ticketId,
+            ticketPath,
+            artifactPath,
+            changedFiles,
+            planArtifact,
+            childTools: [...CHILD_PI_TOOL_ALLOWLIST],
+          },
+        });
+      }
+
+      const childResult = await runReadOnlyChildPiAdvisory(ctx.cwd, {
+        prompt: buildVerifyPrompt(ticketId, ticketPath, changedFiles, planArtifact),
+      });
+      const metadata = await buildAdvisoryArtifactMetadata(ctx.cwd, {
+        artifactType: "verification",
+        commandName: "ticket-verify",
+        ticketPath,
+      });
+      const advisoryResult = renderVerifyAdvisoryMarkdown(changedFiles, planArtifact, childResult.markdown);
+      const artifact = renderVerifyArtifact(metadata, advisoryResult);
+
+      await mkdir(join(ctx.cwd, posix.dirname(artifactPath)), { recursive: true });
+      await writeFile(join(ctx.cwd, artifactPath), artifact, "utf8");
+
+      const text = renderVerifyResult(ticketId, ticketPath, artifactPath, advisoryResult);
+      const handoffParams = {
+        commandName: "ticket-verify",
+        originalRequest: "/ticket-verify",
+        advisoryResult,
+        artifactPath,
+      };
+
+      if (ctx.mode === "print") {
+        process.stdout.write(`${text}\n\n`);
+        deliverAdvisoryParentHandoff(pi, ctx, handoffParams);
+        return;
+      }
+
+      if (shouldSendAdvisoryParentHandoff(ctx)) {
+        pi.sendMessage({
+          customType: "ticket-verify",
+          content: text,
+          display: true,
+          details: {
+            ticketId,
+            ticketPath,
+            artifactPath,
+            changedFiles,
+            planArtifact,
+            childResult,
+          },
+        });
+        deliverAdvisoryParentHandoff(pi, ctx, handoffParams);
+        return;
+      }
+
+      const delivery = deliverAdvisoryParentHandoff(pi, ctx, handoffParams);
+      const content = delivery.sent ? text : `${text}\n\n${delivery.suggestedHandoff}`;
+      pi.sendMessage({
+        customType: "ticket-verify",
+        content,
+        display: true,
+        details: {
+          ticketId,
+          ticketPath,
+          artifactPath,
+          changedFiles,
+          planArtifact,
           childResult,
           parentHandoff: delivery,
         },
@@ -507,6 +602,42 @@ function buildPlanPrompt(ticketId: string, ticketPath: string, dependencies: Tic
   ].join("\n");
 }
 
+function buildVerifyPrompt(
+  ticketId: string,
+  ticketPath: string,
+  changedFiles: GitChangedFiles,
+  planArtifact: PlanArtifactStatus,
+): string {
+  const planSection = planArtifact.exists
+    ? planArtifact.stale
+      ? `- ${planArtifact.path} (STALE: ticket changed since plan was generated)`
+      : `- ${planArtifact.path}`
+    : "- No plan artifact was found; verify against the ticket directly.";
+
+  return [
+    "You are a read-only child Pi advisory session for the pi-linuxfr.org ticket workflow.",
+    "Do not modify files. Do not move tickets. Do not create artifacts. Do not commit. Do not attempt to use write, edit, or bash.",
+    "Verify the single ongoing ticket against its acceptance criteria, implementation plan, and current repository changes.",
+    "Read these sources at minimum:",
+    "- tickets/README.md",
+    `- ${ticketPath}`,
+    "- changed files listed below (read them to confirm implementation scope).",
+    "Plan artifact from the parent command:",
+    planSection,
+    "Changed files snapshot from the parent command:",
+    renderGitChangedFilesList(changedFiles),
+    "Return concise Markdown with these sections:",
+    "1. Verdict — exactly one of pass, fail, or inconclusive, with one sentence of rationale.",
+    "2. Acceptance Criteria Review — list each acceptance criterion from the ticket and mark it satisfied, failed, or unverifiable, with evidence from changed files or the plan.",
+    "3. Scope Review — note whether changed files match the ticket scope, and flag any out-of-scope or missing changes.",
+    "4. Changed Files Summary — summarize what the listed files changed and whether they satisfy the ticket.",
+    "5. Verification Evidence — note any tests, checks, or manual verification referenced by the ticket or present in the changes.",
+    "6. Completion Readiness Recommendation — recommend whether the ticket is ready for human completion decision, without performing completion.",
+    "7. Safety Boundary — confirm this was read-only advisory analysis and no ticket transition, commit, or file mutation was performed.",
+    `Target ticket: ${ticketId}`,
+  ].join("\n");
+}
+
 function renderChildDiagnosticStarting(): string {
   return [
     "# Ticket Child Diagnostic",
@@ -626,6 +757,121 @@ function renderPlanResult(ticketId: string, ticketPath: string, artifactPath: st
     "",
     `Review the implementation plan for ${ticketId}, ask any required human questions, and only then decide whether to activate the ticket manually.`,
   ].join("\n");
+}
+
+function renderVerifyStarting(
+  ticketId: string,
+  ticketPath: string,
+  artifactPath: string,
+  changedFiles: GitChangedFiles,
+  planArtifact: PlanArtifactStatus,
+): string {
+  return [
+    "# Ticket Verify",
+    "",
+    `Starting read-only verification for ${ticketId}.`,
+    "",
+    `Source ticket: ${ticketPath}`,
+    `Advisory artifact: ${artifactPath}`,
+    "Safety boundary: the command requires exactly one ongoing ticket and the child analysis uses `read`, `grep`, `find`, and `ls`.",
+    "",
+    "## Plan artifact pre-check",
+    "",
+    renderPlanArtifactStatus(planArtifact),
+    "",
+    "## Changed files snapshot",
+    "",
+    renderGitChangedFilesList(changedFiles),
+  ].join("\n");
+}
+
+function renderVerifyResult(ticketId: string, ticketPath: string, artifactPath: string, advisoryMarkdown: string): string {
+  return [
+    "# Ticket Verify",
+    "",
+    `Source ticket: ${ticketPath}`,
+    `Advisory artifact: ${artifactPath}`,
+    "",
+    "This result is advisory only. Ticket files and ticket directories remain authoritative.",
+    "No ticket state transition, commit, or file mutation was performed.",
+    "",
+    "## Advisory result",
+    "",
+    advisoryMarkdown || "(no advisory result)",
+    "",
+    "## Recommended parent action",
+    "",
+    `Review the verification brief for ${ticketId}, explain what matters, and only then decide whether to manually complete the ticket.`,
+  ].join("\n");
+}
+
+function renderVerifyArtifact(metadata: AdvisoryArtifactMetadata, advisoryMarkdown: string): string {
+  return [
+    renderAdvisoryArtifactFrontmatter(metadata),
+    `# Verification Brief: ${metadata.ticketId}`,
+    "",
+    metadata.advisoryNotice,
+    "",
+    "## Source",
+    "",
+    `- Ticket: \`${metadata.ticketPath}\``,
+    `- Ticket state at generation: \`${metadata.ticketState ?? "unknown"}\``,
+    `- Ticket SHA-256: \`${metadata.ticketSha256}\``,
+    "",
+    "## Advisory Result",
+    "",
+    advisoryMarkdown || "(no advisory result)",
+  ].join("\n");
+}
+
+function renderVerifyAdvisoryMarkdown(
+  changedFiles: GitChangedFiles,
+  planArtifact: PlanArtifactStatus,
+  childMarkdown: string,
+): string {
+  return [
+    "## Parent Changed Files Snapshot",
+    "",
+    renderGitChangedFilesList(changedFiles),
+    "",
+    "## Parent Plan Artifact Pre-check",
+    "",
+    renderPlanArtifactStatus(planArtifact),
+    "",
+    "## Child Verification Brief",
+    "",
+    childMarkdown || "(no advisory result)",
+  ].join("\n");
+}
+
+function renderPlanArtifactStatus(planArtifact: PlanArtifactStatus): string {
+  if (!planArtifact.exists) {
+    return "- No implementation plan artifact found. Verification proceeds against the ticket directly.";
+  }
+
+  const stale = planArtifact.stale
+    ? "STALE: the ticket changed after this plan was generated."
+    : "Plan SHA-256 matches the current ticket.";
+
+  return [
+    `- Path: \`${planArtifact.path}\``,
+    `- Generated at: ${planArtifact.generatedAt ?? "unknown"}`,
+    `- Status: ${stale}`,
+  ].join("\n");
+}
+
+function renderGitChangedFilesList(changedFiles: GitChangedFiles): string {
+  if (changedFiles.error) {
+    return `- Could not inspect git changes: ${changedFiles.error}`;
+  }
+
+  if (changedFiles.entries.length === 0) {
+    return "- No changed files detected by git.";
+  }
+
+  return changedFiles.entries
+    .map((entry) => `- \`${entry.flag}\` \`${entry.path}\``)
+    .join("\n");
 }
 
 function renderPlanArtifact(metadata: AdvisoryArtifactMetadata, advisoryMarkdown: string): string {
@@ -768,6 +1014,126 @@ async function inspectTicketDependencies(cwd: string, ticketPath: string): Promi
       note,
     };
   });
+}
+
+type GitChangedFile = {
+  flag: string;
+  path: string;
+};
+
+type GitChangedFiles = {
+  entries: GitChangedFile[];
+  error?: string;
+};
+
+type PlanArtifactStatus = {
+  exists: boolean;
+  path: string;
+  stale: boolean;
+  generatedAt?: string;
+  recordedSha256?: string;
+  currentSha256?: string;
+};
+
+async function requireSingleOngoingTicket(cwd: string): Promise<{ ticketId: string; ticketPath: string }> {
+  const ongoingDir = join(cwd, TICKET_ROOT, "ongoing");
+
+  try {
+    const entries = await readdir(ongoingDir, { withFileTypes: true });
+    const ticketFiles = entries
+      .filter((entry) => entry.isFile() && TICKET_FILE_PATTERN.test(entry.name))
+      .map((entry) => entry.name)
+      .sort();
+
+    if (ticketFiles.length === 0) {
+      throw new Error("No ticket is ongoing. /ticket-verify requires exactly one ticket in tickets/ongoing/.");
+    }
+
+    if (ticketFiles.length > 1) {
+      throw new Error(
+        `Multiple ongoing tickets found (${ticketFiles.join(", ")}). /ticket-verify requires exactly one ticket in tickets/ongoing/.`,
+      );
+    }
+
+    const ticketId = ticketIdFromFile(ticketFiles[0]);
+    return {
+      ticketId,
+      ticketPath: posix.join(TICKET_ROOT, "ongoing", ticketFiles[0]),
+    };
+  } catch (error) {
+    if (isErrorWithCode(error) && error.code === "ENOENT") {
+      throw new Error("The tickets/ongoing/ directory was not found. /ticket-verify requires exactly one ongoing ticket.");
+    }
+    throw error;
+  }
+}
+
+function inspectGitChangedFiles(cwd: string): GitChangedFiles {
+  try {
+    const output = execFileSync("git", ["status", "--porcelain"], {
+      cwd,
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+
+    const entries = output
+      .split("\n")
+      .map((line) => line.trimEnd())
+      .filter((line) => line.length > 0)
+      .map((line) => {
+        const flag = line.slice(0, 2);
+        const path = line.slice(3).trim().replace(/^"|"$/g, "");
+        return { flag, path };
+      });
+
+    return { entries };
+  } catch (error) {
+    return {
+      entries: [],
+      error: error instanceof Error ? error.message : String(error),
+    };
+  }
+}
+
+async function inspectPlanArtifact(
+  cwd: string,
+  ticketId: string,
+  ticketPath: string,
+): Promise<PlanArtifactStatus> {
+  const artifactPath = buildAdvisoryArtifactPath(ticketId, "plans");
+  const absolutePath = join(cwd, artifactPath);
+
+  if (!existsSync(absolutePath)) {
+    return {
+      exists: false,
+      path: artifactPath,
+      stale: false,
+    };
+  }
+
+  const artifactContent = await readFile(absolutePath, "utf8");
+  const generatedAt = parseAdvisoryField(artifactContent, "generatedAt");
+  const recordedSha256 = parseAdvisoryField(artifactContent, "ticketSha256");
+  const currentSha256 = await computeTicketSha256(cwd, ticketPath);
+  const stale =
+    Boolean(recordedSha256) && Boolean(currentSha256) && recordedSha256 !== currentSha256;
+
+  return {
+    exists: true,
+    path: artifactPath,
+    stale,
+    generatedAt,
+    recordedSha256: recordedSha256 || undefined,
+    currentSha256: currentSha256 || undefined,
+  };
+}
+
+function parseAdvisoryField(content: string, field: string): string | undefined {
+  const match = content.match(new RegExp(`^${field}:\\s*(.+)$`, "m"));
+  if (!match) {
+    return undefined;
+  }
+  return match[1].trim().replace(/^["']|["']$/g, "");
 }
 
 function parseFrontmatterDependencies(content: string): string[] {
