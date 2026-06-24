@@ -22,6 +22,27 @@ Commands may inspect tickets and produce advisory Markdown artifacts, but they m
 
 Read-only command that reports ticket counts by state, the active ongoing ticket when exactly one exists, missing state directories, and basic workflow errors.
 
+### `/ticket-doctor`
+
+Read-only deterministic audit command that checks ticket workflow consistency and prints errors, warnings, and actionable next steps without mutating files.
+
+The command reports as errors:
+
+- missing expected ticket state directories;
+- duplicate `PLF-*.md` ticket IDs across ticket state directories;
+- multiple tickets in `tickets/ongoing/`;
+- unreadable ticket state directories.
+
+The command reports as warnings:
+
+- planned or ongoing tickets missing required ready-ticket sections from `tickets/TEMPLATE.md`;
+- missing or unreadable advisory artifact directories;
+- advisory artifacts missing staleness metadata;
+- advisory artifacts whose recorded type, ticket ID, path, state, or SHA-256 no longer matches the current source ticket;
+- advisory artifacts whose source ticket no longer exists.
+
+Advisory artifacts are inspected only for consistency. They remain non-authoritative, and `/ticket-doctor` does not delete, regenerate, or otherwise repair them. The command does not trigger parent LLM handoff by default.
+
 ### `/ticket-child-diagnostic`
 
 Read-only diagnostic command for the reusable child Pi advisory runner. It immediately displays a starting message, launches one bounded child Pi process, captures its Markdown output, and displays the final result to the parent session. The command is for validating the runner primitive; future commands should call the helper directly and write advisory artifacts themselves when appropriate.
@@ -105,7 +126,7 @@ Ticket workflow commands fall into two interaction classes:
 - deterministic display-only commands inspect local workflow state and show bounded results without asking the parent LLM to synthesize anything;
 - advisory commands produce a verdict, plan, verification result, or transition recommendation that should be handed back to the parent LLM for conversational synthesis.
 
-`/ticket-status` is deterministic and display-only. Future audit commands such as `/ticket-doctor` should also stay deterministic and display-only by default unless a later ticket explicitly adds advisory handoff behavior.
+`/ticket-status` and `/ticket-doctor` are deterministic and display-only. Future audit commands should also stay deterministic and display-only by default unless a later ticket explicitly adds advisory handoff behavior.
 
 `/ticket-readiness`, `/ticket-plan`, `/ticket-activate-check`, `/ticket-verify`, and `/ticket-completion-brief` are advisory and use the parent LLM handoff pattern below.
 

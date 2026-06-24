@@ -54,6 +54,25 @@ type TicketStatus = {
   missingDirectories: string[];
 };
 
+type TicketDoctorIssue = {
+  code: string;
+  message: string;
+  path?: string;
+  nextStep: string;
+};
+
+type TicketDoctorReport = {
+  states: StateStatus[];
+  errors: TicketDoctorIssue[];
+  warnings: TicketDoctorIssue[];
+};
+
+type TicketLocation = {
+  ticketId: string;
+  path: string;
+  state: TicketState;
+};
+
 export type AdvisoryArtifactMetadata = {
   artifactType: AdvisoryArtifactType;
   commandName: string;
@@ -101,6 +120,26 @@ export default function (pi: ExtensionAPI) {
         content: text,
         display: true,
         details: status,
+      });
+    },
+  });
+
+  pi.registerCommand("ticket-doctor", {
+    description: "Audit ticket workflow consistency without mutating repository files",
+    handler: async (_args, ctx) => {
+      const report = await inspectTicketDoctor(ctx.cwd);
+      const text = renderTicketDoctor(report);
+
+      if (ctx.mode === "print") {
+        process.stdout.write(`${text}\n`);
+        return;
+      }
+
+      pi.sendMessage({
+        customType: "ticket-doctor",
+        content: text,
+        display: true,
+        details: report,
       });
     },
   });
@@ -1823,6 +1862,379 @@ async function inspectTicketStatus(cwd: string): Promise<TicketStatus> {
     workflowErrors,
     missingDirectories,
   };
+}
+
+const REQUIRED_READY_TICKET_SECTIONS = [
+  "Objective",
+  "Context",
+  "Scope",
+  "Acceptance Criteria",
+  "Dependencies",
+  "Implementation Notes",
+  "Verification",
+  "Files Changed",
+  "Decisions",
+  "Notes",
+  "Resolution",
+  "Log",
+] as const;
+
+async function inspectTicketDoctor(cwd: string): Promise<TicketDoctorReport> {
+  const states = await Promise.all(TICKET_STATES.map((state) => inspectState(cwd, state)));
+  const errors: TicketDoctorIssue[] = [];
+  const warnings: TicketDoctorIssue[] = [];
+  const locations = collectTicketLocations(states);
+
+  for (const state of states) {
+    if (!state.exists) {
+      errors.push(
+        doctorIssue(
+          "missing-ticket-directory",
+          `Expected ticket state directory ${state.path} was not found.`,
+          "Restore the directory and keep its .gitkeep file when it has no tickets.",
+          state.path,
+        ),
+      );
+    }
+
+    if (state.error) {
+      errors.push(
+        doctorIssue(
+          "ticket-directory-unreadable",
+          `Could not inspect ticket state directory ${state.path}: ${state.error}`,
+          "Fix filesystem permissions or the directory entry, then run /ticket-doctor again.",
+          state.path,
+        ),
+      );
+    }
+  }
+
+  for (const duplicate of findDuplicateTicketIds(locations)) {
+    errors.push(
+      doctorIssue(
+        "duplicate-ticket-id",
+        `Ticket ID ${duplicate.ticketId} appears in multiple state directories: ${duplicate.paths.join(", ")}.`,
+        "Choose the authoritative ticket state, then remove or rename the duplicate file with explicit human approval.",
+      ),
+    );
+  }
+
+  const ongoing = states.find((state) => state.state === "ongoing");
+  const ongoingTickets = ongoing?.ticketFiles ?? [];
+  if (ongoingTickets.length > 1) {
+    errors.push(
+      doctorIssue(
+        "multiple-ongoing-tickets",
+        `tickets/ongoing/ contains multiple active tickets: ${ongoingTickets.join(", ")}.`,
+        "Keep exactly one active ticket in tickets/ongoing/ before continuing ticketed work.",
+        posix.join(TICKET_ROOT, "ongoing"),
+      ),
+    );
+  }
+
+  warnings.push(...(await inspectReadyTicketSections(cwd, locations)));
+  warnings.push(...(await inspectAdvisoryArtifactsForDoctor(cwd, locations)));
+
+  return {
+    states,
+    errors,
+    warnings,
+  };
+}
+
+function doctorIssue(code: string, message: string, nextStep: string, path?: string): TicketDoctorIssue {
+  return {
+    code,
+    message,
+    path,
+    nextStep,
+  };
+}
+
+function collectTicketLocations(states: StateStatus[]): TicketLocation[] {
+  return states.flatMap((state) =>
+    state.ticketFiles.map((fileName) => ({
+      ticketId: ticketIdFromFile(fileName),
+      path: posix.join(TICKET_ROOT, state.state, fileName),
+      state: state.state,
+    })),
+  );
+}
+
+function findDuplicateTicketIds(locations: TicketLocation[]): Array<{ ticketId: string; paths: string[] }> {
+  const byTicketId = new Map<string, string[]>();
+
+  for (const location of locations) {
+    byTicketId.set(location.ticketId, [...(byTicketId.get(location.ticketId) ?? []), location.path]);
+  }
+
+  return Array.from(byTicketId.entries())
+    .filter(([, paths]) => paths.length > 1)
+    .map(([ticketId, paths]) => ({ ticketId, paths: paths.sort() }))
+    .sort((left, right) => left.ticketId.localeCompare(right.ticketId));
+}
+
+async function inspectReadyTicketSections(cwd: string, locations: TicketLocation[]): Promise<TicketDoctorIssue[]> {
+  const warnings: TicketDoctorIssue[] = [];
+  const readyLocations = locations.filter((location) => location.state === "planned" || location.state === "ongoing");
+
+  for (const location of readyLocations) {
+    try {
+      const content = await readFile(join(cwd, location.path), "utf8");
+      const missingSections = REQUIRED_READY_TICKET_SECTIONS.filter((section) => !hasMarkdownSection(content, section));
+
+      if (missingSections.length > 0) {
+        warnings.push(
+          doctorIssue(
+            "missing-required-ticket-sections",
+            `${location.path} is missing required ready-ticket sections: ${missingSections.join(", ")}.`,
+            "Fill the missing sections or move the ticket back to backlog before implementation continues.",
+            location.path,
+          ),
+        );
+      }
+    } catch (error) {
+      warnings.push(
+        doctorIssue(
+          "ticket-content-unreadable",
+          `Could not read ${location.path}: ${error instanceof Error ? error.message : String(error)}`,
+          "Fix the ticket file so its required sections can be inspected.",
+          location.path,
+        ),
+      );
+    }
+  }
+
+  return warnings;
+}
+
+function hasMarkdownSection(content: string, section: string): boolean {
+  return new RegExp(`^##\\s+${escapeRegExp(section)}\\s*$`, "m").test(content);
+}
+
+async function inspectAdvisoryArtifactsForDoctor(cwd: string, locations: TicketLocation[]): Promise<TicketDoctorIssue[]> {
+  const warnings: TicketDoctorIssue[] = [];
+
+  if (!existsSync(join(cwd, ADVISORY_ARTIFACT_ROOT))) {
+    return warnings;
+  }
+
+  for (const artifactType of ADVISORY_ARTIFACT_TYPES) {
+    const artifactDirectory = posix.join(ADVISORY_ARTIFACT_ROOT, artifactType);
+    let entries;
+
+    try {
+      entries = await readdir(join(cwd, artifactDirectory), { withFileTypes: true });
+    } catch (error) {
+      if (isErrorWithCode(error) && error.code === "ENOENT") {
+        warnings.push(
+          doctorIssue(
+            "missing-artifact-directory",
+            `Expected advisory artifact directory ${artifactDirectory} was not found.`,
+            "Restore the directory with its .gitkeep file or regenerate advisory artifacts when needed.",
+            artifactDirectory,
+          ),
+        );
+        continue;
+      }
+
+      warnings.push(
+        doctorIssue(
+          "artifact-directory-unreadable",
+          `Could not inspect advisory artifact directory ${artifactDirectory}: ${error instanceof Error ? error.message : String(error)}`,
+          "Fix filesystem permissions or the directory entry, then run /ticket-doctor again.",
+          artifactDirectory,
+        ),
+      );
+      continue;
+    }
+
+    const artifactFiles = entries
+      .filter((entry) => entry.isFile() && TICKET_FILE_PATTERN.test(entry.name))
+      .map((entry) => entry.name)
+      .sort();
+
+    for (const artifactFile of artifactFiles) {
+      warnings.push(...(await inspectOneAdvisoryArtifactForDoctor(cwd, locations, artifactType, artifactFile)));
+    }
+  }
+
+  return warnings;
+}
+
+async function inspectOneAdvisoryArtifactForDoctor(
+  cwd: string,
+  locations: TicketLocation[],
+  artifactType: AdvisoryArtifactType,
+  artifactFile: string,
+): Promise<TicketDoctorIssue[]> {
+  const warnings: TicketDoctorIssue[] = [];
+  const artifactPath = posix.join(ADVISORY_ARTIFACT_ROOT, artifactType, artifactFile);
+  const fileTicketId = ticketIdFromFile(artifactFile);
+
+  let content: string;
+  try {
+    content = await readFile(join(cwd, artifactPath), "utf8");
+  } catch (error) {
+    return [
+      doctorIssue(
+        "artifact-unreadable",
+        `Could not read advisory artifact ${artifactPath}: ${error instanceof Error ? error.message : String(error)}`,
+        "Fix or remove the advisory artifact after confirming it is not needed.",
+        artifactPath,
+      ),
+    ];
+  }
+
+  const recordedArtifactType = parseAdvisoryField(content, "artifactType");
+  const recordedTicketId = parseAdvisoryField(content, "ticketId");
+  const recordedTicketPath = parseAdvisoryField(content, "ticketPath");
+  const recordedTicketState = parseAdvisoryField(content, "ticketState");
+  const recordedSha256 = parseAdvisoryField(content, "ticketSha256");
+  const sourceTicketId = recordedTicketId || fileTicketId;
+  const matchingLocations = locations.filter((location) => location.ticketId === sourceTicketId);
+
+  if (recordedArtifactType && recordedArtifactType !== artifactType) {
+    warnings.push(
+      doctorIssue(
+        "artifact-type-mismatch",
+        `${artifactPath} records artifactType ${recordedArtifactType}, but it is stored under ${artifactType}.`,
+        "Regenerate the artifact or move it only after explicit human review.",
+        artifactPath,
+      ),
+    );
+  }
+
+  if (recordedTicketId && recordedTicketId !== fileTicketId) {
+    warnings.push(
+      doctorIssue(
+        "artifact-ticket-id-mismatch",
+        `${artifactPath} records ticketId ${recordedTicketId}, but its filename is ${fileTicketId}.`,
+        "Regenerate the artifact so its filename and metadata agree.",
+        artifactPath,
+      ),
+    );
+  }
+
+  if (!recordedTicketId || !recordedTicketPath || !recordedSha256) {
+    warnings.push(
+      doctorIssue(
+        "artifact-missing-staleness-metadata",
+        `${artifactPath} is missing ticketId, ticketPath, or ticketSha256 metadata needed for complete staleness checks.`,
+        "Regenerate the artifact with the current advisory artifact metadata helper.",
+        artifactPath,
+      ),
+    );
+  }
+
+  if (matchingLocations.length === 0) {
+    warnings.push(
+      doctorIssue(
+        "orphaned-advisory-artifact",
+        `${artifactPath} refers to ${sourceTicketId}, but no matching ticket exists in ticket state directories.`,
+        "Confirm the artifact is historical, then remove it or recreate the missing source ticket with explicit human approval.",
+        artifactPath,
+      ),
+    );
+    return warnings;
+  }
+
+  const recordedLocation = recordedTicketPath
+    ? matchingLocations.find((location) => location.path === recordedTicketPath)
+    : undefined;
+  const currentLocation = recordedLocation ?? (matchingLocations.length === 1 ? matchingLocations[0] : undefined);
+
+  if (recordedTicketPath && !recordedLocation) {
+    warnings.push(
+      doctorIssue(
+        "stale-advisory-artifact-path",
+        `${artifactPath} records source path ${recordedTicketPath}, but ${sourceTicketId} is currently at ${matchingLocations.map((location) => location.path).join(", ")}.`,
+        "Regenerate the artifact for the ticket's current state if the advisory result is still useful.",
+        artifactPath,
+      ),
+    );
+  }
+
+  if (recordedTicketState && currentLocation && recordedTicketState !== currentLocation.state) {
+    warnings.push(
+      doctorIssue(
+        "stale-advisory-artifact-state",
+        `${artifactPath} records ticketState ${recordedTicketState}, but ${sourceTicketId} is currently in ${currentLocation.state}.`,
+        "Regenerate the artifact after confirming the current ticket state is correct.",
+        artifactPath,
+      ),
+    );
+  }
+
+  if (recordedSha256 && currentLocation) {
+    const currentSha256 = await computeTicketSha256(cwd, currentLocation.path);
+    if (recordedSha256 !== currentSha256) {
+      warnings.push(
+        doctorIssue(
+          "stale-advisory-artifact-sha256",
+          `${artifactPath} records an outdated SHA-256 for ${currentLocation.path}.`,
+          "Regenerate the artifact if its advisory content should reflect the current ticket file.",
+          artifactPath,
+        ),
+      );
+    }
+  }
+
+  return warnings;
+}
+
+function renderTicketDoctor(report: TicketDoctorReport): string {
+  const lines = [
+    "# Ticket Doctor",
+    "",
+    "Ticket state source of truth: the `tickets/<state>/` directories.",
+    "Advisory artifacts are checked only for consistency; they are not authoritative workflow state.",
+    "This command is read-only, deterministic, and does not trigger parent LLM handoff.",
+    "",
+    "## Summary",
+    `- errors: ${report.errors.length}`,
+    `- warnings: ${report.warnings.length}`,
+    "",
+    "## Ticket counts",
+  ];
+
+  for (const state of report.states) {
+    const suffix = state.exists ? "" : " (missing directory)";
+    lines.push(`- ${state.state}: ${state.ticketFiles.length}${suffix}`);
+  }
+
+  lines.push("", "## Errors", renderDoctorIssueList(report.errors));
+  lines.push("", "## Warnings", renderDoctorIssueList(report.warnings));
+  lines.push("", "## Actionable next steps", renderDoctorNextSteps(report));
+
+  return lines.join("\n");
+}
+
+function renderDoctorIssueList(issues: TicketDoctorIssue[]): string {
+  if (issues.length === 0) {
+    return "No issues found.";
+  }
+
+  return issues
+    .map((issue) => {
+      const path = issue.path ? `\n  Path: \`${issue.path}\`` : "";
+      return `- [${issue.code}] ${issue.message}${path}\n  Next step: ${issue.nextStep}`;
+    })
+    .join("\n");
+}
+
+function renderDoctorNextSteps(report: TicketDoctorReport): string {
+  const issues = [...report.errors, ...report.warnings];
+  if (issues.length === 0) {
+    return "- No action needed. Run `/ticket-doctor` again after ticket workflow changes or advisory artifact generation.";
+  }
+
+  const uniqueSteps = Array.from(new Set(issues.map((issue) => issue.nextStep)));
+  return uniqueSteps.map((step) => `- ${step}`).join("\n");
+}
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 export function buildAdvisoryArtifactPath(ticketId: string, artifactType: AdvisoryArtifactType): string {
