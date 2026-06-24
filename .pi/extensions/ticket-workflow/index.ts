@@ -1,12 +1,19 @@
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
-import { readdir } from "node:fs/promises";
-import { basename, join } from "node:path";
+import { createHash } from "node:crypto";
+import { readdir, readFile } from "node:fs/promises";
+import { basename, join, posix } from "node:path";
 
 const TICKET_ROOT = "tickets";
 const TICKET_STATES = ["backlog", "planned", "ongoing", "completed", "rejected"] as const;
 const TICKET_FILE_PATTERN = /^PLF-\d+\.md$/;
+const TICKET_ID_PATTERN = /^PLF-\d+$/;
+const ADVISORY_ARTIFACT_ROOT = posix.join(TICKET_ROOT, ".artifacts");
+const ADVISORY_ARTIFACT_TYPES = ["readiness", "plans", "verification", "completion"] as const;
+const ADVISORY_ARTIFACT_NOTICE =
+  "Advisory artifact only. Ticket files and ticket state directories remain authoritative.";
 
-type TicketState = (typeof TICKET_STATES)[number];
+export type TicketState = (typeof TICKET_STATES)[number];
+export type AdvisoryArtifactType = (typeof ADVISORY_ARTIFACT_TYPES)[number];
 
 type StateStatus = {
   state: TicketState;
@@ -21,6 +28,18 @@ type TicketStatus = {
   activeTicket?: string;
   workflowErrors: string[];
   missingDirectories: string[];
+};
+
+export type AdvisoryArtifactMetadata = {
+  artifactType: AdvisoryArtifactType;
+  commandName: string;
+  generatedAt: string;
+  ticketId: string;
+  ticketPath: string;
+  ticketState?: TicketState;
+  ticketSha256: string;
+  advisory: true;
+  advisoryNotice: string;
 };
 
 export default function (pi: ExtensionAPI) {
@@ -68,6 +87,46 @@ async function inspectTicketStatus(cwd: string): Promise<TicketStatus> {
     workflowErrors,
     missingDirectories,
   };
+}
+
+export function buildAdvisoryArtifactPath(ticketId: string, artifactType: AdvisoryArtifactType): string {
+  assertValidTicketId(ticketId);
+  assertValidAdvisoryArtifactType(artifactType);
+
+  return posix.join(ADVISORY_ARTIFACT_ROOT, artifactType, `${ticketId}.md`);
+}
+
+export async function buildAdvisoryArtifactMetadata(
+  cwd: string,
+  params: {
+    artifactType: AdvisoryArtifactType;
+    commandName: string;
+    ticketPath: string;
+    generatedAt?: Date;
+  },
+): Promise<AdvisoryArtifactMetadata> {
+  assertValidAdvisoryArtifactType(params.artifactType);
+
+  const ticketPath = normalizeRelativeTicketPath(params.ticketPath);
+  const ticketId = ticketIdFromPath(ticketPath);
+
+  return {
+    artifactType: params.artifactType,
+    commandName: params.commandName,
+    generatedAt: (params.generatedAt ?? new Date()).toISOString(),
+    ticketId,
+    ticketPath,
+    ticketState: ticketStateFromPath(ticketPath),
+    ticketSha256: await computeTicketSha256(cwd, ticketPath),
+    advisory: true,
+    advisoryNotice: ADVISORY_ARTIFACT_NOTICE,
+  };
+}
+
+export async function computeTicketSha256(cwd: string, ticketPath: string): Promise<string> {
+  const normalizedTicketPath = normalizeRelativeTicketPath(ticketPath);
+  const content = await readFile(join(cwd, normalizedTicketPath));
+  return createHash("sha256").update(content).digest("hex");
 }
 
 async function inspectState(cwd: string, state: TicketState): Promise<StateStatus> {
@@ -153,6 +212,49 @@ function renderTicketStatus(status: TicketStatus): string {
 
 function ticketIdFromFile(fileName: string): string {
   return basename(fileName, ".md");
+}
+
+function ticketIdFromPath(ticketPath: string): string {
+  const fileName = basename(ticketPath);
+
+  if (!TICKET_FILE_PATTERN.test(fileName)) {
+    throw new Error(`Expected a PLF ticket file path, got ${ticketPath}`);
+  }
+
+  return ticketIdFromFile(fileName);
+}
+
+function ticketStateFromPath(ticketPath: string): TicketState | undefined {
+  const parts = ticketPath.split("/");
+  const possibleState = parts[1];
+
+  return isTicketState(possibleState) ? possibleState : undefined;
+}
+
+function normalizeRelativeTicketPath(ticketPath: string): string {
+  const normalized = ticketPath.replaceAll("\\", "/").replace(/^\.\//, "");
+
+  if (!normalized.startsWith(`${TICKET_ROOT}/`)) {
+    throw new Error(`Expected a path under ${TICKET_ROOT}/, got ${ticketPath}`);
+  }
+
+  return normalized;
+}
+
+function assertValidTicketId(ticketId: string): void {
+  if (!TICKET_ID_PATTERN.test(ticketId)) {
+    throw new Error(`Expected a PLF ticket ID, got ${ticketId}`);
+  }
+}
+
+function assertValidAdvisoryArtifactType(artifactType: string): asserts artifactType is AdvisoryArtifactType {
+  if (!ADVISORY_ARTIFACT_TYPES.includes(artifactType as AdvisoryArtifactType)) {
+    throw new Error(`Unknown advisory artifact type: ${artifactType}`);
+  }
+}
+
+function isTicketState(value: string | undefined): value is TicketState {
+  return TICKET_STATES.includes(value as TicketState);
 }
 
 function isErrorWithCode(error: unknown): error is Error & { code: string } {
