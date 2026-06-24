@@ -409,6 +409,64 @@ export default function (pi: ExtensionAPI) {
     },
   });
 
+  pi.registerCommand("ticket-activate-check", {
+    description: "Check whether a planned ticket is ready for manual activation without moving it",
+    handler: async (args, ctx) => {
+      const ticketId = parseTicketIdArg(args, "ticket-activate-check");
+      const ticketPath = requirePlannedTicketPath(ctx.cwd, ticketId, "ticket-activate-check");
+      await requireNoOngoingTickets(ctx.cwd, "ticket-activate-check");
+      const dependencies = await inspectTicketDependencies(ctx.cwd, ticketPath);
+      const planArtifact = await inspectPlanArtifact(ctx.cwd, ticketId, ticketPath);
+      const manualSteps = buildActivationManualSteps(ticketId, ticketPath);
+      const advisoryResult = renderActivationCheckAdvisoryMarkdown(dependencies, planArtifact, manualSteps);
+      const text = renderActivationCheckResult(ticketId, ticketPath, advisoryResult);
+      const handoffParams = {
+        commandName: "ticket-activate-check",
+        originalRequest: `/ticket-activate-check ${args.trim()}`.trim(),
+        advisoryResult,
+      };
+
+      if (ctx.mode === "print") {
+        process.stdout.write(`${text}\n\n`);
+        deliverAdvisoryParentHandoff(pi, ctx, handoffParams);
+        return;
+      }
+
+      if (shouldSendAdvisoryParentHandoff(ctx)) {
+        pi.sendMessage({
+          customType: "ticket-activate-check",
+          content: text,
+          display: true,
+          details: {
+            ticketId,
+            ticketPath,
+            dependencies,
+            planArtifact,
+            manualSteps,
+          },
+        });
+        deliverAdvisoryParentHandoff(pi, ctx, handoffParams);
+        return;
+      }
+
+      const delivery = deliverAdvisoryParentHandoff(pi, ctx, handoffParams);
+      const content = delivery.sent ? text : `${text}\n\n${delivery.suggestedHandoff}`;
+      pi.sendMessage({
+        customType: "ticket-activate-check",
+        content,
+        display: true,
+        details: {
+          ticketId,
+          ticketPath,
+          dependencies,
+          planArtifact,
+          manualSteps,
+          parentHandoff: delivery,
+        },
+      });
+    },
+  });
+
   pi.registerCommand("ticket-completion-brief", {
     description: "Prepare a read-only advisory completion brief for the single ongoing ticket",
     handler: async (_args, ctx) => {
@@ -918,6 +976,96 @@ function renderPlanResult(ticketId: string, ticketPath: string, artifactPath: st
   ].join("\n");
 }
 
+function renderActivationCheckResult(ticketId: string, ticketPath: string, advisoryMarkdown: string): string {
+  return [
+    "# Ticket Activate Check",
+    "",
+    `Source ticket: ${ticketPath}`,
+    "Advisory artifact: (none; this read-only command does not write files)",
+    "",
+    "This result is advisory only. Ticket files and ticket directories remain authoritative.",
+    "No ticket state transition, log edit, commit, or file mutation was performed.",
+    "",
+    "## Advisory result",
+    "",
+    advisoryMarkdown || "(no advisory result)",
+    "",
+    "## Recommended parent action",
+    "",
+    `Review the activation recommendation for ${ticketId}, explain any warnings, and only then ask the human whether to perform the manual activation steps.`,
+  ].join("\n");
+}
+
+function renderActivationCheckAdvisoryMarkdown(
+  dependencies: TicketDependencyStatus[],
+  planArtifact: PlanArtifactStatus,
+  manualSteps: string[],
+): string {
+  const unresolvedDependencies = dependencies.filter((dependency) => !dependency.resolved);
+  const planWarning = !planArtifact.exists || planArtifact.stale;
+  const verdict = unresolvedDependencies.length > 0
+    ? "not-ready"
+    : planWarning
+      ? "ready-with-warnings"
+      : "ready-for-activation";
+
+  return [
+    "## Verdict",
+    "",
+    `- ${verdict}`,
+    "",
+    "## Preconditions",
+    "",
+    "- Target ticket exists in `tickets/planned/`.",
+    "- `tickets/ongoing/` contains no `PLF-*.md` ticket file.",
+    "",
+    "## Dependency pre-check",
+    "",
+    renderDependencyStatusList(dependencies),
+    "",
+    "## Implementation plan artifact",
+    "",
+    renderActivationPlanArtifactStatus(planArtifact),
+    "",
+    "## Suggested manual activation steps",
+    "",
+    ...manualSteps.map((step) => `- ${step}`),
+    "",
+    "Human approval is required before activation. Do not run these steps unless the human explicitly chooses to activate this ticket.",
+  ].join("\n");
+}
+
+function renderActivationPlanArtifactStatus(planArtifact: PlanArtifactStatus): string {
+  if (!planArtifact.exists) {
+    return "- Warning: no implementation plan artifact found. Consider running `/ticket-plan <ticket-id>` before activation.";
+  }
+
+  if (planArtifact.stale) {
+    return [
+      `- Warning: implementation plan artifact \`${planArtifact.path}\` is stale because the ticket changed after the plan was generated.`,
+      `- Generated at: ${planArtifact.generatedAt ?? "unknown"}`,
+    ].join("\n");
+  }
+
+  return [
+    `- Implementation plan artifact: \`${planArtifact.path}\``,
+    `- Generated at: ${planArtifact.generatedAt ?? "unknown"}`,
+    "- Status: Plan SHA-256 matches the current ticket.",
+  ].join("\n");
+}
+
+function buildActivationManualSteps(ticketId: string, ticketPath: string): string[] {
+  const ongoingPath = posix.join(TICKET_ROOT, "ongoing", `${ticketId}.md`);
+
+  return [
+    "Confirm human approval to activate the ticket.",
+    "Generate a log timestamp with `date '+%Y-%m-%d %H:%M:%S'`.",
+    `Append a dated activation log entry to \`${ticketPath}\` before or after the move.`,
+    `Run \`git mv ${ticketPath} ${ongoingPath}\`.`,
+    "Run `pi --approve --offline --no-session -p '/ticket-status'` to confirm exactly one ongoing ticket.",
+  ];
+}
+
 function renderVerifyStarting(
   ticketId: string,
   ticketPath: string,
@@ -1268,7 +1416,7 @@ function requireBacklogTicketPath(cwd: string, ticketId: string): string {
   throw new Error(`Ticket ${ticketId} was not found in tickets/backlog/.`);
 }
 
-function requirePlannedTicketPath(cwd: string, ticketId: string): string {
+function requirePlannedTicketPath(cwd: string, ticketId: string, commandName = "ticket-plan"): string {
   const plannedPath = posix.join(TICKET_ROOT, "planned", `${ticketId}.md`);
 
   if (existsSync(join(cwd, plannedPath))) {
@@ -1280,10 +1428,34 @@ function requirePlannedTicketPath(cwd: string, ticketId: string): string {
   );
 
   if (currentState) {
-    throw new Error(`Ticket ${ticketId} is in tickets/${currentState}/; /ticket-plan only accepts planned tickets.`);
+    throw new Error(`Ticket ${ticketId} is in tickets/${currentState}/; /${commandName} only accepts planned tickets.`);
   }
 
   throw new Error(`Ticket ${ticketId} was not found in tickets/planned/.`);
+}
+
+async function requireNoOngoingTickets(cwd: string, commandName: string): Promise<void> {
+  const ongoingDir = join(cwd, TICKET_ROOT, "ongoing");
+
+  try {
+    const entries = await readdir(ongoingDir, { withFileTypes: true });
+    const ticketFiles = entries
+      .filter((entry) => entry.isFile() && TICKET_FILE_PATTERN.test(entry.name))
+      .map((entry) => entry.name)
+      .sort();
+
+    if (ticketFiles.length > 0) {
+      const ticketIds = ticketFiles.map(ticketIdFromFile).join(", ");
+      throw new Error(
+        `Cannot activate a planned ticket because tickets/ongoing/ already contains ${ticketIds}. /${commandName} requires tickets/ongoing/ to be empty.`,
+      );
+    }
+  } catch (error) {
+    if (isErrorWithCode(error) && error.code === "ENOENT") {
+      throw new Error(`The tickets/ongoing/ directory was not found. /${commandName} requires tickets/ongoing/ to exist and be empty.`);
+    }
+    throw error;
+  }
 }
 
 async function inspectTicketDependencies(cwd: string, ticketPath: string): Promise<TicketDependencyStatus[]> {
