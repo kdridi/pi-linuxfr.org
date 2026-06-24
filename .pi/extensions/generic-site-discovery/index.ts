@@ -146,7 +146,7 @@ export default function (pi: ExtensionAPI) {
       const outputPath = resolve(ctx.cwd, stripAtPrefix(params.outputPath));
       const allowedHost = root.hostname;
 
-      onUpdate?.({ content: [{ type: "text", text: `Starting bounded discovery of ${root.href}` }] });
+      onUpdate?.({ content: [{ type: "text", text: `Starting bounded discovery of ${root.href}` }], details: {} });
 
       const browser = await chromium.launch({ headless: true });
       const context = await browser.newContext({ ignoreHTTPSErrors: false });
@@ -172,7 +172,7 @@ export default function (pi: ExtensionAPI) {
           }
 
           visited.add(next.url);
-          onUpdate?.({ content: [{ type: "text", text: `Visiting ${pages.length + 1}/${maxPages}: ${next.url}` }] });
+          onUpdate?.({ content: [{ type: "text", text: `Visiting ${pages.length + 1}/${maxPages}: ${next.url}` }], details: {} });
 
           let observation: PageObservation;
           try {

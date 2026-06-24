@@ -1,0 +1,12 @@
+{
+  "name": "pi-linuxfr-project-extensions",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Local TypeScript editor support for project Pi extensions.",
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "0.80.2",
+    "@types/node": "24.12.4",
+    "typebox": "1.1.38",
+    "typescript": "5.9.3"
+  }
+}

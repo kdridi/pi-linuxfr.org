@@ -72,7 +72,7 @@ export function registerCollectPagesTool(pi: ExtensionAPI) {
 
       for (const inputUrl of urls) {
         if (signal?.aborted) throw new Error("Collection cancelled");
-        onUpdate?.({ content: [{ type: "text", text: `Collecting ${inputUrl}` }] });
+        onUpdate?.({ content: [{ type: "text", text: `Collecting ${inputUrl}` }], details: {} });
         try {
           const result = await collectOne(ctx.cwd, paths, inputUrl, params.preferredFormat ?? "auto", Boolean(params.forceRefresh), signal);
           results.push(result);
