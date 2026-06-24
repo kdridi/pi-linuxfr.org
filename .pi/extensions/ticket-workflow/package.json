@@ -1,0 +1,6 @@
+{
+  "name": "pi-ticket-workflow",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Project-local Pi extension for deterministic ticket workflow commands."
+}
