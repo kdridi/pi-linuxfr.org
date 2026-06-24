@@ -2,7 +2,7 @@ import type { ExtensionAPI, ExtensionCommandContext } from "@earendil-works/pi-c
 import { spawn } from "node:child_process";
 import { createHash } from "node:crypto";
 import { existsSync } from "node:fs";
-import { readdir, readFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { basename, join, posix } from "node:path";
 
 const TICKET_ROOT = "tickets";
@@ -130,6 +130,90 @@ export default function (pi: ExtensionAPI) {
         content: text,
         display: true,
         details: result,
+      });
+    },
+  });
+
+  pi.registerCommand("ticket-readiness", {
+    description: "Create a read-only advisory readiness brief for a backlog ticket",
+    handler: async (args, ctx) => {
+      const ticketId = parseTicketIdArg(args, "ticket-readiness");
+      const ticketPath = requireBacklogTicketPath(ctx.cwd, ticketId);
+      const artifactPath = buildAdvisoryArtifactPath(ticketId, "readiness");
+      const startingText = renderReadinessStarting(ticketId, ticketPath, artifactPath);
+
+      if (ctx.mode === "print") {
+        process.stdout.write(`${startingText}\n\n`);
+      } else {
+        pi.sendMessage({
+          customType: "ticket-readiness-starting",
+          content: startingText,
+          display: true,
+          details: {
+            ticketId,
+            ticketPath,
+            artifactPath,
+            childTools: [...CHILD_PI_TOOL_ALLOWLIST],
+          },
+        });
+      }
+
+      const childResult = await runReadOnlyChildPiAdvisory(ctx.cwd, {
+        prompt: buildReadinessPrompt(ticketId, ticketPath),
+      });
+      const metadata = await buildAdvisoryArtifactMetadata(ctx.cwd, {
+        artifactType: "readiness",
+        commandName: "ticket-readiness",
+        ticketPath,
+      });
+      const artifact = renderReadinessArtifact(metadata, childResult.markdown);
+
+      await mkdir(join(ctx.cwd, posix.dirname(artifactPath)), { recursive: true });
+      await writeFile(join(ctx.cwd, artifactPath), artifact, "utf8");
+
+      const text = renderReadinessResult(ticketId, ticketPath, artifactPath, childResult.markdown);
+      const handoffParams = {
+        commandName: "ticket-readiness",
+        originalRequest: `/ticket-readiness ${args.trim()}`.trim(),
+        advisoryResult: childResult.markdown,
+        artifactPath,
+      };
+
+      if (ctx.mode === "print") {
+        process.stdout.write(`${text}\n\n`);
+        deliverAdvisoryParentHandoff(pi, ctx, handoffParams);
+        return;
+      }
+
+      if (shouldSendAdvisoryParentHandoff(ctx)) {
+        pi.sendMessage({
+          customType: "ticket-readiness",
+          content: text,
+          display: true,
+          details: {
+            ticketId,
+            ticketPath,
+            artifactPath,
+            childResult,
+          },
+        });
+        deliverAdvisoryParentHandoff(pi, ctx, handoffParams);
+        return;
+      }
+
+      const delivery = deliverAdvisoryParentHandoff(pi, ctx, handoffParams);
+      const content = delivery.sent ? text : `${text}\n\n${delivery.suggestedHandoff}`;
+      pi.sendMessage({
+        customType: "ticket-readiness",
+        content,
+        display: true,
+        details: {
+          ticketId,
+          ticketPath,
+          artifactPath,
+          childResult,
+          parentHandoff: delivery,
+        },
       });
     },
   });
@@ -280,6 +364,27 @@ function buildChildDiagnosticPrompt(args: string): string {
   ].join("\n");
 }
 
+function buildReadinessPrompt(ticketId: string, ticketPath: string): string {
+  return [
+    "You are a read-only child Pi advisory session for the pi-linuxfr.org ticket workflow.",
+    "Do not modify files. Do not move tickets. Do not create artifacts. Do not attempt to use write, edit, or bash.",
+    "Assess whether the target backlog ticket is ready to move to tickets/planned/ according to the project workflow.",
+    "Read these sources at minimum:",
+    "- tickets/README.md",
+    "- docs/ticket-workflow-commands.md",
+    `- ${ticketPath}`,
+    "Also inspect completed dependency tickets if useful and explicitly named by the target ticket.",
+    "Return concise Markdown with these sections:",
+    "1. Verdict — exactly one of ready, not-ready, split-recommended, or defer-or-reject, with one sentence of rationale.",
+    "2. Definition of Ready Review — evaluate objective, scope, acceptance criteria, artifacts, dependencies, size, verification, and fresh-session implementability.",
+    "3. Missing Information or Blockers — list concrete gaps, or say none.",
+    "4. Human Questions — list questions needed before planning, or say none.",
+    "5. Recommended Next Action — recommend the next manual workflow action without performing it.",
+    "6. Safety Boundary — confirm this was read-only advisory analysis.",
+    `Target ticket: ${ticketId}`,
+  ].join("\n");
+}
+
 function renderChildDiagnosticStarting(): string {
   return [
     "# Ticket Child Diagnostic",
@@ -302,6 +407,119 @@ function renderChildDiagnostic(result: ReadOnlyChildPiAdvisoryResult): string {
     "",
     result.markdown || "(no child output)",
   ].join("\n");
+}
+
+function renderReadinessStarting(ticketId: string, ticketPath: string, artifactPath: string): string {
+  return [
+    "# Ticket Readiness",
+    "",
+    `Starting read-only readiness analysis for ${ticketId}.`,
+    "",
+    `Source ticket: ${ticketPath}`,
+    `Advisory artifact: ${artifactPath}`,
+    "Safety boundary: the command only accepts backlog tickets and the child analysis uses `read`, `grep`, `find`, and `ls`.",
+  ].join("\n");
+}
+
+function renderReadinessResult(
+  ticketId: string,
+  ticketPath: string,
+  artifactPath: string,
+  advisoryMarkdown: string,
+): string {
+  return [
+    "# Ticket Readiness",
+    "",
+    `Source ticket: ${ticketPath}`,
+    `Advisory artifact: ${artifactPath}`,
+    "",
+    "This result is advisory only. Ticket files and ticket directories remain authoritative.",
+    "No ticket state transition was performed.",
+    "",
+    "## Advisory result",
+    "",
+    advisoryMarkdown || "(no advisory result)",
+    "",
+    "## Recommended parent action",
+    "",
+    `Review the advisory result for ${ticketId}, ask any required human questions, and only then decide whether to manually refine or move the ticket.`,
+  ].join("\n");
+}
+
+function renderReadinessArtifact(metadata: AdvisoryArtifactMetadata, advisoryMarkdown: string): string {
+  return [
+    renderAdvisoryArtifactFrontmatter(metadata),
+    `# Readiness Brief: ${metadata.ticketId}`,
+    "",
+    metadata.advisoryNotice,
+    "",
+    "## Source",
+    "",
+    `- Ticket: \`${metadata.ticketPath}\``,
+    `- Ticket state at generation: \`${metadata.ticketState ?? "unknown"}\``,
+    `- Ticket SHA-256: \`${metadata.ticketSha256}\``,
+    "",
+    "## Advisory Result",
+    "",
+    advisoryMarkdown || "(no advisory result)",
+  ].join("\n");
+}
+
+function renderAdvisoryArtifactFrontmatter(metadata: AdvisoryArtifactMetadata): string {
+  const lines = [
+    "---",
+    `artifactType: ${yamlString(metadata.artifactType)}`,
+    `commandName: ${yamlString(metadata.commandName)}`,
+    `generatedAt: ${yamlString(metadata.generatedAt)}`,
+    `ticketId: ${yamlString(metadata.ticketId)}`,
+    `ticketPath: ${yamlString(metadata.ticketPath)}`,
+  ];
+
+  if (metadata.ticketState) {
+    lines.push(`ticketState: ${yamlString(metadata.ticketState)}`);
+  }
+
+  lines.push(
+    `ticketSha256: ${yamlString(metadata.ticketSha256)}`,
+    "advisory: true",
+    `advisoryNotice: ${yamlString(metadata.advisoryNotice)}`,
+    "---",
+  );
+
+  return lines.join("\n");
+}
+
+function yamlString(value: string): string {
+  return JSON.stringify(value);
+}
+
+function parseTicketIdArg(args: string, commandName: string): string {
+  const ticketId = args.trim().split(/\s+/, 1)[0];
+
+  if (!ticketId) {
+    throw new Error(`Usage: /${commandName} PLF-123`);
+  }
+
+  assertValidTicketId(ticketId);
+  return ticketId;
+}
+
+function requireBacklogTicketPath(cwd: string, ticketId: string): string {
+  const backlogPath = posix.join(TICKET_ROOT, "backlog", `${ticketId}.md`);
+
+  if (existsSync(join(cwd, backlogPath))) {
+    return backlogPath;
+  }
+
+  const currentState = TICKET_STATES.find((state) =>
+    existsSync(join(cwd, posix.join(TICKET_ROOT, state, `${ticketId}.md`))),
+  );
+
+  if (currentState) {
+    throw new Error(`Ticket ${ticketId} is in tickets/${currentState}/; /ticket-readiness only accepts backlog tickets.`);
+  }
+
+  throw new Error(`Ticket ${ticketId} was not found in tickets/backlog/.`);
 }
 
 async function inspectTicketStatus(cwd: string): Promise<TicketStatus> {

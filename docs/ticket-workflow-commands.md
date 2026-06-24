@@ -16,7 +16,7 @@ tickets/rejected/
 
 Commands may inspect tickets and produce advisory Markdown artifacts, but they must not treat generated artifacts as workflow state.
 
-## Existing command
+## Existing commands
 
 ### `/ticket-status`
 
@@ -34,6 +34,18 @@ pi --approve --no-session --no-extensions --no-skills --no-prompt-templates --no
 
 The parent also sets `PI_TICKET_CHILD=1` in the child environment and refuses to spawn another child when that variable is already present. The tool allowlist intentionally excludes `write`, `edit`, and `bash`.
 
+### `/ticket-readiness <ticket-id>`
+
+Read-only advisory command that analyzes a ticket currently in `tickets/backlog/` and writes a readiness brief to:
+
+```text
+tickets/.artifacts/readiness/<ticket-id>.md
+```
+
+The command refuses tickets outside `tickets/backlog/`. It starts a bounded read-only child Pi analysis, writes advisory metadata with the source ticket fingerprint, displays the readiness result, and hands the advisory result back to the parent LLM according to the parent handoff convention.
+
+The command does not edit tickets, move tickets, create split tickets, resolve dependencies, or perform workflow transitions.
+
 ## Command interaction classes
 
 Ticket workflow commands fall into two interaction classes:
@@ -43,7 +55,7 @@ Ticket workflow commands fall into two interaction classes:
 
 `/ticket-status` is deterministic and display-only. Future audit commands such as `/ticket-doctor` should also stay deterministic and display-only by default unless a later ticket explicitly adds advisory handoff behavior.
 
-Future advisory commands such as `/ticket-readiness`, `/ticket-plan`, `/ticket-verify`, `/ticket-activate-check`, and `/ticket-completion-brief` should use the parent LLM handoff pattern below.
+`/ticket-readiness` is advisory and uses the parent LLM handoff pattern below. Future advisory commands such as `/ticket-plan`, `/ticket-verify`, `/ticket-activate-check`, and `/ticket-completion-brief` should use the same pattern.
 
 ## Advisory parent handoff
 
@@ -85,7 +97,7 @@ The extension helper `deliverAdvisoryParentHandoff(...)` builds the same message
 
 ## Advisory artifacts
 
-Future advisory commands should write Markdown artifacts under `tickets/.artifacts/` using deterministic paths:
+Advisory commands should write Markdown artifacts under `tickets/.artifacts/` using deterministic paths:
 
 ```text
 tickets/.artifacts/<artifact-type>/<ticket-id>.md
